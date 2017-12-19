@@ -1,7 +1,7 @@
 # Project3
 Project 3 
 
-##Team 
+## Team 
 
 - Mark Albom
 - Mohammad Badruzzaman
@@ -9,48 +9,48 @@ Project 3
 
 Description: MVP for this is an app for 
 
-##Wireframes
+## Wireframes
 - a
 - b
 
-##User stories 
+## User stories 
 
-- Full user stories can be found in the projects tab
+- Full user stories can be found on the [projects tab](https://git.generalassemb.ly/HamiltonGroup1Project3/Project3/projects/1)
 - UserStory1: 
 - UserStory2: 
 - UserStory3: 
 - UserStory4: 
 
-##References and Acknowledgements 
+## References and Acknowledgements 
 - a
 - b
 
-##Resources
+## Resources
 - a
 - b
 
-##Technologies
+## Technologies
 
 - List
 - Destription
 
-##APIs
+## APIs
 
 - List
 - Description
 
-##Modules
+## Modules
 
 - List
 - Descirption
 
-##Feautured Code 
+## Feautured Code 
 - a
 
-##Future 
+## Future 
 - Any things you plan to fix or features you plan to add
 
-##How to install and get it running on a localhost
+## How to install and get it running on a localhost
 - Fork
 - Clone
 - NPM install
