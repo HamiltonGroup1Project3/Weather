@@ -44,13 +44,13 @@ Full user stories can be found on the [Here! On the projects tab](https://git.ge
 - List
 - Descirption
 
-## Feautured Code 
+## Featured Code 
 - a
 
 ## Future 
 - Any things you plan to fix or features you plan to add
 
-## How to install and get it running on a localhost
+## How to install and get it running on a local host
 - Fork
 - Clone
 - NPM install
