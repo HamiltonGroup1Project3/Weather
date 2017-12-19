@@ -10,10 +10,11 @@ Project 3
 Description: MVP for this is an app for 
 
 ##Wireframes
-- 
-- 
+- a
+- b
 
 ##User stories 
+
 - Full user stories can be found in the projects tab
 - UserStory1: 
 - UserStory2: 
@@ -21,30 +22,30 @@ Description: MVP for this is an app for
 - UserStory4: 
 
 ##References and Acknowledgements 
-- 
-- 
+- a
+- b
 
 ##Resources
-- 
-- 
+- a
+- b
 
-###Technologies
+##Technologies
 
 - List
 - Destription
 
-###APIs
+##APIs
 
 - List
 - Description
 
-###Modules
+##Modules
 
 - List
 - Descirption
 
 ##Feautured Code 
-- 
+- a
 
 ##Future 
 - Any things you plan to fix or features you plan to add
