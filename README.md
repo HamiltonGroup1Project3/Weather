@@ -15,7 +15,7 @@ Description: MVP for this is an app for
 
 ## User stories 
 
-- Full user stories can be found on the [Here! On the projects tab](https://git.generalassemb.ly/HamiltonGroup1Project3/Project3/projects/1)
+Full user stories can be found on the [Here! On the projects tab](https://git.generalassemb.ly/HamiltonGroup1Project3/Project3/projects/1)
 - UserStory1: 
 - UserStory2: 
 - UserStory3: 
