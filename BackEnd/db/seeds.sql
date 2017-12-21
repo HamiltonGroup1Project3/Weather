@@ -1,5 +1,11 @@
 \c top_shelf
 
+INSERT INTO type (name) VALUES
+('Lager'),
+('Märzen'),
+('Ale'),
+('India Pale Ale');
+
 INSERT INTO beer (name, brewery, type_id, description) VALUES
 (
   'Bud Light',
@@ -62,12 +68,6 @@ INSERT INTO beer (name, brewery, type_id, description) VALUES
   1,
   'Brewed with lemon peels and dry hopped with Cascade, Amarillo, Centennial and Simcoe for a hoppy aroma of citrus, fruit and pine. Its easy to drink and just right for long hot days, steamy nights, parades or a day on the river with friends.'
 );
-
-INSERT INTO type (name) VALUES
-('Lager'),
-('Märzen'),
-('Ale'),
-('India Pale Ale');
 
 
 
