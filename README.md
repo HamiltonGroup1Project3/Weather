@@ -80,3 +80,12 @@ Phase4
 - Clone
 - NPM install
 - .......anything else.....
+
+
+## How to get the Client server running 
+- CD into project3
+-CD into Client  => wdi/Project3/Client
+- npm start in terminal
+
+
+
