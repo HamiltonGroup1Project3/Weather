@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 
 
-class WeatherForm extends Component {
+class BeerForm extends Component {
   render(){
     return(
 
-      <div className="Beer-form"> This is a form
+      <div className="BeerForm"> This is a form
       <form onSubmit= {this.props}>
 
   <input type="submit" value="Submit"/>
