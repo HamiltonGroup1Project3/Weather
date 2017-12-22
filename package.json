@@ -14,7 +14,8 @@
     "morgan": "^1.9.0",
     "passport": "^0.4.0",
     "pg-promise": "^7.3.2",
-    "react-scripts": "^1.0.17"
+    "react-scripts": "^1.0.17",
+    "string-width": "^2.1.1"
   },
   "devDependencies": {
     "axios": "^0.17.1",
@@ -60,7 +61,9 @@
     "rebuild": "webpack -d --progress",
     "build": "webpack -p",
     "clean": "rm -rf dist && rm -rf node_modules",
-    "watch": "webpack -d --progress --watch"
+    "watch": "webpack -d --progress --watch",
+    "heroku-prebuild": "bash scripts/deployment_react.sh",
+    "heroku-postbuild": "bash scripts/deployment_cleanup.sh"
   },
   "repository": {
     "type": "git",
