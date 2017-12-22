@@ -2,7 +2,7 @@ import React from 'react';
 import BeerForm from './BeerForm';
 import SingleBeer from './SingleBeer';
 import  NotFound from  './NotFound';
-import './../css/App.css'
+import './../css/App.css';
 
 
 const BeerList = () => {
@@ -12,7 +12,7 @@ const BeerList = () => {
        <BeerForm />
       <SingleBeer name="name1" />
       <SingleBeer name="name2" />
-      <SingleBeer name="name3"/>
+      <SingleBeer name="name3" />
 
        <NotFound />
 

@@ -7,8 +7,8 @@ const SingleBeer = (props) => {
   return(
     <div className="singleBeer">
       <h1> Single Beer page</h1>
-      {this.props.name}
-      {this.props.description}
+      {props.name}
+      {props.description}
       <SingleNav />
     </div>
   );

@@ -20,7 +20,8 @@ if (!('NODE_ENV' in process.env)) require('dotenv').config();
 
 const config = {
   entry: {
-    main:   `${APP_DIR}/main.jsx`,
+    main:   `${APP_DIR}/Index.jsx`,
+    // splits code for each vender and make a file for each
     vendor: ['axios', 'react', 'react-dom', 'prop-types'],
   },
   output: {
@@ -50,7 +51,7 @@ const config = {
       },
     }),
     new HtmlWebpackPlugin({
-      title:      'React Skeleton',
+      title:      'Top Shelf',
       xhtml:      true,
       inject:     false,
       template:   htmlTemplate,
