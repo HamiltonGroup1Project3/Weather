@@ -18,6 +18,6 @@ if (process.env.NODE_ENV === 'development' || !process.env.NODE_ENV) {
   }
 }
 
-const db = setDatabase();
+const db = setDatabase;
 
 module.exports = db;

@@ -1,6 +1,10 @@
-const Beers = require('../models/Beers');
+//import model so that it can be accessed by the controller
+const Beers = require('../models/beersDB');
 
-const beerController = {},
+const beerController = {};
+
+//wrap all controller middleware in an export object?
+
 
 beerController.index = (req, res, next) => {
   Beers.findAllBeers()
@@ -17,7 +21,7 @@ beerController.index = (req, res, next) => {
 
 
 beerController.show = (req, res, next) => {
-  Beers.findBeerById(req.params.id)
+  Beers.findOneBeer(req.params.id)
   .then(beers => {
     res.status(200).json({
       message: 'ok',
@@ -53,10 +57,10 @@ beerController.create = (req, res, next) => {
 };
 
 
-beerController.update = (req, res, next) => {
-  Beers.findBeerById(req.params.id)
+beerController.editOneBeer = (req, res, next) => {
+  Beers.findOneBeer(req.params.id)
   .then(beer => {
-    return beer.update({
+    return beer.editOneBeer({
       id: req.body.id,
       name: req.body.id,
       description: req.body.id,
@@ -74,7 +78,7 @@ beerController.update = (req, res, next) => {
 };
 
 
-beerController.delete = (req, res, next) => {
+beerController.deleteOneBeer = (req, res, next) => {
   Beers.destroy(req.params.id)
   .then(() => {
     res.status(202).json({
