@@ -1,9 +1,6 @@
 import React, { Component } from 'react';
 import { Switch, Route } from 'react-router-dom';
-import Header from './components/Header';
-import Footer from './components/Footer';
-import Home from './components/Home';
-import BeerForm from './components/BeerForm';
+import { Header, Footer, Home, BeerForm, SingleBeer, BeerList, NotFound } from './components';
 import './css/App.css'
 
 
@@ -21,7 +18,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Header />
+       {/* <Header />
         <h1 className="App-title">This is the Home-page</h1>
         <BeerForm />
 
@@ -33,7 +30,7 @@ class App extends Component {
               render={props => <SingleBeer {...props} beer={this.state.beer} />}
             />
             <Route path="/" component={NotFound} />
-          </Switch>
+          </Switch>  */}
           <Footer />
       </div>
     );
