@@ -26,3 +26,10 @@
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
+
+div {
+  margin: 15px;
+  background-color: rgba(100,100,100, .2);
+  border: 3px solid rgba(0,0,255, .5);
+
+}
