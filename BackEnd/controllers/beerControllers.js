@@ -1,7 +1,10 @@
-const Beers = require('../models/Beers');
+//import model so that it can be accessed by the controller
+const Beers = require('../models/beersDB');
 
-const beerController = {},
+//wrap all controller middleware in an empty object, then export that object at bottom of the file
+const beerController = {};
 
+//find all beers
 beerController.index = (req, res, next) => {
   Beers.findAllBeers()
   .then(beers => {
@@ -15,9 +18,9 @@ beerController.index = (req, res, next) => {
   .catch(next);
 };
 
-
+//find one beer
 beerController.show = (req, res, next) => {
-  Beers.findBeerById(req.params.id)
+  Beers.findOneBeer(req.params.id)
   .then(beers => {
     res.status(200).json({
       message: 'ok',
@@ -29,7 +32,7 @@ beerController.show = (req, res, next) => {
   .catch(next);
 };
 
-
+//add one beer
 beerController.create = (req, res, next) => {
   try {
     new Beer({
@@ -52,11 +55,11 @@ beerController.create = (req, res, next) => {
   }
 };
 
-
-beerController.update = (req, res, next) => {
-  Beers.findBeerById(req.params.id)
+//edit one beer
+beerController.editOneBeer = (req, res, next) => {
+  Beers.findOneBeer(req.params.id)
   .then(beer => {
-    return beer.update({
+    return beer.editOneBeer({
       id: req.body.id,
       name: req.body.id,
       description: req.body.id,
@@ -73,8 +76,8 @@ beerController.update = (req, res, next) => {
   .catch(next)
 };
 
-
-beerController.delete = (req, res, next) => {
+//delete one beer
+beerController.deleteOneBeer = (req, res, next) => {
   Beers.destroy(req.params.id)
   .then(() => {
     res.status(202).json({

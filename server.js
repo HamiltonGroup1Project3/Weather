@@ -10,6 +10,9 @@ const passport        = require('passport');
 const methodOverride  = require('method-override');
 const ejs             = require('ejs');
 
+//import controller
+const controller = require('./BackEnd/controllers/beerControllers');
+
 //connect port to server
 const PORT            = process.env.PORT || 3000
 
@@ -33,6 +36,10 @@ app.get('/', (req, res) => {
     documentTitle: 'If you can see this, then the server is running on 3000',
     subTitle:      'Hooray!',
   });
+});
+
+app.get('/test', controller.index, (req, res, next) => {
+  res.send('it worked');
 });
 
 app.get('*', (req, res) =>{
