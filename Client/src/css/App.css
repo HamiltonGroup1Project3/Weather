@@ -1,10 +1,8 @@
 .App {
   text-align: center;
-}
-
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+  margin: 5px;
+  background-color: rgba( 0,0,250, .3);
+  border: 3px solid rgba(0,0,250, .3) ;
 }
 
 .App-header {
@@ -16,20 +14,69 @@
 
 .App-title {
   font-size: 1.5em;
+  margin: 50px;
+  background-color: rgba(0,0,100,.3);
+  border: 3px solid rgba(0,0,100,.3) ;
 }
 
-.App-intro {
-  font-size: large;
+.beerForm {
+  margin: 50px;
+  background-color: rgba(0,100,000,.3);
+  border: 3px solid rgba(0,100,00,.3) ;
 }
 
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+.beerList {
+  display: flex;
+  margin: 50px;
+  background-color: rgba(100,00,000,.3);
+  border: 3px solid rgba(100,00,00,.3) ;
 }
 
-div {
-  margin: 15px;
-  background-color: rgba(100,100,100, .2);
-  border: 3px solid rgba(0,0,255, .5);
-
+.filter {
+  margin: 50px;
+  background-color: rgba(200,00,000,.3);
+  border: 3px solid rgba(200,00,00,.3) ;
 }
+
+.footer {
+  margin: 50px;
+  background-color: rgba(200,100,000,.3);
+  border: 3px solid rgba(200,100,00,.3) ;
+}
+
+.header {
+  margin: 50px;
+  background-color: rgba(200,200,000,.3);
+  border: 3px solid rgba(200,200,00,.3) ;
+}
+
+.home {
+  margin: 50px;
+  background-color: rgba(000,100,100,.3);
+  border: 3px solid rgba(000,100,100,.3);
+}
+
+.nav {
+  margin: 50px;
+  background-color: rgba(000,200,100,.3);
+  border: 3px solid rgba(000,200,100,.3);
+}
+
+.singleBeer {
+
+  width: 400px;
+  height: 200px;
+  margin: 50px;
+  background-color: rgba(000,200,200,.3);
+  border: 3px solid rgba(000,200,200,.3);
+}
+
+.singleNav {
+  width: 200px;
+  height: 50px;
+  margin: 50px;
+  background-color: rgba(000,000,255,.3);
+  border: 3px solid rgba(000,000,255,.3) ;
+}
+
+

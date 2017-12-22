@@ -3,10 +3,12 @@ import SingleNav from './SingleNav';
 import './../css/App.css'
 
 
-const SingleBeer = () => {
+const SingleBeer = (props) => {
   return(
     <div className="singleBeer">
       <h1> Single Beer page</h1>
+      {this.props.name}
+      {this.props.description}
       <SingleNav />
     </div>
   );

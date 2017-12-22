@@ -4,9 +4,10 @@ import React, { Component } from 'react';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import Home from './components/Home';
-
+import Filter from './components/Filter';
 import BeerList from './components/BeerList';
 import NotFound from './components/NotFound';
+import Nav from './components/Nav';
 import './css/App.css'
 
 
@@ -26,6 +27,8 @@ class App extends Component {
       <div className="App">
 
        <Header />
+       <Filter />
+       <Nav />
        <Home />
        <BeerList />
 
