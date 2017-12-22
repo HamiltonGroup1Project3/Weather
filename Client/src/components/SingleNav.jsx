@@ -5,7 +5,7 @@ import './../css/App.css'
 const SingleNav = () => {
   return(
     <div className="singleNav">
-      <h1> SingleNav </h1>
+      <p> SingleNav </p>
     </div>
   );
 };

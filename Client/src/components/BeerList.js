@@ -10,7 +10,10 @@ const BeerList = () => {
     <div className="beerList">
       <h1> BeerList </h1>
        <BeerForm />
-       <SingleBeer />
+      <SingleBeer name="name1" />
+      <SingleBeer name="name2" />
+      <SingleBeer name="name3"/>
+
        <NotFound />
 
     </div>

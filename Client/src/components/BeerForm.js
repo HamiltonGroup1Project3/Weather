@@ -5,7 +5,7 @@ class BeerForm extends Component {
   render(){
     return(
 
-      <div className="BeerForm"> This is a form
+      <div className="beerForm"> This is Beerform
       <form onSubmit= {this.props}>
 
   <input type="submit" value="Submit"/>
