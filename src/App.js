@@ -52,6 +52,8 @@ getBeers() {
       this.setState({
         singleBeerData: true
       })
+    })
+    };
 
 
   //setting State to when we add A beer
@@ -92,7 +94,7 @@ getBeers() {
           <Footer />
         </div>
     );
-  )}
-}
+  }
+};
 
 export default App;
