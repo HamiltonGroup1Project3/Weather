@@ -9,6 +9,7 @@ const SingleBeer = (props) => {
       <h1> Single Beer page</h1>
       {props.name}
       {props.description}
+      {props.brewery}
       <SingleNav />
     </div>
   );
