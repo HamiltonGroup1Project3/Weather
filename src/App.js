@@ -92,7 +92,7 @@ getBeers() {
           <Footer />
         </div>
     );
-  }
+  )}
 }
 
 export default App;
