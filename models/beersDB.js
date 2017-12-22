@@ -1,5 +1,5 @@
 //import config and pg-promise
-const dbConfig  = require('./db/config');
+const dbConfig  = require('./../db/config');
 const pgp       = require('pg-promise') ();
 
 // //execute pgp with out dbconfig so that the connection is made.

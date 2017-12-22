@@ -46,6 +46,7 @@
     "nodemon": "^1.14.2",
     "react": "*",
     "react-dom": "*",
+    "react-router-dom": "^4.2.2",
     "sass-loader": "^6.0.6",
     "style-loader": "^0.19.1",
     "url-loader": "^0.6.2",
