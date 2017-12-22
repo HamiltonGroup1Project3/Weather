@@ -4,19 +4,18 @@ const options = {
   }
 }
 
+const config = {
+  host: process.env.DB_HOST,
+  port: process.env.DB_PORT,
+  database:process.env.DB_NAME,
+  user: process.env.DB_USER,
+}
+
 const pgp = require('pg-promise')(options);
 
 function setDatabase(){
-if (process.env.NODE_ENV === 'development' || !process.env.NODE_ENV) {
-    return pgp({
-      database: 'top_shelf',
-      port: 5432,
-      host: 'localhost',
-    })
-  } else if (process.en.NODE_ENV === 'production') {
-    return pgp(process.env.DATABASE_URL);
+    return pgp(process.env.DATABASE_URL || config);
   }
-}
 
 const db = setDatabase();
 
