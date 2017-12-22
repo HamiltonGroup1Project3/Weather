@@ -8,7 +8,6 @@ const cookieParser    = require('cookie-parser');
 const session         = require('express-session');
 const passport        = require('passport');
 const methodOverride  = require('method-override');
-const ejs             = require('ejs');
 
 //import controller
 const controller = require('./controllers/beerControllers');
