@@ -33,12 +33,11 @@ Phase2
 - UserStory12: As a user I would like to filter beers by Type
 - UserStory13: As a user I would like to filter by Country
 - UserStory14: As a user I would like to filter by Mood.
+- Deploy Phase2 
 
-Phase3
+Backlog
 - UserStory15: As a user I would like to Search for beers from a public API.
 - UserStory16: As a user I would like to save the public beers as my favorites. 
-
-Phase4
 - UserStory17: As a product owner I would like multiple users to be able to use the site.
 - UserStory18: As a admin I would like to edit user information.
 - UserStory19: As a user I would like to edit my user information.
