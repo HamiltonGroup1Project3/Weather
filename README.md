@@ -10,41 +10,42 @@ Project 3
 Description: MVP for this is an app for 
 
 ## Wireframes
-- a
-- b
+- [Wireframe-Main](https://git.generalassemb.ly/HamiltonGroup1Project3/Project3/blob/master/Assets/Wireframes/WF-ListView.JPG)
+- [Wireframe-SingleView](https://git.generalassemb.ly/HamiltonGroup1Project3/Project3/blob/master/Assets/Wireframes/WF-SingleView.JPG)
 
 ## User stories 
 
-Full user stories & task can be found on the [Here! On the projects tab](https://git.generalassemb.ly/HamiltonGroup1Project3/Project3/projects/1)
-**MVP**
-- UserStory1: As a user I want to see all the beers on the main site.
-- UserStory2: As a developer I need to have the frontent connected to the backend
-- UserStory3: As a user I would like to add beers to list.
-- UserStory4: As a user I would like to display/edit the beer details.
-- UserStory5: As a user I would like to display/edit the beer details.
-- UserStory6: As a user I would like to delete beers off of the list.
-- UserStory7: As a user I would like the site to look visually appealing
-- UserStory8: As a product owner I would like my product deployed publicly. 
+Full user stories & task can be found [Here! On the projects tab](https://git.generalassemb.ly/HamiltonGroup1Project3/Project3/projects/1)
+Phase1
+1. UserStory: As a user I want to see all the beers on the main site.
+2. UserStory: As a developer I need to have the frontent connected to the backend
+3. UserStory: As a user I would like to add beers to list.
+4. UserStory: As a user I would like to display/edit the beer details.
+5. UserStory: As a user I would like to display/edit the beer details.
+6. UserStory: As a user I would like to delete beers off of the list.
+7. UserStory: As a user I would like the site to look visually appealing
+8. UserStory: As a product owner I would like my product deployed publicly.
+**MVP Met**
 
 Phase2
-- UserStory9: As a user I would like to save beers as favorite.
-- UserStory10: As a user I would like to filter by my Favorites
-- UserStory11: As a user I would like to cycle from one single beer to the next. 
-- UserStory12: As a user I would like to filter beers by Type
-- UserStory13: As a user I would like to filter by Country
-- UserStory14: As a user I would like to filter by Mood.
-- Deploy Phase2 
-
-Backlog
-- UserStory15: As a user I would like to Search for beers from a public API.
-- UserStory16: As a user I would like to save the public beers as my favorites. 
-- UserStory17: As a product owner I would like multiple users to be able to use the site.
-- UserStory18: As a admin I would like to edit user information.
-- UserStory19: As a user I would like to edit my user information.
-
+1. UserStory: As a user I would like to save beers as favorite.
+2. UserStory: As a user I would like to filter by my Favorites
+3. UserStory: As a user I would like to cycle from one single beer to the next. 
+4. UserStory: As a user I would like to filter beers by Type
+5. UserStory: As a user I would like to filter by Country
+6. UserStory: As a user I would like to filter by Seeting.
+7. UserStory: As a product owner I would like my product deployed publicly.
+**Done**
 
 ## Future 
-- Any things you plan to fix or features you plan to add
+Phase3
+1. UserStory: As a user I would like to Search for beers from a public API.
+2. UserStory: As a user I would like to save the public beers as my favorites. 
+
+Phase4
+1. UserStory: As a product owner I would like multiple users to be able to use the site.
+2. UserStory: As a admin I would like to edit user information.
+3. UserStory: As a user I would like to edit my user information.
 
 
 ## References and Acknowledgements 
@@ -81,10 +82,11 @@ Backlog
 - .......anything else.....
 
 
-## How to get the Client server running 
+### How to get the Client server running 
 - CD into project3
--CD into Client  => wdi/Project3/Client
-- npm start in terminal
+- CD into Client  => /Project3/Client
+- npm start 
 
-
+### How to get the React server running
+- 
 
