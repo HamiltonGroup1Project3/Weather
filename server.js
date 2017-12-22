@@ -1,5 +1,5 @@
 //import dependencies
-require('dotenv').config();
+!( 'NODE_ENV' in process.env ) && require('dotenv').config();
 const express         = require('express');
 const logger          = require('morgan');
 const path            = require('path');
@@ -8,19 +8,18 @@ const cookieParser    = require('cookie-parser');
 const session         = require('express-session');
 const passport        = require('passport');
 const methodOverride  = require('method-override');
-const ejs             = require('ejs');
 
 //import controller
-const controller = require('./BackEnd/controllers/beerControllers');
+const controller = require('./controllers/beerControllers');
 
 //connect port to server
-const PORT            = process.env.PORT || 3001
+const PORT            = process.env.PORT || 3000
 
 //initialize the app and set up dotenv
 const app             = express();
 
 //set up static file
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'dist')));
 
 //import logger and body parser
 app.use(logger('dev'));
@@ -29,14 +28,6 @@ app.use(bodyParser.urlencoded({
 }));
 app.use(bodyParser.json());
 
-
-//on index (home route), display the following:
-app.get('/', (req, res) => {
-  res.json({
-    documentTitle: 'If you can see this, then the server is running on 3000',
-    subTitle:      'Hooray!',
-  });
-});
 
 app.get('/test', controller.index, (req, res, next) => {
   res.send('it worked');

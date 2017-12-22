@@ -84,9 +84,10 @@ Phase4
 
 ### How to get the Client server running 
 - CD into project3
-- CD into Client  => /Project3/Client
-- npm start 
+- npm run dev 
 
 ### How to get the React server running
-- 
+- In a different terminal 
+- CD into project3
+- npm run watch
 
