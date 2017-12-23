@@ -81,13 +81,11 @@ Phase4
 - Clone
 - NPM install
 
-2. To get Server running
-- 2a.
-    - Open new terminal window
+2. Setup - Open new terminal window
     - CD into project3
     - npm run dev 
-- 2b.
-    - In a second terminal window
+
+3. Setup - In a second terminal window
     - CD into project3
     - npm run watch
 
