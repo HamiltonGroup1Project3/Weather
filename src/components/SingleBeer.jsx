@@ -8,8 +8,18 @@ const SingleBeer = (props) => {
   console.log('SingleBeer component loaded');
   return (
     <div className="singleBeer">
+
+
+
       <p>  {props.name} </p>
       <p> {props.brewery} </p>
+
+
+
+
+
+      <SingleNav />
+
     </div>
   );
 };
