@@ -2,7 +2,7 @@ import React from 'react';
 import './../css/App.css';
 import './../css/reset.css';
 
-const NotFound1 = () => {
+const NotFound = () => {
   console.log('Not Found page loaded');
   return (
     <div className="notFound">
@@ -11,4 +11,4 @@ const NotFound1 = () => {
   );
 };
 
-export default NotFound1;
+export default NotFound;
