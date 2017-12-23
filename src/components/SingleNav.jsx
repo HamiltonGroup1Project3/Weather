@@ -4,7 +4,8 @@ import './../css/reset.css';
 
 
 const SingleNav = (props) => {
-  return(
+  console.log('SingleNav component loaded');
+  return (
     <div className="singleNav">
       <p>{props.name}  SingleNav </p>
     </div>

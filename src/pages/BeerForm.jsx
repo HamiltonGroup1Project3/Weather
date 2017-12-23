@@ -4,38 +4,37 @@ import './../css/reset.css';
 import SingleNav from './../components/SingleNav';
 
 class BeerForm extends Component {
-  render(){
-    return(
 
-      <div className="beerForm"> This is the Beerform. It will display the detail information for each beer and allow for add & edit.
-      <form onSubmit= {this.props.beer}>
+  render() {
+    console.log('BeerForm loaded');
+    return (
 
-  <input type="submit" value="Submit"/>
-  </form>
+      <div className="beerForm">
+        <p>This is the Beerform. It will display the detail information for each beer and allow for add & edit. </p>
+        <form onSubmit= {this.props.beer}>
 
-
-{/* will be replaced with input / display fields */}
-  <br />
-  <p>Name  </p><br />
-  <p>Brewery </p><br />
-  <p>Description </p><br />
-  <p>some text  </p><br />
-  <p>some text  </p><br />
-
-  <div className="container">
-    <SingleNav name="prev" />
-    <SingleNav name="edit" />
-    <SingleNav name="next" />
-  </div>
-</div>
-
-      )
+          <input type="submit" value="Submit"/>
+        </form>
 
 
+        {/* will be replaced with input / display fields */}
+        <br />
+        <p>Name  </p><br />
+        <p>Brewery </p><br />
+        <p>Description </p><br />
+        <p>some text  </p><br />
+        <p>some text  </p><br />
 
-    }
+        <div className="container">
+          <SingleNav name="prev" />
+          <SingleNav name="edit" />
+          <SingleNav name="delete" />
+          <SingleNav name="next" />
+        </div>
+      </div>
 
-
+    );
+  }
 }
 
 export default BeerForm;

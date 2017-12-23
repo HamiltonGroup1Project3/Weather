@@ -1,6 +1,21 @@
 
 /*################*/
 /*#              #*/
+/*#  Standards   #*/
+/*#              #*/
+/*################*/
+
+h1 {
+  font-size: 2em;
+}
+
+p {
+  font-size: 1.0em;
+}
+
+
+/*################*/
+/*#              #*/
 /*#  MAIN RENDER #*/
 /*#  PAGE FRAME  #*/
 /*#              #*/
@@ -20,18 +35,6 @@
   border: 3px solid rgba(0,0,100,.3) ;
 }
 
-.footer {
-  margin: 0px;
-  background-color: rgba(200,100,000,.3);
-  border: 3px solid rgba(200,100,00,.3) ;
-}
-
-.header {
-  margin: 0px;
-  background-color: rgba(200,200,000,.3);
-  border: 3px solid rgba(200,200,00,.3) ;
-}
-
 
 
 
@@ -49,7 +52,7 @@
   border: 3px solid rgba(0,100,00,.3) ;
 }
 
-.beerList {
+.beersList {
   height: 500px;
   margin: 10px;
   background-color: rgba(100,00,000,.3);
@@ -68,12 +71,28 @@
 /*#  COMPONENTS  #*/
 /*#              #*/
 /*################*/
+
 .container {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-content: center;
 }
+
+
+.header {
+  margin: 0px;
+  background-color: rgba(200,200,000,.3);
+  border: 3px solid rgba(200,200,00,.3);
+}
+
+
+.footer {
+  margin: 0px;
+  background-color: rgba(200,100,000,.3);
+  border: 3px solid rgba(200,100,00,.3) ;
+}
+
 
 .filter {
 /*  width: 100px;
@@ -86,20 +105,17 @@
 
 .nav {
   width: 100px;
-  height: 50px;
+  /*height: 30px;*/
   margin: 5px;
+  padding: 8px 0px;
   background-color: rgba(000,200,100,.3);
   border: 3px solid rgba(000,200,100,.3);
 }
 
-.singleBeer {
-
-  width: 150px;
-  height: 75px;
-  margin: 5px;
-  background-color: rgba(000,200,200,.3);
-  border: 3px solid rgba(000,200,200,.3);
+.nav:hover {
+  background-color: white;
 }
+
 
 .singleNav {
   width: 75px;
@@ -107,6 +123,23 @@
   margin: 5px;
   background-color: rgba(000,000,255,.3);
   border: 3px solid rgba(000,000,255,.3) ;
+}
+
+.singleNav:hover {
+  background-color: white;
+}
+
+
+.singleBeer {
+  width: 150px;
+  height: 75px;
+  margin: 5px;
+  background-color: rgba(000,200,200,.3);
+  border: 3px solid rgba(000,200,200,.3);
+}
+
+.singleBeer:hover {
+  background-color: white;
 }
 
 

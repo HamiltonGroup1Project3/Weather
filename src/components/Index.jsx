@@ -1,9 +1,6 @@
-import { Home } from './Home';
-import { Header } from './Header';
-import { Footer } from './Footer';
-import { BeerForm } from './BeerForm';
-import { SingleBeer } from './SingleBeer';
-import { BeerList } from './BeerList';
-import { NotFound } from './NotFound';
+// import { Header } from './Header';
+// import { Footer } from './Footer';
+// import { SingleBeer } from './SingleBeer';
+// import { BeerList } from './BeerList';
 
-export { Header, Footer, Home, BeerForm, SingleBeer, BeerList, NotFound };
+// export { Header, Footer, SingleBeer, BeerList };
