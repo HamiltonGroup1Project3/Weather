@@ -5,7 +5,7 @@ import Footer from './components/Footer';
 import Home from './pages/Home';
 import BeersList from './pages/BeersList';
 import BeerForm from './pages/BeerForm';
-import NotFound1 from './pages/NotFound1';
+import NotFound from './pages/NotFound';
 import './css/App.css';
 import './css/reset.css';
 
@@ -14,11 +14,54 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      auth: false,
-      user: null,
-
+      singleBeerData: null,
+      dataLoaded: false,
+      beerList: null,
+      // addingBeerForm: null,
     };
+    // this.
   }
+
+  componentDidMount() {
+    console.log('component did mount');
+    this.getBeers();
+  }
+
+  getBeers() {
+    console.log('get beers');
+    fetch('/api/beer')
+      .then(res => res.json())
+      .then(res => {
+        this.setState({
+          dataLoaded: true,
+          beerData: res.data.beers,
+        });
+      })
+      .catch(err => {
+        console.log(err);
+      });
+  }
+
+  getSingleBeer(url){
+    fetch(url)
+      .then(res => res.json())
+      .then(res => {
+        console.log(res);
+        this.setState({
+          singleBeerData: true,
+        });
+      });
+  }
+
+
+  // setting State to when we add A beer
+  // AddBeer(){
+  //   this.setState({
+  //     addingBeer: true,
+  //   })
+  // }
+
+
   render() {
     return (
       <div className="App">
@@ -35,12 +78,16 @@ class App extends Component {
 
         <Switch>
           <Route path="/" exact component={Home} />
-          <Route path="/BeersList" exact component={BeersList} />
+          <Route path="/BeersList" exact component={BeersList}
+           /* beerList={this.state.beerList} */ />
+          <Route path="/BeersList" {...props}  exact  beerList={this.state.beerList}  />
+
           <Route
             path="/BeersList/Beer"
-            render={props => <BeerForm {...props} /* beer={this.state.beer} */ />}
+            render={props => <BeerForm {...props}  beer={this.state.beer}  />}
           />
-          <Route path="/" component={NotFound1} />
+
+          <Route path="/" component={NotFound} />
 
         </Switch>
 
