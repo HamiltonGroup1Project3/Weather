@@ -1,5 +1,6 @@
 import React from 'react';
-import './../css/App.css'
+import './../css/App.css';
+import './../css/reset.css';
 
  const NotFound = () => {
   return(

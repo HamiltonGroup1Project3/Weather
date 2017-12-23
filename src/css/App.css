@@ -1,3 +1,11 @@
+
+/*################*/
+/*#              #*/
+/*#  MAIN RENDER #*/
+/*#  PAGE FRAME  #*/
+/*#              #*/
+/*################*/
+
 .App {
   text-align: center;
   margin: 5px;
@@ -5,76 +13,98 @@
   border: 3px solid rgba(0,0,250, .3) ;
 }
 
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
-}
-
 .App-title {
   font-size: 1.5em;
-  margin: 50px;
+  margin: 5px;
   background-color: rgba(0,0,100,.3);
   border: 3px solid rgba(0,0,100,.3) ;
 }
 
-.beerForm {
-  margin: 50px;
-  background-color: rgba(0,100,000,.3);
-  border: 3px solid rgba(0,100,00,.3) ;
-}
-
-.beerList {
-  display: flex;
-  margin: 50px;
-  background-color: rgba(100,00,000,.3);
-  border: 3px solid rgba(100,00,00,.3) ;
-}
-
-.filter {
-  margin: 50px;
-  background-color: rgba(200,00,000,.3);
-  border: 3px solid rgba(200,00,00,.3) ;
-}
-
 .footer {
-  margin: 50px;
+  margin: 0px;
   background-color: rgba(200,100,000,.3);
   border: 3px solid rgba(200,100,00,.3) ;
 }
 
 .header {
-  margin: 50px;
+  margin: 0px;
   background-color: rgba(200,200,000,.3);
   border: 3px solid rgba(200,200,00,.3) ;
 }
 
+
+
+
+/*################*/
+/*#              #*/
+/*#  PAGES       #*/
+/*#              #*/
+/*################*/
+
+.beerForm {
+  height: 500px;
+  margin: 10px;
+  padding: 5px;
+  background-color: rgba(0,100,000,.3);
+  border: 3px solid rgba(0,100,00,.3) ;
+}
+
+.beerList {
+  height: 500px;
+  margin: 10px;
+  background-color: rgba(100,00,000,.3);
+  border: 3px solid rgba(100,00,00,.3) ;
+}
+
 .home {
-  margin: 50px;
+  height: 500px;
+  margin: 0px;
   background-color: rgba(000,100,100,.3);
   border: 3px solid rgba(000,100,100,.3);
 }
 
+/*################*/
+/*#              #*/
+/*#  COMPONENTS  #*/
+/*#              #*/
+/*################*/
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: center;
+}
+
+.filter {
+/*  width: 100px;
+  height: 20px;*/
+  margin: 10px;
+  background-color: rgba(200,00,000,.3);
+  border: 3px solid rgba(200,00,00,.3) ;
+}
+
+
 .nav {
-  margin: 50px;
+  width: 100px;
+  height: 50px;
+  margin: 5px;
   background-color: rgba(000,200,100,.3);
   border: 3px solid rgba(000,200,100,.3);
 }
 
 .singleBeer {
 
-  width: 400px;
-  height: 200px;
-  margin: 50px;
+  width: 150px;
+  height: 75px;
+  margin: 5px;
   background-color: rgba(000,200,200,.3);
   border: 3px solid rgba(000,200,200,.3);
 }
 
 .singleNav {
-  width: 200px;
-  height: 50px;
-  margin: 50px;
+  width: 75px;
+  height: 30px;
+  margin: 5px;
   background-color: rgba(000,000,255,.3);
   border: 3px solid rgba(000,000,255,.3) ;
 }

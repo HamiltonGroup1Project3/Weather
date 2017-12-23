@@ -1,6 +1,7 @@
 import React from 'react';
-import SingleNav from './SingleNav';
+// import SingleNav from './SingleNav';
 import './../css/App.css';
+import './../css/reset.css';
 
 
 const SingleBeer = (props) => {
@@ -10,7 +11,6 @@ const SingleBeer = (props) => {
       <p>  {props.name} </p>
       <p> {props.description} </p>
       <p> {props.brewery} </p>
-      <SingleNav />
     </div>
   );
 };

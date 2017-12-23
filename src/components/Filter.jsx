@@ -1,11 +1,12 @@
 import React from 'react';
-import './../css/App.css'
+import './../css/App.css';
+import './../css/reset.css';
 
 
-const Filter = () => {
+const Filter = (props) => {
   return(
     <div className="filter">
-      <h1> Filter element</h1>
+      <p>Filter {props.name}</p>
     </div>
   );
 };
