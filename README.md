@@ -82,11 +82,11 @@ Phase4
 - NPM install
 
 2. To get Server running
-    2a.
+- 2a.
     - Open new terminal window
     - CD into project3
     - npm run dev 
-    2b.
+- 2b.
     - In a second terminal window
     - CD into project3
     - npm run watch
