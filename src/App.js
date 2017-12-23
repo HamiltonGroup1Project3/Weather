@@ -6,7 +6,7 @@ import Footer from './components/Footer';
 import Home from './components/Home';
 import Filter from './components/Filter';
 import BeerList from './components/BeerList';
-import NotFound from './components/NotFound';
+// import NotFound from './components/NotFound';
 import Nav from './components/Nav';
 import './css/App.css'
 
@@ -17,7 +17,7 @@ class App extends Component {
     constructor(props){
     super(props);
     this.state = {
-      // singleBeerData: null,
+      singleBeerData: null,
       dataLoaded: false,
       beerList: null,
       // addingBeerForm: null,
@@ -30,15 +30,29 @@ componentDidMount(){
 }
 
 getBeers() {
-   fetch('/test')
+  console.log('mounting!')
+   fetch('/api/beer')
   .then(res => res.json())
-  .then(res =>{
-  this.state({
+  .then(res => {
+  this.setState({
   dataLoaded: true,
   beerData: res.data.beers,
+    })
   })
-  }
-)}
+  .catch(err => {
+        console.log(err);
+      })
+}
+
+  getSingleBeer(url){
+       fetch(url)
+      .then(res => res.json())
+      .then(res => {
+      console.log(res);
+      this.setState({
+        singleBeerData: true
+      })
+
 
   //setting State to when we add A beer
   // AddBeer(){
@@ -63,10 +77,7 @@ getBeers() {
           // dataLaoded={this.state.dataLoaded}
           // singleBeerData={this.singleBeerData}
       />
-
-
-
-        <h1 className="App-title">This is the Home-page</h1>
+          <h1 className="App-title">This is the Home-page</h1>
 
         { /*
          <Switch>
@@ -77,11 +88,9 @@ getBeers() {
               render={props => <SingleBeer {...props} beer={this.state.beer} />}
             />
             <Route path="/" component={NotFound} />
-
-          </Switch>  */}
+            </Switch>  */}
           <Footer />
-
-      </div>
+        </div>
     );
   }
 }
