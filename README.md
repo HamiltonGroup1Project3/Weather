@@ -76,18 +76,18 @@ Phase4
 
 
 ## How to install and get it running on a local host
+1. Install
 - Fork
 - Clone
 - NPM install
-- .......anything else.....
 
-
-### How to get the Client server running 
-- CD into project3
-- npm run dev 
-
-### How to get the React server running
-- In a different terminal 
-- CD into project3
-- npm run watch
+2. To get Server running
+    2a.
+    - Open new terminal window
+    - CD into project3
+    - npm run dev 
+    2b.
+    - In a second terminal window
+    - CD into project3
+    - npm run watch
 
