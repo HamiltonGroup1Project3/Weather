@@ -1,13 +1,12 @@
 import React from 'react';
-import Filter from './Filter';
-import './../css/App.css'
+import './../css/App.css';
+import './../css/reset.css';
 
 
-const Nav = () => {
+const Nav = (props) => {
   return(
     <div className="nav">
-      <h1> Nav element</h1>
-      <Filter />
+      <p>{props.name} Nav</p>
     </div>
   );
 };

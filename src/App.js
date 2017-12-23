@@ -1,20 +1,18 @@
 import React, { Component } from 'react';
-import { Switch, Route } from 'react-router-dom';
-
+import { Route } from 'react-router-dom';
+import { Switch } from 'react-router-dom';
 import Header from './components/Header';
 import Footer from './components/Footer';
-import Home from './components/Home';
-import Filter from './components/Filter';
-import BeerList from './components/BeerList';
+import Home from './pages/Home';
+import BeerList from './pages/BeerList';
+import BeerForm from './pages/BeerForm';
 import NotFound from './components/NotFound';
-import Nav from './components/Nav';
-import './css/App.css'
-
-
+import './css/App.css';
+import './css/reset.css';
 
 
 class App extends Component {
-      constructor(props){
+  constructor(props) {
     super(props);
     this.state = {
       auth: false,
@@ -26,15 +24,14 @@ class App extends Component {
     return (
       <div className="App">
 
-       <Header />
-       <Filter />
-       <Nav />
-       <Home />
-       <BeerList />
+        <Header />
+        <h1 className="App-title"> TOP SHELF</h1>
+        <p>This is the Home-page that will render the pages within </p>
 
+        <Home />
+        <BeerList />
+        <BeerForm />
 
-
-        <h1 className="App-title">This is the Home-page</h1>
 
         { /*
          <Switch>
@@ -47,7 +44,9 @@ class App extends Component {
             <Route path="/" component={NotFound} />
 
           </Switch>  */}
-          <Footer />
+
+        <Footer />
+
 
       </div>
     );
