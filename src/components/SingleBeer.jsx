@@ -5,11 +5,10 @@ import './../css/reset.css';
 
 
 const SingleBeer = (props) => {
-  return(
+  console.log('SingleBeer component loaded');
+  return (
     <div className="singleBeer">
-      <h1> Single Beer page</h1>
       <p>  {props.name} </p>
-      <p> {props.description} </p>
       <p> {props.brewery} </p>
     </div>
   );

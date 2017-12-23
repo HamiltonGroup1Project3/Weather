@@ -4,7 +4,8 @@ import './../css/reset.css';
 
 
 const Filter = (props) => {
-  return(
+  console.log('Filter component loaded');
+  return (
     <div className="filter">
       <p>Filter {props.name}</p>
     </div>

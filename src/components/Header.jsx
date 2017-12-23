@@ -6,13 +6,12 @@ import Nav from './Nav';
 
 
 const Header = (props) => {
+  console.log('Header component loaded');
   return (
     <div className="header">
       <h1> Header </h1>
       <div className="container">
-        <Nav name="Home"/>
-        <Nav name="List"/>
-        <Nav name="Details/Form"/>
+        <Nav />
       </div>
       <div className="container">
         <Filter name="Type" />

@@ -1,12 +1,23 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 import './../css/App.css';
 import './../css/reset.css';
 
 
-const Nav = (props) => {
-  return(
-    <div className="nav">
-      <p>{props.name} Nav</p>
+const Nav = () => {
+  console.log('Nav component loaded');
+  return (
+    <div className="container">
+      <NavLink to="/" exact className="nav" activeClassName="active">
+      Home
+      </NavLink>
+      <NavLink to="/BeersList" className="nav" activeClassName="active">
+      List
+      </NavLink>
+      <NavLink to="/BeersList/Beer" className="nav" activeClassName="active">
+      Details/Form
+      </NavLink>
+
     </div>
   );
 };

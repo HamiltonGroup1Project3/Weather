@@ -1,12 +1,11 @@
 import React, { Component } from 'react';
-import { Route } from 'react-router-dom';
-import { Switch } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import Home from './pages/Home';
-import BeerList from './pages/BeerList';
+import BeersList from './pages/BeersList';
 import BeerForm from './pages/BeerForm';
-import NotFound from './components/NotFound';
+import NotFound1 from './pages/NotFound1';
 import './css/App.css';
 import './css/reset.css';
 
@@ -18,7 +17,7 @@ class App extends Component {
       auth: false,
       user: null,
 
-    }
+    };
   }
   render() {
     return (
@@ -28,22 +27,22 @@ class App extends Component {
         <h1 className="App-title"> TOP SHELF</h1>
         <p>This is the Home-page that will render the pages within </p>
 
-        <Home />
-        <BeerList />
-        <BeerForm />
-
-
         { /*
-         <Switch>
-            <Route path="/" exact component={Home} />
-            <Route path="/BeerList" component={BeerList} />
-            <Route
-              path="/Beer"
-              render={props => <SingleBeer {...props} beer={this.state.beer} />}
-            />
-            <Route path="/" component={NotFound} />
+        <Home />
+        <BeersList />
+        <BeerForm />
+        */}
 
-          </Switch>  */}
+        <Switch>
+          <Route path="/" exact component={Home} />
+          <Route path="/BeersList" exact component={BeersList} />
+          <Route
+            path="/BeersList/Beer"
+            render={props => <BeerForm {...props} /* beer={this.state.beer} */ />}
+          />
+          <Route path="/" component={NotFound1} />
+
+        </Switch>
 
         <Footer />
 
