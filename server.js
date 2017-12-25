@@ -4,16 +4,13 @@ const express         = require('express');
 const logger          = require('morgan');
 const path            = require('path');
 const bodyParser      = require('body-parser');
-const cookieParser    = require('cookie-parser');
-const session         = require('express-session');
-const passport        = require('passport');
 const methodOverride  = require('method-override');
 
 //import controller
-const controller = require('./controllers/beerControllers');
+const controller = require('./controllers/beersController');
 
 //connect port to server
-const PORT            = process.env.PORT || 3000
+const PORT            = process.env.PORT || 3000;
 
 //initialize the app and set up dotenv
 const app             = express();
@@ -29,9 +26,13 @@ app.use(bodyParser.urlencoded({
 app.use(bodyParser.json());
 
 
-app.get('/test', controller.index, (req, res, next) => {
-  res.send('it worked');
-});
+const beerRoutes = require('./routes/beerRoutes');
+app.use('/api/beers', beerRoutes);
+
+
+// app.get('/test', controller.index, (req, res, next) => {
+//   res.send('it worked');
+// });
 
 app.get('*', (req, res) =>{
   res.status(400).json({
