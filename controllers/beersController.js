@@ -56,7 +56,7 @@ beerController.create = (req, res, next) => {
 };
 
 //edit one beer
-beerController.editOneBeer = (req, res, next) => {
+beerController.update = (req, res, next) => {
   Beers.findOneBeer(req.params.id)
   .then(beer => {
     return beer.editOneBeer({
@@ -77,7 +77,7 @@ beerController.editOneBeer = (req, res, next) => {
 };
 
 //delete one beer
-beerController.deleteOneBeer = (req, res, next) => {
+beerController.delete = (req, res, next) => {
   Beers.destroy(req.params.id)
   .then(() => {
     res.status(202).json({

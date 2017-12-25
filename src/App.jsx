@@ -14,9 +14,8 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      singleBeerData: null,
       dataLoaded: false,
-      beerList: null,
+      beerData: null,
       // addingBeerForm: null,
     };
     // this.
@@ -34,15 +33,16 @@ class App extends Component {
       .then(res => {
         this.setState({
           dataLoaded: true,
-          beerData: res.data.beers,
-        });
+          beerData: res,
+        })
+        console.log({ res });
       })
       .catch(err => {
         console.log(err);
       });
   }
 
-  getSingleBeer(url){
+  getSingleBeer(url) {
     fetch(url)
       .then(res => res.json())
       .then(res => {
@@ -78,22 +78,38 @@ class App extends Component {
 
         <Switch>
           <Route path="/" exact component={Home} />
-          <Route path="/BeersList" exact component={BeersList}
-           /* beerList={this.state.beerList} */ />
-          <Route path="/BeersList" {...props}  exact  beerList={this.state.beerList}  />
+
+          <Route
+            path="/BeersList"
+            exact
+            component={BeersList}
+           /* beerList={this.state.beerList} */
+          />
+
+          <Route
+            path="/BeersList"
+            render={props => (<BeersList
+              {...props}
+              beer={this.state.beer}
+            />
+            )}
+            exact
+            /* beerList={this.state.beerList} */
+          />
 
           <Route
             path="/BeersList/Beer"
-            render={props => <BeerForm {...props}  beer={this.state.beer}  />}
+            render={props => (<BeerForm
+              {...props}
+              beer={this.state.beer}
+            />
+            )}
           />
 
           <Route path="/" component={NotFound} />
 
         </Switch>
-
         <Footer />
-
-
       </div>
     );
   }
