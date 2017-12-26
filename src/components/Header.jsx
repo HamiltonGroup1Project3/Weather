@@ -3,6 +3,7 @@ import './../css/reset.css';
 import './../css/App.css';
 import Filter from './Filter';
 import Nav from './Nav';
+import 'font-awesome/css/font-awesome.min.css';
 
 
 const Header = (props) => {
@@ -18,6 +19,16 @@ const Header = (props) => {
         <Nav />
       </div>
       <div className="right container">
+        <div className="Login" >
+          <button>
+          <p><i class="fa fa-sign-in" aria-hidden="true"></i> Login</p>
+            </button>
+        </div>
+        <div className="UserName" >
+          <button>
+          <p> User1 </p>
+          </button>
+        </div>
       </div>
     </div>
   );

@@ -11,9 +11,11 @@ h1 {
 
 p {
   font-size: 1.0em;
-
 }
 
+a {
+  text-decoration: none;
+}
 
 /*################*/
 /*#              #*/
@@ -24,9 +26,15 @@ p {
 
 .App {
   text-align: center;
-  margin: 5px;
+  margin: 0px;
   background-color: rgba( 0,0,250, .3);
-  border: 3px solid rgba(0,0,250, .3) ;
+  border: 0px solid rgba(0,0,250, .0) ;
+  background-image: url("https://i.imgur.com/PnBgPGa.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+
+
+
 }
 
 .App-title {
@@ -34,6 +42,9 @@ p {
   margin: 5px;
   background-color: rgba(0,0,100,.3);
   border: 3px solid rgba(0,0,100,.3) ;
+  font-size: 30px;
+  color: rgba( 240, 240, 250, 1);
+  text-shadow: 1px 1px 3px grey, 0 0 6px darkgrey, 0 0 5px lightgrey;
 }
 
 
@@ -46,7 +57,7 @@ p {
 /*################*/
 
 .beerForm {
-  height: 500px;
+  min-height: 300px;
   margin: 10px;
   padding: 5px;
   background-color: rgba(0,100,000,.3);
@@ -54,17 +65,21 @@ p {
 }
 
 .beersList {
-/*  height: 500px;*/
+  color: white;
+  min-height: 300px;*/
   margin: 10px;
-  background-color: rgba(0,0,0,.9);
+  background-color: rgba(0,100,100,.3);
   border: 3px solid rgba(100,00,00,.3) ;
 }
 
 .home {
-  height: 500px;
+  min-height: 500px;
   margin: 0px;
   background-color: rgba(000,100,100,.3);
-  border: 3px solid rgba(000,100,100,.3);
+  border: 0px solid rgba(000,100,100,.3);
+
+  color: white;
+
 }
 
 /*################*/
@@ -82,9 +97,9 @@ p {
 
 
 .header {
-  margin: 5px;
-  background-color: rgba(200,200,000,.3);
-  border: 3px solid rgba(200,200,00,.3);
+  margin: 0px;
+  background-color: rgba(200,200,000,.0);
+  border: 0px solid rgba(200,200,00,.0);
   display: flex;
 }
 
@@ -102,6 +117,9 @@ background-color: grey;
   flex-grow: 1;
 }
 
+button {
+  margin: auto;
+}
 
 .footer {
   margin: 0px;
@@ -114,11 +132,23 @@ background-color: grey;
 .filter {
 /*  width: 100px;
   height: 20px;*/
-  margin: 10px;
-  background-color: rgba(200,00,000,.3);
-  border: 3px solid rgba(200,00,00,.3) ;
+  margin: 0px ;
+  padding: 10px 0 0 0;
+  background-color: rgba(200,00,000,.0);
+  border: 3px solid rgba(200,00,00,.0) ;
 }
 
+select  {
+    margin: 0px;
+    background: rgba(00, 0, 100, 0.3);
+    color: white;
+    text-shadow: 0 1px 0 rgba(0, 00, 100, 0.3);
+}
+
+
+select option {
+  background-color: black;
+}
 
 .nav {
   width: 100px;
@@ -149,25 +179,49 @@ background-color: grey;
 
 .singleBeer {
   color: white;
-  font-size: 25px;
-  text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
+  font-size: 20px;
+  text-shadow: 1px 1px 3px black, 0 0 6px black, 0 0 5px darkgrey;
   text-decoration: none;
-  background-image: url("https://i.imgur.com/JTSxG6Y.png");
+  background-image: url("https://i.imgur.com/JTSxG6Y.png?3");
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
   width: 121px;
-  height: 150px;
+  height: 100px;
   margin: auto;
   /*background-color: rgba(000,200,200,.3);*/
   border: 3px solid rgba(000,200,200,.3);
   border-radius: 10px;
-  padding: 50px;
+  padding-top: 60px;
   z-index: 4;
 }
 
 .singleBeer:hover {
-  background-color: grey;
+  background-color: darkgrey;
+
+}
+.active {
+ background-color: rgba( 230, 230, 230, 1);
 }
 
+.addBeer {
+  color: white;
+  font-size: 20px;
+  text-shadow: 1px 1px 3px black, 0 0 6px black, 0 0 5px darkgrey;
+  text-decoration: none;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  width: 121px;
+  height: 120px;
+  margin: auto;
+  /*background-color: rgba(000,200,200,.3);*/
+  border: 3px solid rgba(000,200,200,.3);
+  border-radius: 10px;
+  padding-top: 40px;
+  z-index: 4;
+}
 
+.addBeer:hover {
+  background-color: grey;
+}
