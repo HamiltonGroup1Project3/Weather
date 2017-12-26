@@ -11,7 +11,7 @@ const Nav = () => {
       <NavLink to="/" exact className="nav" activeClassName="active">
       Home
       </NavLink>
-      <NavLink to="/BeersList" className="nav" activeClassName="active">
+      <NavLink to="/BeersList" exact className="nav" activeClassName="active">
       List
       </NavLink>
       <NavLink to="/BeersList/Beer" className="nav" activeClassName="active">
