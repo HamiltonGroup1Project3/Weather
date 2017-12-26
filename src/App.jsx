@@ -16,8 +16,8 @@ class App extends Component {
     this.state = {
       dataLoaded: false,
       beerData: {
-        name: coke,
-        brewery: GA
+        name: "coke",
+        brewery: "GA",
 
       }
        //addingBeerForm: null

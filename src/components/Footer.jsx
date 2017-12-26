@@ -6,7 +6,7 @@ const Footer = (props) => {
   console.log('Filter component loaded');
   return (
     <div className="footer">
-      <h2> Made by Mark Albon, Moe Badruzzman & Luke McDonald </h2>
+      <h2> Made by Mark Albom, Mohammad Badruzzaman & Luke McDonald </h2>
     </div>
   );
 };
