@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './../css/App.css';
 import './../css/reset.css';
 import SingleNav from './../components/SingleNav';
+import 'font-awesome/css/font-awesome.min.css';
 
 class BeerForm extends Component {
   constructor(props){

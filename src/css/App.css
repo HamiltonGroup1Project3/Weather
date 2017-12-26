@@ -38,13 +38,14 @@ a {
 }
 
 .App-title {
-  font-size: 1.5em;
-  margin: 5px;
-  background-color: rgba(0,0,100,.3);
+  max-width: 400px;
+  font-size: 40px;
+  margin: 5px auto;
+  background-color: rgba(114, 97, 148, .6);
+  border-radius: 10px;
   border: 3px solid rgba(0,0,100,.3) ;
-  font-size: 30px;
   color: rgba( 240, 240, 250, 1);
-  text-shadow: 1px 1px 3px grey, 0 0 6px darkgrey, 0 0 5px lightgrey;
+  text-shadow: 0px 0px 3px grey, 0 0 10px black, 0 0 17px white;
 }
 
 
@@ -57,26 +58,36 @@ a {
 /*################*/
 
 .beerForm {
+  color: white;
   min-height: 300px;
-  margin: 10px;
+  max-width: 700px;
+  margin: 10px auto;
   padding: 5px;
-  background-color: rgba(0,100,000,.3);
-  border: 3px solid rgba(0,100,00,.3) ;
+  background-color: rgba(98, 98, 80, 0.7);
+  border: 0px solid rgba(0,100,00,.3) ;
+  border-radius: 10px;
+  text-shadow: 0px 0px 3px grey, 0 0 10px black, 0 0 20px white;
 }
 
 .beersList {
   color: white;
-  min-height: 300px;*/
-  margin: 10px;
-  background-color: rgba(0,100,100,.3);
-  border: 3px solid rgba(100,00,00,.3) ;
+  min-height: 300px;
+  margin: 20px;
+  background-color: rgba(98, 98, 80, 0.52);
+  border: 0px solid rgba(100,00,00,.3) ;
+  border-radius: 10px;
+
 }
 
 .home {
   min-height: 500px;
-  margin: 0px;
-  background-color: rgba(000,100,100,.3);
+  min-width: 200px;
+  max-width: 800px;
+  margin: 0 auto;
+  text-shadow: 0px 0px 3px grey, 0 0 10px black, 0 0 20px white;
+  background-color: rgba(98, 98, 80, 0.52);
   border: 0px solid rgba(000,100,100,.3);
+  border-radius: 10px;
 
   color: white;
 
@@ -105,27 +116,48 @@ a {
 
 .center {
 align-content: center;
-flex-grow: 2;
-background-color: grey;
+width: 50%;
+
 }
 
 .left {
-  flex-grow: 1;
+width: 25%;
 }
 
 .right {
-  flex-grow: 1;
+width: 25%;
+float: right;
 }
 
 button {
   margin: auto;
+  color: white;
+  background-color: rgba(126, 089, 022, .7);
+  border-radius: 5px;
 }
 
+button:hover {
+  background-color: rgba(182, 130, 32, 1);
+}
+
+.login, .userName {
+  padding-top: 10px;
+  margin: 0 5px;
+  height: 50px;
+}
+
+
+
 .footer {
-  margin: 0px;
-  background-color: rgba(200,100,000,.3);
-  border: 3px solid rgba(200,100,00,.3) ;
+  margin: 0px auto;
+  width: 400px;
+  padding: 5px;
+  border-radius: 10px;
+  background-color: rgba(114, 97, 148, .6);
+  border: 0px solid rgba(200,100,00,.3) ;
   z-index: 2;
+  color: white;
+  text-shadow: 0px 0px 3px grey, 0 0 10px black, 0 0 17px white;
 }
 
 
@@ -151,25 +183,34 @@ select option {
 }
 
 .nav {
-  width: 100px;
+  color: white;
+  min-width: 60px;
   /*height: 30px;*/
   margin: 5px;
-  padding: 8px 0px;
-  background-color: rgba(000,200,100,.3);
-  border: 3px solid rgba(000,200,100,.3);
+  padding: 2px 2px;
+  background-color: rgba(126, 089, 022, .7);
+  border: 3px solid rgba(69, 49, 12, 0.5);
+  border-radius: 7px;
 }
 
 .nav:hover {
-  background-color: white;
+  background-color: rgba(182, 130, 32, 1);
 }
 
+.active {
+ background-color: rgba( 69, 49, 12, 01);
+ border: 3px solid rgba(182, 130, 32, 1);
+}
 
 .singleNav {
-  width: 75px;
-  height: 30px;
+  color: white;
+  min-width: 60px;
+  /*height: 30px;*/
   margin: 5px;
-  background-color: rgba(000,000,255,.3);
-  border: 3px solid rgba(000,000,255,.3) ;
+  padding: 2px 2px;
+  background-color: rgba(126, 089, 022, .7);
+  border: 3px solid rgba(69, 49, 12, 0.5);
+  border-radius: 7px;
 }
 
 .singleNav:hover {
@@ -190,7 +231,7 @@ select option {
   height: 100px;
   margin: auto;
   /*background-color: rgba(000,200,200,.3);*/
-  border: 3px solid rgba(000,200,200,.3);
+  border: 0px solid rgba(000,200,200,.3);
   border-radius: 10px;
   padding-top: 60px;
   z-index: 4;
@@ -199,9 +240,6 @@ select option {
 .singleBeer:hover {
   background-color: darkgrey;
 
-}
-.active {
- background-color: rgba( 230, 230, 230, 1);
 }
 
 .addBeer {
@@ -216,7 +254,7 @@ select option {
   height: 120px;
   margin: auto;
   /*background-color: rgba(000,200,200,.3);*/
-  border: 3px solid rgba(000,200,200,.3);
+  border: 3px solid rgba(182, 130, 32, .5);
   border-radius: 10px;
   padding-top: 40px;
   z-index: 4;
