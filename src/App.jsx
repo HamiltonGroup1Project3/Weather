@@ -18,8 +18,8 @@ class App extends Component {
       beerData: null,
       // addingBeerForm: null,
     };
-     this.beerSubmit = this.beerSubmit.bind(this);
-     this.deleteBeer = this.deleteBeer.bind(this);
+     // this.beerSubmit = this.beerSubmit.bind(this);
+     // this.deleteBeer = this.deleteBeer.bind(this);
 
   }
 
@@ -79,8 +79,7 @@ class App extends Component {
       <div className="App">
 
         <Header />
-        <h1 className="App-title"> TOP SHELF</h1>
-        <p>This is the Home-page that will render the pages within </p>
+        <p> </p>
 
         { /*
         <Home />

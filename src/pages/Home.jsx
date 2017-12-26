@@ -7,8 +7,8 @@ const Home = () => {
   console.log('Home loaded');
   return (
     <div className="home">
-      <h1> Homepage</h1>
-      <p> Not sure what we will use this for</p>
+      <h1> <br/></h1>
+      <p> Welcome to our app where you can keep track of beers you want to try or have tried and like.</p>
     </div>
   );
 };

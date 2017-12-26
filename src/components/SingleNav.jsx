@@ -7,7 +7,7 @@ const SingleNav = (props) => {
   console.log('SingleNav component loaded');
   return (
     <div className="singleNav">
-      <p>{props.name}  SingleNav </p>
+      <p>{props.name}</p>
     </div>
   );
 };
