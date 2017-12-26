@@ -4,7 +4,25 @@ import './../css/reset.css';
 import SingleNav from './../components/SingleNav';
 
 class BeerForm extends Component {
+  constructor(props){
+    super();
+    this.state={
+      name : props.name ;
+      type : props.type;
+      brewry: props.brewry;
+      Description: props.Description;
 
+    };
+      this.handleChange = this.handleChange.bind(this);
+  }
+
+  handleChange(change){
+    const name = change.target.name;
+    const value = change.target.value;
+    this.setState({
+      [name]: value,
+    });
+  }
   render() {
     console.log('BeerForm loaded');
     return (

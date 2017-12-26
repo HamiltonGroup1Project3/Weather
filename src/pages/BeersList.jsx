@@ -6,7 +6,7 @@ import './../css/App.css';
 import './../css/reset.css';
 
 
-const BeersList = () => {
+const BeersList = (props) => {
   console.log('BeersList loaded');
   return (
     <div className="beersList">
@@ -14,6 +14,13 @@ const BeersList = () => {
       <p> This is the main page that renders the list of beers. </p>
       <div className="container">
         { /* eventually these will be an object itterated over */}
+       {props.beer.map(beer => {
+        return(props.beer == beer.name)
+        ? <BeerForm key={beer.name}
+       }
+
+
+
         <SingleBeer name="name1" brewery="brewery1" />
         <SingleBeer name="name2" brewery="brewery2" />
         <SingleBeer name="name3" brewery="brewery3" />
