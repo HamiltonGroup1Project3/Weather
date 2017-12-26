@@ -12,6 +12,7 @@ const SingleBeer = (props) => {
     <div className="singleBeer">
       <p>  {props.name} </p>
       <p> {props.brewery} </p>
+
     </div>
     </NavLink>
   );

@@ -11,6 +11,7 @@ h1 {
 
 p {
   font-size: 1.0em;
+
 }
 
 
@@ -53,9 +54,9 @@ p {
 }
 
 .beersList {
-  height: 500px;
+/*  height: 500px;*/
   margin: 10px;
-  background-color: rgba(100,00,000,.3);
+  background-color: rgba(0,0,0,.9);
   border: 3px solid rgba(100,00,00,.3) ;
 }
 
@@ -84,6 +85,21 @@ p {
   margin: 5px;
   background-color: rgba(200,200,000,.3);
   border: 3px solid rgba(200,200,00,.3);
+  display: flex;
+}
+
+.center {
+align-content: center;
+flex-grow: 2;
+background-color: grey;
+}
+
+.left {
+  flex-grow: 1;
+}
+
+.right {
+  flex-grow: 1;
 }
 
 
@@ -91,6 +107,7 @@ p {
   margin: 0px;
   background-color: rgba(200,100,000,.3);
   border: 3px solid rgba(200,100,00,.3) ;
+  z-index: 2;
 }
 
 
@@ -131,15 +148,26 @@ p {
 
 
 .singleBeer {
-  width: 150px;
-  height: 75px;
-  margin: 5px;
-  background-color: rgba(000,200,200,.3);
+  color: white;
+  font-size: 25px;
+  text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
+  text-decoration: none;
+  background-image: url("https://i.imgur.com/JTSxG6Y.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  width: 121px;
+  height: 150px;
+  margin: auto;
+  /*background-color: rgba(000,200,200,.3);*/
   border: 3px solid rgba(000,200,200,.3);
+  border-radius: 10px;
+  padding: 50px;
+  z-index: 4;
 }
 
 .singleBeer:hover {
-  background-color: white;
+  background-color: grey;
 }
 
 

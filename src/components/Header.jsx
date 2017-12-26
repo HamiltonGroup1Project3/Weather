@@ -9,13 +9,15 @@ const Header = (props) => {
   console.log('Header component loaded');
   return (
     <div className="header">
-      <h1> Header </h1>
-      <div className="container">
-        <Nav />
-      </div>
-      <div className="container">
+
+      <div className="left container">
         <Filter name="Type" />
         <Filter name="Other" />
+      </div>
+      <div className="center container">
+        <Nav />
+      </div>
+      <div className="right container">
       </div>
     </div>
   );

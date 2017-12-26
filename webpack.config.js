@@ -22,7 +22,7 @@ const config = {
   entry: {
     main:   `${APP_DIR}/Index.jsx`,
     // splits code for each vender and make a file for each
-    vendor: ['axios', 'react', 'react-dom', 'prop-types', 'react-router-dom'],
+    vendor: [ 'react', 'react-dom', 'prop-types', 'react-router-dom'],
   },
   output: {
     path:     BUILD_DIR,
