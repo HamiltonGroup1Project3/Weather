@@ -14,10 +14,11 @@ const BeersList = (props) => {
       <p> This is the main page that renders the list of beers. </p>
       <div className="container">
         { /* eventually these will be an object itterated over */}
+       {/*
        {props.beer.map(beer => {
-        return(props.beer == beer.name)
-        ? <BeerForm key={beer.name}
-       }
+        return(props.beer == beer.name)})}
+         ? <BeerForm key={beer.name} */}
+
 
 
 

@@ -7,10 +7,10 @@ class BeerForm extends Component {
   constructor(props){
     super();
     this.state={
-      name : props.name ;
-      type : props.type;
-      brewry: props.brewry;
-      Description: props.Description;
+      name : props.name ,
+      type : props.type,
+      brewry: props.brewry,
+      description: props.description
 
     };
       this.handleChange = this.handleChange.bind(this);
