@@ -15,11 +15,17 @@ class App extends Component {
     super(props);
     this.state = {
       dataLoaded: false,
-      beerData: null,
-      // addingBeerForm: null,
+      beerData: {
+        name: coke,
+        brewery: GA
+
+      }
+       //addingBeerForm: null
     };
+
      // this.beerSubmit = this.beerSubmit.bind(this);
      // this.deleteBeer = this.deleteBeer.bind(this);
+
 
   }
 
