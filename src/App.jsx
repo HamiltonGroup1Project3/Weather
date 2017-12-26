@@ -18,7 +18,9 @@ class App extends Component {
       beerData: null,
       // addingBeerForm: null,
     };
-    // this.
+     this.beerSubmit = this.beerSubmit.bind(this);
+     this.deleteBeer = this.deleteBeer.bind(this);
+
   }
 
   componentDidMount() {
@@ -54,12 +56,22 @@ class App extends Component {
   }
 
 
+  deleteBeer(name){
+    fetch(`/api/beer/${name}`,{
+      method: 'Delete'
+    }).then(res => res.json())
+    .then(res =>{
+      this.getBeers();
+    });
+  }
+
+
   // setting State to when we add A beer
-  // AddBeer(){
-  //   this.setState({
-  //     addingBeer: true,
-  //   })
-  // }
+   AddBeer(){
+     this.setState({
+       addingBeer: true,
+     });
+   }
 
 
   render() {
