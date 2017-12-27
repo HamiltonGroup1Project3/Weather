@@ -11,14 +11,23 @@ h1 {
 h2 {
   font-size: 1.4em;
 }
+h3 {
+  font-size: 1.3em;
+  line-height: 150%;
+}
 
 p {
-  font-size: 1.0em;
+  font-size: 1.2em;
 }
 
 a {
   text-decoration: none;
 }
+
+i {
+font-style: italic;
+}
+
 
 /*################*/
 /*#              #*/
@@ -76,7 +85,7 @@ a {
   max-width: 800px;
   margin: 0 auto;
   text-shadow: 0px 0px 3px grey, 0 0 10px black, 0 0 20px white;
-  background-color: rgba(98, 98, 80, 0.52);
+  background-color: rgba(98, 98, 80, .8);
   border: 0px solid rgba(000,100,100,.3);
   border-radius: 10px;
 
