@@ -1,8 +1,11 @@
+/* @see https://github.com/jasonseminara/react_to-do/blob/auth/models/connection.js */
 const options = {
-  query: (e) => {
+  query(e){
     console.log(e.query);
   },
 };
+
+const pgp = require('pg-promise')(options);
 
 const config = {
   host:     process.env.DB_HOST,
@@ -11,12 +14,4 @@ const config = {
   user:     process.env.DB_USER,
 };
 
-const pgp = require('pg-promise')(options);
-
-function setDatabase() {
-  return pgp(process.env.DATABASE_URL || config);
-}
-
-const db = setDatabase();
-
-module.exports = db;
+module.exports = pgp(process.env.DATABASE_URL || config)

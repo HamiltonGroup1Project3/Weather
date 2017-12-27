@@ -161,11 +161,13 @@ if (process.env &&
         comments: false,
       },
     }),
+    new webpack.LoaderOptionsPlugin({
+      debug: false,
+    }),
   ];
 
   config.plugins = config.plugins.concat(prodPlugins);
   config.cache = false;
-  config.debug = false;
   config.devtool = undefined;
 }
 

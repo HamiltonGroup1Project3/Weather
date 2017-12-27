@@ -8,12 +8,14 @@ const methodOverride  = require('method-override');
 
 //import controller
 const controller = require('./controllers/beersController');
+// routes
+const beerRoutes = require('./routes/beerRoutes');
 
 //connect port to server
-const PORT            = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3000;
 
 //initialize the app and set up dotenv
-const app             = express();
+const app = express();
 
 //set up static file
 app.use(express.static(path.join(__dirname, 'dist')));
@@ -25,8 +27,6 @@ app.use(bodyParser.urlencoded({
 }));
 app.use(bodyParser.json());
 
-
-const beerRoutes = require('./routes/beerRoutes');
 app.use('/api/beers', beerRoutes);
 
 
