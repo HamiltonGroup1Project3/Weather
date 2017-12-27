@@ -1,6 +1,7 @@
 \c top_shelf
 
 INSERT INTO type (name) VALUES
+('Pilsner'),
 ('Lager'),
 ('Märzen'),
 ('Ale'),
@@ -69,7 +70,17 @@ INSERT INTO beer (name, brewery, type_id, description) VALUES
   'Brewed with lemon peels and dry hopped with Cascade, Amarillo, Centennial and Simcoe for a hoppy aroma of citrus, fruit and pine. Its easy to drink and just right for long hot days, steamy nights, parades or a day on the river with friends.'
 );
 
-
+INSERT INTO x_ref_table (beer_id, style_type_id) VALUES
+(1, 1),
+(2, 2),
+(3, 3),
+(4, 4),
+(5, 2),
+(6, 5),
+(7, 5),
+(8, 4),
+(9, 5),
+(10, 5);
 
 
 
