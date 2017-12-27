@@ -15,18 +15,16 @@ class App extends Component {
     super(props);
     this.state = {
       dataLoaded: false,
-      beerData: {
-        name: "coke",
-        brewery: "GA",
+      beerData:   {
+        name:    'coke',
+        brewery: 'GA',
 
-      }
-       //addingBeerForm: null
+      },
+      // addingBeerForm: null
     };
 
-     // this.beerSubmit = this.beerSubmit.bind(this);
-     // this.deleteBeer = this.deleteBeer.bind(this);
-
-
+    // this.beerSubmit = this.beerSubmit.bind(this);
+    // this.deleteBeer = this.deleteBeer.bind(this);
   }
 
   componentDidMount() {
@@ -38,14 +36,14 @@ class App extends Component {
     console.log('get beers');
     fetch('/api/beer')
       .then(res => res.json())
-      .then(res => {
+      .then((res) => {
         this.setState({
           dataLoaded: true,
-          beerData: res,
-        })
+          beerData:   res,
+        });
         console.log({ res });
       })
-      .catch(err => {
+      .catch((err) => {
         console.log(err);
       });
   }
@@ -53,7 +51,7 @@ class App extends Component {
   getSingleBeer(url) {
     fetch(url)
       .then(res => res.json())
-      .then(res => {
+      .then((res) => {
         console.log(res);
         this.setState({
           singleBeerData: true,
@@ -62,22 +60,22 @@ class App extends Component {
   }
 
 
-  deleteBeer(name){
-    fetch(`/api/beer/${name}`,{
-      method: 'Delete'
+  deleteBeer(name) {
+    fetch(`/api/beer/${name}`, {
+      method: 'Delete',
     }).then(res => res.json())
-    .then(res =>{
-      this.getBeers();
-    });
+      .then((res) => {
+        this.getBeers();
+      });
   }
 
 
   // setting State to when we add A beer
-   AddBeer(){
-     this.setState({
-       addingBeer: true,
-     });
-   }
+  AddBeer() {
+    this.setState({
+      addingBeer: true,
+    });
+  }
 
 
   render() {
@@ -85,7 +83,7 @@ class App extends Component {
       <div className="App">
 
         <Header />
-        <p> </p>
+        <p />
 
         { /*
         <Home />

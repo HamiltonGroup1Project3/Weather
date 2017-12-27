@@ -1,4 +1,4 @@
-//import config and pg-promise
+// import config and pg-promise
 const dbConfig  = require('./../db/config');
 const pgp       = require('pg-promise')();
 
@@ -6,12 +6,11 @@ const pgp       = require('pg-promise')();
 const db = pgp(dbConfig);
 
 
-
-//export the collection of functions
+// export the collection of functions
 module.exports = {
 
-//function 'findAllBeers' to find all the beers
-  findAllBeers(){
+// function 'findAllBeers' to find all the beers
+  findAllBeers() {
     return db.many(`
       SELECT *
       FROM beer
@@ -19,8 +18,8 @@ module.exports = {
       `);
   },
 
-//function 'findOneBeer' to find one beer
-  findOneBeer(beerID){
+  // function 'findOneBeer' to find one beer
+  findOneBeer(beerID) {
     return db.one(`
       SELECT beer.name, beer.brewery, beer.type_id, beer.description
       FROM beer
@@ -28,8 +27,8 @@ module.exports = {
       `, beerID);
   },
 
-//function 'editOneBeer' to edit one beer
-  editOneBeer(beer){
+  // function 'editOneBeer' to edit one beer
+  editOneBeer(beer) {
     return db.one(`
       UPDATE beer
       SET
@@ -42,8 +41,8 @@ module.exports = {
       `, beer);
   },
 
-//function 'addOneBeer' to add a beer
-  addOneBeer(beer){
+  // function 'addOneBeer' to add a beer
+  addOneBeer(beer) {
     return db.one(`
       INSERT INTO beer (name, brewery, description)
       VALUES ($/name/, $/brewery/, $/description/)
@@ -51,12 +50,12 @@ module.exports = {
       `, beer);
   },
 
-//function 'deleteOneBeer' to remove a beer
-  deleteOneBeer(id){
+  // function 'deleteOneBeer' to remove a beer
+  deleteOneBeer(id) {
     return db.none(`
       DELETE
       FROM beer
       WHERE id = $1;
-      `, id)
-  }
-}
+      `, id);
+  },
+};

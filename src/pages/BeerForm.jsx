@@ -5,19 +5,19 @@ import SingleNav from './../components/SingleNav';
 import 'font-awesome/css/font-awesome.min.css';
 
 class BeerForm extends Component {
-  constructor(props){
+  constructor(props) {
     super(props);
-    this.state={
-      name : props.name,
-      type : props.type,
-      brewry: props.brewry,
-      description: props.description
+    this.state = {
+      name:        props.name,
+      type:        props.type,
+      brewry:      props.brewry,
+      description: props.description,
 
     };
-      this.handleChange = this.handleChange.bind(this);
+    this.handleChange = this.handleChange.bind(this);
   }
 
-  handleChange(change){
+  handleChange(change) {
     const name = change.target.name;
     const value = change.target.value;
     this.setState({
@@ -30,13 +30,13 @@ class BeerForm extends Component {
 
       <div className="beerForm">
         <p>This is the Beerform. It will display the detail information for each beer and allow for add & edit. </p>
-        <form onSubmit= {this.props.beer}>
-        <div className="form-typeFinder">
-          <input type="text" name="Name" placeHolder="Name"value={this.state.name} />
-          <input type="text" name="Brewery" placeHolder="Brewery"value={this.state.brewery} />
-          <input type="text" name="Description" placeHolder="Description"value={this.state.description} />
-        {/*<input type="text" name="Name" placeHolder=""value={this.state.} /> */}
-          <input type="submit" value="Submit"/>
+        <form onSubmit={this.props.beer}>
+          <div className="form-typeFinder">
+            <input type="text" name="Name" placeholder="Name"value={this.state.name} />
+            <input type="text" name="Brewery" placeholder="Brewery" value={this.state.brewery} />
+            <input type="text" name="Description" placeholder="Description" value={this.state.description} />
+            {/* <input type="text" name="Name" placeHolder=""value={this.state.} /> */}
+            <input type="submit" value="Submit" />
           </div>
         </form>
 
