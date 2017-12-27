@@ -14,7 +14,7 @@ const Filter = (props) => {
         <option value="Type1">Type1</option>
         <option value="Type2">Type2</option>
         <option value="Type3">Type3</option>
-</select>
+      </select>
     </div>
   );
 };
