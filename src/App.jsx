@@ -5,6 +5,7 @@ import Footer from './components/Footer';
 import Home from './pages/Home';
 import BeersList from './pages/BeersList';
 import BeerForm from './pages/BeerForm';
+import BeerDetails from './pages/BeerDetails';
 import NotFound from './pages/NotFound';
 import './css/App.css';
 import './css/reset.css';
@@ -15,7 +16,7 @@ class App extends Component {
     super(props);
     this.state = {
       dataLoaded: false,
-      beerData:   {
+      beersData:   {
         name:    'coke',
         brewery: 'GA',
 
@@ -23,8 +24,19 @@ class App extends Component {
       // addingBeerForm: null
     };
 
+
     // this.beerSubmit = this.beerSubmit.bind(this);
     // this.deleteBeer = this.deleteBeer.bind(this);
+
+// const FakeApi = {
+//   beerData2: [
+//         {id: 1, name:"BudLight", brewery: "Budwiser", type: "Ale" },
+//         {id: 2, name:"Octoberfest", brewery: "Sam Adams", type: "Seasonal" },
+//         {id: 3, name:"Boston Lager", brewery: "Sam Adams", type: "Lager" }
+//   ]
+// }
+
+
   }
 
   componentDidMount() {
@@ -34,14 +46,14 @@ class App extends Component {
 
   getBeers() {
     console.log('get beers');
-    fetch('/api/beer')
+    fetch('/api/beers')
       .then(res => res.json())
       .then((res) => {
         this.setState({
           dataLoaded: true,
-          beerData:   res,
-        });
-        console.log({ res });
+          beersData:   res,
+        })
+        console.log({ "res": res });
       })
       .catch((err) => {
         console.log(err);
@@ -60,9 +72,11 @@ class App extends Component {
   }
 
 
-  deleteBeer(name) {
-    fetch(`/api/beer/${name}`, {
-      method: 'Delete',
+
+
+  deleteBeer(name){
+    fetch(`/api/beers/${name}`,{
+      method: 'Delete'
     }).then(res => res.json())
       .then((res) => {
         this.getBeers();
@@ -113,10 +127,19 @@ class App extends Component {
           />
 
           <Route
-            path="/BeersList/Beer"
+            path="/BeersList/BeerDetails"
+            render={props => (<BeerDetails
+              {...props}
+              beer={this.state.beerData}
+            />
+            )}
+          />
+
+          <Route
+            path="/BeersList/BeerEdit"
             render={props => (<BeerForm
               {...props}
-              beer={this.state.beer}
+              beer={this.state.beerData}
             />
             )}
           />
