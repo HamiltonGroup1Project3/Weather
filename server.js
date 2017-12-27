@@ -27,7 +27,7 @@ app.use(bodyParser.urlencoded({
 }));
 app.use(bodyParser.json());
 
-app.use('/api/beers', beerRoutes);
+app.use('/api/beer', beerRoutes);
 
 
 // app.get('/test', controller.index, (req, res, next) => {
