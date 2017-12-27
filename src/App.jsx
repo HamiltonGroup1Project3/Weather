@@ -1,3 +1,4 @@
+/*global fetch:false*/
 import React, { Component } from 'react';
 import { Route, Switch } from 'react-router-dom';
 import Header from './components/Header';
@@ -11,32 +12,23 @@ import './css/App.css';
 import './css/reset.css';
 
 
+
 class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      dataLoaded: false,
-      beersData:   {
-        name:    'coke',
+      beersLoaded: false,
+      beersData: {
+        name: 'coke',
         brewery: 'GA',
-
+        description: 'beer initial state',
+        type: 'Ale',
       },
-      // addingBeerForm: null
     };
-
+    this.getBeers = this.getBeers.bind(this);
 
     // this.beerSubmit = this.beerSubmit.bind(this);
     // this.deleteBeer = this.deleteBeer.bind(this);
-
-// const FakeApi = {
-//   beerData2: [
-//         {id: 1, name:"BudLight", brewery: "Budwiser", type: "Ale" },
-//         {id: 2, name:"Octoberfest", brewery: "Sam Adams", type: "Seasonal" },
-//         {id: 3, name:"Boston Lager", brewery: "Sam Adams", type: "Lager" }
-//   ]
-// }
-
-
   }
 
   componentDidMount() {
@@ -46,21 +38,21 @@ class App extends Component {
 
   getBeers() {
     console.log('get beers');
-    fetch('/api/beers')
+    console.log({ 'beersData before': this.state.beersData });
+    fetch('/api/beers/')
       .then(res => res.json())
       .then((res) => {
         this.setState({
-          dataLoaded: true,
-          beersData:   res,
+          beersData: res.data.beers,
+          beersLoaded: true,
         })
-        console.log({ "res": res });
+        console.log({ 'ApiResult': res });
+        console.log({ 'beersData after': this.state.beersData });
       })
-      .catch((err) => {
-        console.log(err);
-      });
+      .catch(err => console.log(err));
   }
 
-  getSingleBeer(url) {
+  getSingleBeer(id) {
     fetch(url)
       .then(res => res.json())
       .then((res) => {
@@ -71,11 +63,8 @@ class App extends Component {
       });
   }
 
-
-
-
-  deleteBeer(name){
-    fetch(`/api/beers/${name}`,{
+  deleteBeer(id){
+    fetch(`/api/beers/${id}`,{
       method: 'Delete'
     }).then(res => res.json())
       .then((res) => {
@@ -97,13 +86,6 @@ class App extends Component {
       <div className="App">
 
         <Header />
-        <p />
-
-        { /*
-        <Home />
-        <BeersList />
-        <BeerForm />
-        */}
 
         <Switch>
           <Route path="/" exact component={Home} />
@@ -112,14 +94,14 @@ class App extends Component {
             path="/BeersList"
             exact
             component={BeersList}
-           /* beerList={this.state.beerList} */
+            beers={this.state.beersData}
           />
 
           <Route
             path="/BeersList"
             render={props => (<BeersList
               {...props}
-              beer={this.state.beer}
+              beersList={this.state.beersData}
             />
             )}
             exact
@@ -130,7 +112,7 @@ class App extends Component {
             path="/BeersList/BeerDetails"
             render={props => (<BeerDetails
               {...props}
-              beer={this.state.beerData}
+              beer={this.state.beersData}
             />
             )}
           />
@@ -139,7 +121,7 @@ class App extends Component {
             path="/BeersList/BeerEdit"
             render={props => (<BeerForm
               {...props}
-              beer={this.state.beerData}
+              beer={this.state.beersData}
             />
             )}
           />
