@@ -14,7 +14,7 @@ const Nav = () => {
       <NavLink to="/BeersList" exact className="nav" activeClassName="active">
       List
       </NavLink>
-      <NavLink to="/BeersList/Beer" className="nav" activeClassName="active">
+      <NavLink to="/BeersList/BeerDetails" className="nav" activeClassName="active">
       Details/Form
       </NavLink>
 
