@@ -52,7 +52,7 @@ class App extends Component {
         this.setState({
           dataLoaded: true,
           beersData:   res,
-        });
+        })
         console.log({ "res": res });
       })
       .catch((err) => {
