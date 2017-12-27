@@ -16,7 +16,7 @@ class App extends Component {
     super(props);
     this.state = {
       dataLoaded: false,
-      beerData:   {
+      beersData:   {
         name:    'coke',
         brewery: 'GA',
 
@@ -28,13 +28,13 @@ class App extends Component {
     // this.beerSubmit = this.beerSubmit.bind(this);
     // this.deleteBeer = this.deleteBeer.bind(this);
 
-const FakeApi = {
-  beerData2: [
-        {id: 1, name:"BudLight", brewery: "Budwiser", type: "Ale" },
-        {id: 2, name:"Octoberfest", brewery: "Sam Adams", type: "Seasonal" },
-        {id: 3, name:"Boston Lager", brewery: "Sam Adams", type: "Lager" }
-  ]
-}
+// const FakeApi = {
+//   beerData2: [
+//         {id: 1, name:"BudLight", brewery: "Budwiser", type: "Ale" },
+//         {id: 2, name:"Octoberfest", brewery: "Sam Adams", type: "Seasonal" },
+//         {id: 3, name:"Boston Lager", brewery: "Sam Adams", type: "Lager" }
+//   ]
+// }
 
 
   }
@@ -51,9 +51,9 @@ const FakeApi = {
       .then((res) => {
         this.setState({
           dataLoaded: true,
-          beerData:   res,
+          beersData:   res,
         });
-        console.log({ res });
+        console.log({ "res": res });
       })
       .catch((err) => {
         console.log(err);
