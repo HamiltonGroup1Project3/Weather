@@ -94,7 +94,7 @@ class App extends Component {
             path="/BeersList"
             exact
             component={BeersList}
-            beers={this.state.beersData}
+            beersList={this.state.beersData}
           />
 
           <Route
