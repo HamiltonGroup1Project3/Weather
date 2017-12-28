@@ -79,10 +79,10 @@ class App extends Component {
     });
   }
 
-  editForm(name){
+  editForm(id){
     this.setState({
       editName: name,
-      editBrewry: brewry,
+      editBrewery: brewery,
       editType: type,
       editDesc: description,
     })
