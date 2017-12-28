@@ -20,7 +20,7 @@ const BeersList = (props) => {
         { /* eventually these will be an object itterated over */}
        { props.beersList.map( beer => {
         return ( <SingleBeer key={beer.id} name={beer.name} brewery={beer.brewery} /> );
-        })};
+        })}
 
       </div>
     </div>
