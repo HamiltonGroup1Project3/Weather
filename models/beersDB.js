@@ -13,6 +13,14 @@ module.exports = {
       `);
   },
 
+  findAllTypes() {
+    return db.many(`
+      SELECT *
+      FROM type
+      ORDER BY id;
+      `);
+  },
+
   // function 'findOneBeer' to find one beer
   findOneBeer(beerID) {
     return db.one(`
