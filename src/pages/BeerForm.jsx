@@ -34,7 +34,7 @@ class BeerForm extends Component {
           <div className="form-typeFinder">
             <input type="text" name="Name" placeholder="Name"value={this.state.name} onChange={this.handleChange} />
             <input type="text" name="Type" placeholder="Type"value={this.state.type} onChange={this.handleChange} />
-            <input type="text" name="Brewery" placeholder="Brewery" value={this.state.brewery} onChange={this.handleChange} />
+            <input type="text" name="Brewery" placeholder="Brewry" value={this.state.brewry} onChange={this.handleChange} />
             <input type="text" name="Description" placeholder="Description" value={this.state.description} onChange={this.handleChange}/>
             {/* <input type="text" name="Name" placeHolder=""value={this.state.} /> */}
             <input type="submit" value={this.props.addBeer ? 'AddBeer' : 'UpdateDescription'} />
