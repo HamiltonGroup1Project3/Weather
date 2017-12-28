@@ -14,31 +14,14 @@ const BeersList = (props) => {
       {/* } <h1> Beers List </h1>
       <p> This is the main page that renders the list of beers. </p> */}
       <div className="container">
-        { /* eventually these will be an object itterated over */}
-        { /*
-       {props.beer.map(beer => {
-        return(props.beer == beer.name)})}
-         ? <BeerForm key={beer.name} */ }
 
         <AddBeer />
-        <SingleBeer name="name1" brewery="Sam Adams" />
-        <SingleBeer name="name2" brewery="brewery2" />
-        <SingleBeer name="name3" brewery="brewery3" />
-        <SingleBeer name="name1" brewery="brewery1" />
-        <SingleBeer name="name2" brewery="brewery2" />
-        <SingleBeer name="name3" brewery="brewery3" />
-        <SingleBeer name="name1" brewery="brewery1" />
-        <SingleBeer name="name2" brewery="brewery2" />
-        <SingleBeer name="name3" brewery="brewery3" />
-        <SingleBeer name="name1" brewery="brewery1" />
-        <SingleBeer name="name2" brewery="brewery2" />
-        <SingleBeer name="name3" brewery="brewery3" />
-        <SingleBeer name="name1" brewery="brewery1" />
-        <SingleBeer name="name2" brewery="brewery2" />
-        <SingleBeer name="name3" brewery="brewery3" />
-        <SingleBeer name="name1" brewery="brewery1" />
-        <SingleBeer name="name2" brewery="brewery2" />
-        <SingleBeer name="name3" brewery="brewery3" />
+
+        { /* eventually these will be an object itterated over */}
+       { props.beersList.map( beer => {
+        return ( <SingleBeer key={beer.id} name={beer.name} brewery={beer.brewery} /> );
+        })};
+
       </div>
     </div>
   );

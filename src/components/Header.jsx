@@ -27,12 +27,12 @@ const Header = (props) => {
         <div className="right container">
           <div className="login" >
             <button>
-              <p><i className="fa fa-sign-in" aria-hidden="true" /> Login</p>
+              <i className="fa fa-sign-in" aria-hidden="true" /> Login
             </button>
           </div>
           <div className="userName" >
             <button>
-              <p> User1 </p>
+               User1
             </button>
           </div>
         </div>
