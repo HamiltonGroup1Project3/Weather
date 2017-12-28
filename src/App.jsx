@@ -18,10 +18,10 @@ class App extends Component {
     this.state = {
       beersLoaded: false,
       beersData: {
-        name: 'coke',
-        brewery: 'GA',
-        description: 'beer initial state',
-        type: 'Ale',
+        name: null,
+        brewery: null,
+        description: null,
+        type: null,
       },
     };
     this.getAllBeers = this.getAllBeers.bind(this);
