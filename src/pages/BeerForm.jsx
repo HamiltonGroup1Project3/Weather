@@ -8,10 +8,10 @@ class BeerForm extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      name:        props.name,
-      type:        props.type,
-      brewry:      props.brewry,
-      description: props.description,
+      name:        props.beer ? props.beer.name: '',
+      type:        props.beer ? props.beer.type: '',
+      brewry:      props.beer ? props.beer.brewry: '' ,
+      description: props.beer ? props.beer.description: '',
 
     };
     this.handleChange = this.handleChange.bind(this);
@@ -32,11 +32,12 @@ class BeerForm extends Component {
         <p>This is the Beerform. It will display the detail information for each beer and allow for add & edit. </p>
         <form onSubmit={this.props.beer}>
           <div className="form-typeFinder">
-            <input type="text" name="Name" placeholder="Name"value={this.state.name} />
-            <input type="text" name="Brewery" placeholder="Brewery" value={this.state.brewery} />
-            <input type="text" name="Description" placeholder="Description" value={this.state.description} />
+            <input type="text" name="Name" placeholder="Name"value={this.state.name} onChange={this.handleChange} />
+            <input type="text" name="Type" placeholder="Type"value={this.state.type} onChange={this.handleChange} />
+            <input type="text" name="Brewery" placeholder="Brewery" value={this.state.brewery} onChange={this.handleChange} />
+            <input type="text" name="Description" placeholder="Description" value={this.state.description} onChange={this.handleChange}/>
             {/* <input type="text" name="Name" placeHolder=""value={this.state.} /> */}
-            <input type="submit" value="Submit" />
+            <input type="submit" value={this.props.addBeer ? 'AddBeer' : 'UpdateDescription'} />
           </div>
         </form>
 

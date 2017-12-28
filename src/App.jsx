@@ -79,6 +79,15 @@ class App extends Component {
     });
   }
 
+  editForm(name){
+    this.setState({
+      editName: name,
+      editBrewry: brewry,
+      editType: type,
+      editDesc: description,
+    })
+  }
+
 
   render() {
     return (
