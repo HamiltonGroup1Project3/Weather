@@ -6,11 +6,17 @@ import './../css/reset.css';
 
 
 const SingleBeer = (props) => {
-  console.log('SingleBeer component loaded');
+  console.log({'SingleBeer component loaded': props});
   return (
 
-    <NavLink to="/BeersList/BeerDetails"  activeClassName="active">
+    <NavLink
+    to="/BeersList/BeerDetails"
+    activeClassName="active"
+    beerid={props.id}
+    >
+
     <div className="singleBeer">
+    {props.id}
       <p>  {props.name} </p>
       <p> {props.brewery} </p>
 

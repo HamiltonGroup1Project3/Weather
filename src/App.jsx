@@ -1,6 +1,6 @@
 /*global fetch:false*/
 import React, { Component } from 'react';
-import { Route, Switch } from 'react-router-dom';
+import { Route, Switch, Link } from 'react-router-dom';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import Home from './pages/Home';
@@ -18,6 +18,7 @@ class App extends Component {
     this.state = {
       beersLoaded: false,
       beersData: {
+        id: null,
         name: null,
         brewery: null,
         description: null,
@@ -57,25 +58,31 @@ class App extends Component {
 
   // bellow aren't working yet
 
-  getSingleBeer(id) {
-    console.log(`single beer id is ${this.state.singleBeer}`);
-    if (this.state.singleBeer === id) {
-      this.setState({ singleBeer: null });
-    } else { this.setState({ singleBeer: id });
-    }
-  }
-
-
   // getSingleBeer(id) {
-  //   fetch(url)
+  //   console.log(`single beer id is ${this.state.singleBeer}`);
+  //   if (this.state.singleBeer === id) {
+  //     this.setState({ singleBeer: null });
+  //   } else { this.setState({ singleBeer: id });
+  //   }
+  // }
+
+
+  // getSingleBeer(method, event, data, id) {
+  //   console.log({"getSingleBeer": { method, event, data, id }});
+  //   event.prevent.DEfault();
+  //   fetch(`/api/beers/:${id} || '' `, {
+  //     method: method,
+  //     headers: {
+  //       'Content-Type': 'application/json',
+  //     },
+  //     body: JSON.stringify(data),
+  //   })
   //     .then(res => res.json())
   //     .then((res) => {
-  //       console.log(res);
-  //       this.setState({
-  //         singleBeerData: true,
+  //         this.getAllBeers();
   //       });
-  //     });
-  // }
+  //     }
+
 
   deleteBeer(id){
     fetch(`/api/beers/${id}`,{

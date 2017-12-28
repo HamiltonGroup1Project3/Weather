@@ -6,9 +6,11 @@ import 'font-awesome/css/font-awesome.min.css';
 
 const BeerDetails = (props) => {
   console.log({'Beer details component loaded': {props}});
+
   return (
     <div className="beerForm">
       <br />
+      {props.beerid}
       <p>Name: {props.beer[0].name}  </p><br />
       <p>Brewery: {props.beer[0].brewery} </p><br />
       <p>Description: {props.beer[0].description} </p><br />
