@@ -12,7 +12,6 @@ import './css/App.css';
 import './css/reset.css';
 
 
-
 class App extends Component {
   constructor(props) {
     super(props);
@@ -25,7 +24,7 @@ class App extends Component {
         type: 'Ale',
       },
     };
-    this.getBeers = this.getBeers.bind(this);
+    this.getAllBeers = this.getAllBeers.bind(this);
 
     // this.beerSubmit = this.beerSubmit.bind(this);
     // this.deleteBeer = this.deleteBeer.bind(this);
@@ -33,10 +32,10 @@ class App extends Component {
 
   componentDidMount() {
     console.log('component did mount');
-    this.getBeers();
+    this.getAllBeers();
   }
 
-  getBeers() {
+  getAllBeers() {
     console.log('get beers');
     console.log({ 'beersData before': this.state.beersData });
     fetch('/api/beers/')
@@ -68,7 +67,7 @@ class App extends Component {
       method: 'Delete'
     }).then(res => res.json())
       .then((res) => {
-        this.getBeers();
+        this.getAllBeers();
       });
   }
 
@@ -90,23 +89,20 @@ class App extends Component {
         <Switch>
           <Route path="/" exact component={Home} />
 
-          <Route
-            path="/BeersList"
-            exact
-            component={BeersList}
-            beersList={this.state.beersData}
-          />
 
-          <Route
+          {/* If api Beers data has returned beerlist component is rendered */}
+          {(this.state.beersLoaded)
+          ? <Route
             path="/BeersList"
             render={props => (<BeersList
               {...props}
               beersList={this.state.beersData}
-            />
+              />
             )}
             exact
-            /* beerList={this.state.beerList} */
+            beersList={this.state.beerList}
           />
+          : <p> Loading... </p> }
 
           <Route
             path="/BeersList/BeerDetails"
