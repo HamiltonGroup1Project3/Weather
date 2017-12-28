@@ -17,7 +17,7 @@ const BeersList = (props) => {
 
         <AddBeer />
 
-        { /* eventually these will be an object itterated over */}
+        { /* itterates over beers list to display full list of beers */}
        { props.beersList.map( beer => {
         return ( <SingleBeer key={beer.id} name={beer.name} brewery={beer.brewery} /> );
         })}
