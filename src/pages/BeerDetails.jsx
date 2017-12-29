@@ -10,11 +10,11 @@ const BeerDetails = (props) => {
   return (
     <div className="beerForm">
       <br />
-      {props.beerid}
+
       <p>Name: {props.beer[0].name}  </p><br />
       <p>Brewery: {props.beer[0].brewery} </p><br />
+      <p>Type: {props.beer[0].type}  </p><br />
       <p>Description: {props.beer[0].description} </p><br />
-      <p>Type: {props.beer[0].type_id}  </p><br />
       <p>some text  </p><br />
 
 
