@@ -11,6 +11,7 @@ module.exports = {
       FROM beer
       ORDER BY id;
       `);
+
   },
 
   findAllTypes() {
