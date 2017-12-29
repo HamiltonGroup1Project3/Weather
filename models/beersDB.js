@@ -7,9 +7,7 @@ module.exports = {
 // function 'findAllBeers' to find all the beers
   findAllBeers() {
     return db.many(`
-      SELECT *
-      FROM beer
-      ORDER BY id;
+       select beer.id, beer.name, beer.brewery, type.name as type, beer.description from beer join x_ref_table ON beer.id = x_ref_table.beer_id join type ON x_ref_table.style_type_id = type.id ;
       `);
 
   },
