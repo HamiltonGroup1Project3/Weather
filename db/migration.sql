@@ -28,7 +28,7 @@ style_type_id INTEGER NOT NULL REFERENCES type,
 PRIMARY KEY(beer_id, style_type_id)
 );
 
-CREATE INDEX ON x_ref_table(style_type_id),
+CREATE INDEX ON x_ref_table(style_type_id);
 
 
 
