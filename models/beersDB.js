@@ -49,8 +49,12 @@ module.exports = {
   deleteOneBeer(id) {
     return db.none(`
       DELETE
+      FROM x_ref_table
+      WHERE beer_id = $1;
+      DELETE
       FROM beer
-      WHERE id = $1;
+      WHERE id = $1
       `, id);
-  },
-};
+  }
+}
+
