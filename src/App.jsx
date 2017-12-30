@@ -56,7 +56,7 @@ class App extends Component {
   }
 
 
-  // bellow aren't working yet
+  // below aren't working yet
 
   // getSingleBeer(id) {
   //   console.log(`single beer id is ${this.state.singleBeer}`);
