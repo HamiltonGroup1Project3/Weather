@@ -11,10 +11,10 @@ const BeerDetails = (props) => {
     <div className="beerForm">
       <br />
 
-      <p>Name: {props.beer[0].name}  </p><br />
-      <p>Brewery: {props.beer[0].brewery} </p><br />
-      <p>Type: {props.beer[0].type}  </p><br />
-      <p>Description: {props.beer[0].description} </p><br />
+      <p>Name: {props.beer[5].name}  </p><br />
+      <p>Brewery: {props.beer[5].brewery} </p><br />
+      <p>Type: {props.beer[5].type.join(',')}  </p><br />
+      <p>Description: {props.beer[5].description} </p><br />
       <p>some text  </p><br />
 
 
