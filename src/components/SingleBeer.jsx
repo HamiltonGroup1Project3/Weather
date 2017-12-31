@@ -10,13 +10,14 @@ const SingleBeer = (props) => {
   return (
 
     <NavLink
-    to="/BeersList/BeerDetails"
+    to={`/BeersList/BeerDetails#${props.id}`}
     activeClassName="active"
-    beerid={props.id}
+    key={props.id}
     >
 
     <div className="singleBeer">
-    {props.id} {/* <<  to hide later, using for reference  */ }
+    {props.id}
+  {/* <<  to hide later, using for reference  */ }
       <p>  {props.name} </p>
       <p> {props.brewery} </p>
 

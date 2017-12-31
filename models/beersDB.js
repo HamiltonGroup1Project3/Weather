@@ -7,14 +7,9 @@ module.exports = {
 // function 'findAllBeers' to find all the beers
   findAllBeers() {
     return db.many(`
-      SELECT DISTINCT x_ref_table.beer_id, beer.name, beer.brewery, beer.description, array_agg(type.name) AS type FROM x_ref_table INNER JOIN type ON type.id = x_ref_table.style_type_id INNER JOIN beer on beer.id = x_ref_table.beer_id GROUP BY x_ref_table.beer_id, beer.name, beer.brewery, beer.description ORDER BY x_ref_table.beer_id;
+ SELECT DISTINCT x_ref_table.beer_id AS id, beer.name, beer.brewery, array_agg(type.name) AS type, beer.description FROM x_ref_table INNER JOIN type ON type.id = x_ref_table.style_type_id INNER JOIN beer on beer.id = x_ref_table.beer_id GROUP BY x_ref_table.beer_id, beer.name, beer.brewery, beer.description ORDER BY x_ref_table.beer_id;
       `);
-
   },
-
-
-
-
 
 
   findAllTypes() {
@@ -28,9 +23,7 @@ module.exports = {
   // function 'findOneBeer' to find one beer
   findOneBeer(beerID) {
     return db.one(`
-      SELECT beer.name, beer.brewery, beer.type_id, beer.description
-      FROM beer
-      WHERE beer.id = $1
+      SELECT DISTINCT x_ref_table.beer_id AS id, beer.name, beer.brewery, array_agg(type.name) AS type, beer.description FROM x_ref_table INNER JOIN type ON type.id = x_ref_table.style_type_id INNER JOIN beer on beer.id = x_ref_table.beer_id  where x_ref_table.beer_id = $1 GROUP BY x_ref_table.beer_id, beer.name, beer.brewery, beer.description ORDER BY x_ref_table.beer_id;
       `, beerID);
   },
 
