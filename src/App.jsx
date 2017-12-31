@@ -25,9 +25,10 @@ class App extends Component {
         type: null,
       },
       singleBeer: null,
+      singleBeerLoaded: false,
     };
     this.getAllBeers = this.getAllBeers.bind(this);
-
+    // this.getSingleBeer = this.getSingleBeer.bind(this);
     // this.beerSubmit = this.beerSubmit.bind(this);
     // this.deleteBeer = this.deleteBeer.bind(this);
   }
@@ -36,6 +37,7 @@ class App extends Component {
   componentDidMount() {
     console.log('component did mount');
     this.getAllBeers();
+    // this.getSingleBeer(6);
   }
 
   // api call to our local api to return beersData
@@ -57,20 +59,37 @@ class App extends Component {
 
 
   // below aren't working yet
-
+  // // method for using cleint side  selection
   // getSingleBeer(id) {
   //   console.log(`single beer id is ${this.state.singleBeer}`);
   //   if (this.state.singleBeer === id) {
   //     this.setState({ singleBeer: null });
   //   } else { this.setState({ singleBeer: id });
-  //   }
+  //   }console.log({ 'state after': this.state });
+  // }
+
+  // method of using another api call to get single beer
+  //  getSingleBeer(id) {
+  //   console.log('get one beer');
+  //   console.log({ 'state before': this.state });
+  //   fetch(`/api/beers/beer/${id}`)
+  //     .then(res => res.json())
+  //     .then((res) => {
+  //       this.setState({
+  //         singleBeer: res.data.beer,
+  //         singleBeerLoaded: true,
+  //       })
+  //       console.log({ 'Single ApiResult': res });
+  //       console.log({ 'state after': this.state });
+  //     })
+  //     .catch(err => console.log(err));
   // }
 
 
   // getSingleBeer(method, event, data, id) {
   //   console.log({"getSingleBeer": { method, event, data, id }});
   //   event.prevent.DEfault();
-  //   fetch(`/api/beers/:${id} || '' `, {
+  //   fetch(`/api/beers/beer:${id} || '' `, {
   //     method: method,
   //     headers: {
   //       'Content-Type': 'application/json',

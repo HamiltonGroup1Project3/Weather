@@ -7,7 +7,7 @@ beersRouter.route('/')
   .get(beersController.index)
   .post(beersController.create);
 
-beersRouter.route('/:id')
+beersRouter.route('/beer/:id')
   .get(beersController.show)
   .put(beersController.update)
   .delete(beersController.delete);
