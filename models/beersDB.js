@@ -57,8 +57,8 @@ module.exports = {
 
           /*insert a new entry into beers, grab the beer id */
           t.one(`
-            INSERT INTO beers (name, brewery, description)
-            VALUES ($/name/, $/brewery/, $description/)
+            INSERT INTO beer (name, brewery, description)
+            VALUES ($/name/, $/brewery/, $/description/)
             RETURNING id
           `, beer),
 
