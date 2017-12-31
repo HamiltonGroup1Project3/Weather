@@ -121,11 +121,19 @@ Using array_agg(type.name) AS type  merges the duplicate entries and turns them 
     - run migration file from /Project3/db/migration.sql
     - run seed from file /Project3/db/seed.sql
 
-3. Setup - Open new terminal window
+3. Create .env file
+```
+  DB_HOST=localhost
+  DB_PORT=5432
+  DB_NAME=top_shelf
+  DB_USER=name
+```
+
+4. Setup - Open new terminal window
     - CD into project3
     - npm run dev 
 
-4. Setup - In a second terminal window
+5. Setup - In a second terminal window
     - CD into project3
     - npm run watch
 
