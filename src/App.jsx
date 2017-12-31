@@ -72,7 +72,7 @@ class App extends Component {
   //  getSingleBeer(id) {
   //   console.log('get one beer');
   //   console.log({ 'state before': this.state });
-  //   fetch(`/api/beers/beer/${id}`)
+  //   fetch(`/api/beers/${id}`)
   //     .then(res => res.json())
   //     .then((res) => {
   //       this.setState({
@@ -89,7 +89,7 @@ class App extends Component {
   // getSingleBeer(method, event, data, id) {
   //   console.log({"getSingleBeer": { method, event, data, id }});
   //   event.prevent.DEfault();
-  //   fetch(`/api/beers/beer:${id} || '' `, {
+  //   fetch(`/api/beers/:${id} || '' `, {
   //     method: method,
   //     headers: {
   //       'Content-Type': 'application/json',

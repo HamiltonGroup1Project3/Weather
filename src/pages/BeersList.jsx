@@ -21,7 +21,7 @@ const BeersList = (props) => {
         { /* itterates over beers list to display full list of beers */}
        { props.beersList.map(( beer ) => {
         // <Link to={`/${this.props.beer.id}`} >
-        return ( <SingleBeer key={beer.beer_id} name={beer.name} brewery={beer.brewery} id={beer.beer_id} /> );
+        return ( <SingleBeer key={beer.id} name={beer.name} brewery={beer.brewery} id={beer.id} /> );
         // </Link>
         })
      }
