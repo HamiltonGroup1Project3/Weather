@@ -1,4 +1,4 @@
-/*global fetch:false*/
+/* global fetch:false */
 import React, { Component } from 'react';
 import { Route, Switch, Link } from 'react-router-dom';
 import Header from './components/Header';
@@ -17,14 +17,14 @@ class App extends Component {
     super(props);
     this.state = {
       beersLoaded: false,
-      beersData: {
-        id: null,
-        name: null,
-        brewery: null,
+      beersData:   {
+        id:          null,
+        name:        null,
+        brewery:     null,
         description: null,
-        type: null,
+        type:        null,
       },
-      singleBeer: null,
+      singleBeer:       null,
       singleBeerLoaded: false,
     };
     this.getAllBeers = this.getAllBeers.bind(this);
@@ -48,10 +48,10 @@ class App extends Component {
       .then(res => res.json())
       .then((res) => {
         this.setState({
-          beersData: res.data.beers,
+          beersData:   res.data.beers,
           beersLoaded: true,
-        })
-        console.log({ 'ApiResult': res });
+        });
+        console.log({ ApiResult: res });
         console.log({ 'state after': this.state });
       })
       .catch(err => console.log(err));
@@ -103,9 +103,9 @@ class App extends Component {
   //     }
 
 
-  deleteBeer(id){
-    fetch(`/api/beers/${id}`,{
-      method: 'Delete'
+  deleteBeer(id) {
+    fetch(`/api/beers/${id}`, {
+      method: 'Delete',
     }).then(res => res.json())
       .then((res) => {
         this.getAllBeers();
@@ -120,13 +120,13 @@ class App extends Component {
     });
   }
 
-  editForm(id){
+  editForm(id) {
     this.setState({
-      editName: name,
+      editName:    name,
       editBrewery: brewery,
-      editType: type,
-      editDesc: description,
-    })
+      editType:    type,
+      editDesc:    description,
+    });
   }
 
 
@@ -147,7 +147,7 @@ class App extends Component {
             render={props => (<BeersList
               {...props}
               beersList={this.state.beersData}
-              />
+            />
             )}
             exact
             beersList={this.state.beerList}

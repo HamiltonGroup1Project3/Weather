@@ -6,7 +6,7 @@ const NotFound = () => {
   console.log('Not Found page loaded');
   return (
     <div className="notFound">
-      <h1> NotFound page</h1>
+      <h1>Page Not Found </h1>
     </div>
   );
 };

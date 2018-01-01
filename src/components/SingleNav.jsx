@@ -1,12 +1,12 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 import './../css/App.css';
 import './../css/reset.css';
-import { NavLink } from 'react-router-dom';
 
 
 const SingleNav = (props) => {
-  console.log({'SingleNav component loaded': props});
-// need to have currentBeer and place it after hash
+  console.log({ 'SingleNav component loaded': props });
+  // need to have currentBeer and place it after hash
   return (
     <div className="container">
       <div className="container">
