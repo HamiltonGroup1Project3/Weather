@@ -8,7 +8,7 @@ const Home = () => {
   return (
     <div className="home">
 
-      <h1> <br/></h1>
+      <h1> <br /></h1>
       <h3> We've all experienced it before - <i>beerception</i>; when the beer options in a bar are so esoteric, dizzying and numerous that we descend into a paralyzing inabiity to make a concious decision about what to drink.  With <i>Top Shelf</i>, the next time you see the onset of these symptoms you'll be prepared.</h3>
       <br />
       <br />

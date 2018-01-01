@@ -1,9 +1,9 @@
+import 'font-awesome/css/font-awesome.min.css';
 import React from 'react';
-import './../css/reset.css';
-import './../css/App.css';
 import Filter from './Filter';
 import Nav from './Nav';
-import 'font-awesome/css/font-awesome.min.css';
+import './../css/reset.css';
+import './../css/App.css';
 
 
 const Header = (props) => {
