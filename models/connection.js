@@ -1,6 +1,6 @@
 /* @see https://github.com/jasonseminara/react_to-do/blob/auth/models/connection.js */
 const options = {
-  query(e){
+  query(e) {
     console.log(e.query);
   },
 };
@@ -14,4 +14,4 @@ const config = {
   user:     process.env.DB_USER,
 };
 
-module.exports = pgp(process.env.DATABASE_URL || config)
+module.exports = pgp(process.env.DATABASE_URL || config);
