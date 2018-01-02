@@ -9,7 +9,6 @@ class BeerForm extends Component {
     super(props);
     this.state = {
       name:        props.beer ? props.beer.name : '',
-      type:        props.beer ? props.beer.type : '',
       brewery:     props.beer ? props.beer.brewery : '',
       description: props.beer ? props.beer.description : '',
 
@@ -25,21 +24,29 @@ class BeerForm extends Component {
     });
   }
   render() {
-    console.log('BeerForm loaded');
+    console.log({'BeerForm loaded': this.state});
+
     return (
 
       <div className="beerForm">
         <p>This is the Beerform. It will display the detail information for each beer and allow for add & edit. </p>
-        <form onSubmit={this.props.beer}>
+
+      {/* It's its an edit for then update for that id, if its add then just post new state. */}
+        <form className={this.props.isadd ? 'addForm' : 'editForm'}
+        onSubmit={this.props.isadd
+          ? change => this.props.beerSubmit('Put', change, this.state )
+          : change => this.props.beerSubmit('Post' , change,
+            this.state, this.props.beer.id)}>
+
           <div className="form-typeFinder">
             <input
               type="text"
-              name="Name"
+              name="name"
               placeholder="Name"
               value={this.state.name}
               onChange={this.handleChange}
             />
-
+            {/*
             <input
               type="text"
               name="Type"
@@ -47,10 +54,10 @@ class BeerForm extends Component {
               value={this.state.type}
               onChange={this.handleChange}
             />
-
+            */}
             <input
               type="text"
-              name="Brewery"
+              name="brewery"
               placeholder="Brewery"
               value={this.state.brewery}
               onChange={this.handleChange}
@@ -58,14 +65,14 @@ class BeerForm extends Component {
 
             <input
               type="text"
-              name="Description"
+              name="description"
               placeholder="Description"
               value={this.state.description}
               onChange={this.handleChange}
             />
 
             {/* <input type="text" name="Name" placeHolder=""value={this.state.} /> */}
-            <input type="submit" value={this.props.addBeer ? 'AddBeer' : 'UpdateDescription'} />
+            <input type="submit" value={this.props.addBeer ? 'AddBeer' : 'Submit'} />
           </div>
         </form>
 
