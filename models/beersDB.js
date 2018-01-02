@@ -35,15 +35,12 @@ module.exports = {
   },
 
 
-
-
-
-
   // function to add a beer to the collection.
   addOneBeer(beer) {
+    debugger;
     return db.tx('beerInsertion', async (t) => {
       /* insert a new entry into beers, grab the beer id */
-      const { id } = await t.one(`
+      const { id: beerID } = await t.one(`
         INSERT INTO beer (name, brewery, description)
         VALUES ($/name/, $/brewery/, $/description/)
         RETURNING id
@@ -53,14 +50,12 @@ module.exports = {
         INSERT INTO x_ref_table (beer_id, style_type_id)
         VALUES ($1, $2)
         RETURNING beer_id
-        `, [id, +beer.typeID]);
+        `, [beerID, +beer.typeID]);
 
-      return id;
-    })
+      return beerID;
+    });
 
   },
-
-
 
   /* function 'deleteOneBeer' to remove a beer (from both the xref table and the beer table) */
 
