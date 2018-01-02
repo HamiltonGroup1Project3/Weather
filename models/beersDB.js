@@ -75,8 +75,11 @@ module.exports = {
           `, joinBeer.beer_id)
       })
   },
+)
+},
 
   /* function 'deleteOneBeer' to remove a beer (from both the xref table and the beer table) */
+
   deleteOneBeer(id) {
     return db.none(`
       DELETE
