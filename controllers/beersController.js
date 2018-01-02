@@ -36,9 +36,9 @@ beersController.show = (req, res, next) => {
 // // add one beer
 beersController.create = (req, res, next) => {
     console.log(req.body, 'body');
-    Beers.addOneBeer(req.body)
-      .then((beer) => {
-        res.locals.beer = beer;
+    Beers.addOneBeer(req.body.beer)
+      .then((beerID) => {
+        res.locals.beerID = beerID;
         next();
       })
       .catch(err => next(err));
