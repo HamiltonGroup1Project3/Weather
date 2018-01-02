@@ -7,14 +7,18 @@ import './../css/App.css';
 
 
 const Header = (props) => {
-  console.log('Header component loaded');
+  console.log({'Header component loaded': props});
   return (
     <div>
       <div className="header">
 
         <div className="left container">
-          <Filter name="Type" />
-          <Filter name="Other" />
+
+          {/* passes in types for filtering */}
+          <Filter name="Type" typeData={props.type} />
+
+        {/*should pass in brewery's currently passing types*/}
+          <Filter name="Brewery" typeData={props.type}/>
         </div>
         <div className="center">
           <div>

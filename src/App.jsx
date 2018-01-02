@@ -11,7 +11,7 @@ import NotFound from './pages/NotFound';
 import './css/App.css';
 import './css/reset.css';
 
-
+// state of main application
 class App extends Component {
   constructor(props) {
     super(props);
@@ -24,10 +24,11 @@ class App extends Component {
         description: null,
         type:        null,
       },
-      singleBeer:       null,
-      singleBeerLoaded: false,
+      typesData:     null,
+      typesLoaded:   false,
     };
     this.getAllBeers = this.getAllBeers.bind(this);
+    this.getAllTypes = this.getAllTypes.bind(this);
     // this.getSingleBeer = this.getSingleBeer.bind(this);
     // this.beerSubmit = this.beerSubmit.bind(this);
     // this.deleteBeer = this.deleteBeer.bind(this);
@@ -37,13 +38,13 @@ class App extends Component {
   componentDidMount() {
     console.log('component did mount');
     this.getAllBeers();
+    this.getAllTypes();
     // this.getSingleBeer(6);
   }
 
   // api call to our local api to return beersData
   getAllBeers() {
     console.log('get beers');
-    console.log({ 'state before': this.state });
     fetch('/api/beers/')
       .then(res => res.json())
       .then((res) => {
@@ -51,12 +52,25 @@ class App extends Component {
           beersData:   res.data.beers,
           beersLoaded: true,
         });
-        console.log({ ApiResult: res });
-        console.log({ 'state after': this.state });
+        console.log({ 'Beers Api': res.data.beers });
       })
       .catch(err => console.log(err));
   }
 
+// api call to our local api to return types of beers list
+  getAllTypes() {
+    console.log('get types');
+    fetch('/api/types/')
+      .then(res => res.json())
+      .then((res) => {
+        this.setState({
+          typesData:   res.data.types,
+          typesLoaded: true,
+        });
+        console.log({ 'Types Api': res.data.types });
+      })
+      .catch(err => console.log(err));
+  }
 
   // below aren't working yet
   // // method for using cleint side  selection
@@ -103,6 +117,7 @@ class App extends Component {
   //     }
 
 
+// for deleting a beer based by id
   deleteBeer(id) {
     fetch(`/api/beers/${id}`, {
       method: 'Delete',
@@ -133,8 +148,11 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+        {/* pass in types for filtering on if loaded*/}
+        {(this.state.typesLoaded) && (this.state.beersLoaded)
+        ? <Header type={this.state.typesData} brewery={this.state.typesData} />
+        : <p> Loading... </p> }
 
-        <Header />
 
         <Switch>
           <Route path="/" exact component={Home} />
@@ -154,6 +172,8 @@ class App extends Component {
           />
           : <p> Loading... </p> }
 
+
+        {/* route for individual beer details */}
           <Route
             path="/BeersList/BeerDetails"
             render={props => (<BeerDetails
@@ -163,6 +183,8 @@ class App extends Component {
             )}
           />
 
+
+          {/* route to edit form */}
           <Route
             path="/BeersList/BeerEdit"
             render={props => (<BeerForm
@@ -172,6 +194,8 @@ class App extends Component {
             )}
           />
 
+
+          {/* catch all for bad routes */}
           <Route path="/" component={NotFound} />
 
         </Switch>

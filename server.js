@@ -6,10 +6,13 @@ const path            = require('path');
 const bodyParser      = require('body-parser');
 const methodOverride  = require('method-override');
 
-//import controller
-const controller = require('./controllers/beersController');
+// //import controller
+// const beersController = require('./controllers/beersController');
+
 // routes
 const beerRoutes = require('./routes/beerRoutes');
+const typeRoutes = require('./routes/typeRoutes');
+
 
 //connect port to server
 const PORT = process.env.PORT || 3000;
@@ -28,7 +31,7 @@ app.use(bodyParser.urlencoded({
 app.use(bodyParser.json());
 
 app.use('/api/beers', beerRoutes);
-
+app.use('/api/types', typeRoutes);
 
 // app.get('/test', controller.index, (req, res, next) => {
 //   res.send('it worked');

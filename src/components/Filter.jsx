@@ -4,16 +4,17 @@ import './../css/reset.css';
 
 
 const Filter = (props) => {
-  console.log('Filter component loaded');
+  console.log({'Filter component loaded': props});
   return (
     <div className="filter">
 
       <select name="filterSelect" >
         {/* map over selections */}
         <option value="null">Filter By {props.name}</option>
-        <option value="Type1">Type1</option>
-        <option value="Type2">Type2</option>
-        <option value="Type3">Type3</option>
+        {props.typeData.map(type => (
+        <option value={type.id} key={type.id}>{type.name}</option>
+        ))}
+
       </select>
     </div>
   );
