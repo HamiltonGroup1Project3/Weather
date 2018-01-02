@@ -60,19 +60,20 @@ module.exports = {
             INSERT INTO type (name)
             VALUES ($1)
             RETURNING id
-        `, beer_type)
-      ])
-    })
-    /* then insert those two id values into their respective tables (beer) and (type)*/
-      .then(([beerID, typeID]) => {
-        return db.one(`
+          `, beer_type)
+        ])
+      })
+          /*then insert those two id values into the xref table*/
+        .then(([beerID, typeID]) => {
+          return db.one(`
             INSERT INTO x_ref_table (beer_id, type_id)
             VALUES ($1, $2)
             RETURNING beer_id
-          `, [beerID.id, typeID.style_type_id])
-      })
-      .then(joinBeer => {
-        return db.one(`
+            ` [beerID.id, typeID.style_type_id])
+        })
+          /*then insert those two id values into their respective tables (beer) and (type) */
+        .then(joinBeer => {
+          return db.one(`
             SELECT beer.name, beer.brewery, beer.description, type.name
             FROM x_ref_table
             INNER JOIN beers ON beers.id=x_ref_table.beer_id
@@ -82,7 +83,7 @@ module.exports = {
       })
   },
 
-  // function 'deleteOneBeer' to remove a beer
+  /* function 'deleteOneBeer' to remove a beer (from both the xref table and the beer table) */
   deleteOneBeer(id) {
     return db.none(`
       DELETE
