@@ -71,7 +71,8 @@ class BeerForm extends Component {
               onChange={this.handleChange}
             />
 
-            {/* <input type="text" name="Name" placeHolder=""value={this.state.} /> */}
+            <input type="text" name="Name" placeHolder=""value={this.state.} />
+
             <input type="submit" value={this.props.addBeer ? 'AddBeer' : 'Submit'} />
           </div>
         </form>
