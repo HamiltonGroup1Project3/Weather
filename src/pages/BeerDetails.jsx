@@ -12,7 +12,7 @@ const BeerDetails = (props) => {
   // pulls the index of the beer from the hash and stores it as index, if none then set it to 1st index
   // **Should pass up to class
   let id = null;
-  if (props.location.hash == false) (id = 0); else (id = props.location.hash.substr(1));
+  if (props.location.hash == false) (id = 0); else (id = props.location.hash.substr(1)-1);
 
 console.log({ 'id': id})
 
@@ -20,10 +20,10 @@ console.log({ 'id': id})
   return (
     <div className="beerForm">
       <br />
-      <p>Name: {props.beer[`${id-1}`].name}  </p><br />
-      <p>Brewery: {props.beer[`${id-1}`].brewery} </p><br />
-      <p>Type: {props.beer[`${id-1}`].type.join(',')}  </p><br />
-      <p>Description: {props.beer[`${id-1}`].description} </p><br />
+      <p>Name: {props.beer[`${id}`].name}  </p><br />
+      <p>Brewery: {props.beer[`${id}`].brewery} </p><br />
+      <p>Type: {props.beer[`${id}`].type.join(',')}  </p><br />
+      <p>Description: {props.beer[`${id}`].description} </p><br />
       <p>some text  </p><br />
 
 
