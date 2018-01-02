@@ -8,6 +8,7 @@ const SingleBeer = (props) => {
   console.log({ 'SingleBeer component loaded': props });
   return (
 
+    // passed the id to hash... need to make it index
     <NavLink
       to={`/BeersList/BeerDetails#${props.id}`}
       activeClassName="active"

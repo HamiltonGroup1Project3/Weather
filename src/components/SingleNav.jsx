@@ -10,7 +10,7 @@ const SingleNav = (props) => {
   return (
     <div className="container">
       <div className="container">
-        <NavLink to="/BeersList/BeerDetails#5" className="singleNav">
+        <NavLink to="/BeersList/BeerDetails" className="singleNav">
           <p>Prev</p>
         </NavLink>
       </div>
@@ -28,7 +28,7 @@ const SingleNav = (props) => {
       </div>
 
       <div className="container">
-        <NavLink to="/BeersList/BeerDetails" className="singleNav">
+        <NavLink to="/BeersList/BeerDetails#10" className="singleNav">
           <p>Next</p>
         </NavLink>
       </div>
