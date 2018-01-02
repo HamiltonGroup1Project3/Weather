@@ -97,7 +97,7 @@ class App extends Component {
   beerSubmit(method, event, data, id) {
     console.log({"beersubmit": { method, event, data, id }});
     event.preventDefault();
-    fetch(`/api/beers/:${11} || '' `, {
+    fetch(`/api/beers/`, {
       method: method,
       headers: {
         'Content-Type': 'application/json',
@@ -106,12 +106,12 @@ class App extends Component {
     })
       .then(res => res.json())
       .then((res) => {
-          this.getAllBeers();
-        });
-      }
+        this.getAllBeers();
+      });
+  }
 
 
-// for deleting a beer based by id
+  // for deleting a beer based by id
   deleteBeer(id) {
     fetch(`/api/beers/${id}`, {
       method: 'Delete',

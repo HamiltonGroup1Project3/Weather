@@ -32,36 +32,48 @@ beersController.show = (req, res, next) => {
     .catch(next);
 };
 
-// add one beer
+
 beersController.create = (req, res, next) => {
-  try {
-    new Beer({
-      id:          req.body.name,
-      name:        req.body.name,
-      description: req.body.description,
-    })
-      .save()
+    console.log(req.body, 'body');
+    Beers.addOneBeer(req.body)
       .then((beer) => {
-        res.status(201).json({
-          message: 'Beer successfully created',
-          data:    {
-            beer,
-          },
-        });
+        res.locals.beer = beer;
+        next();
       })
-      .catch(next);
-  } catch (err) {
-    return next(err);
-  }
-};
+      .catch(err => next(err));
+  },
+
+// // add one beer
+// beersController.create = (req, res, next) => {
+//   console.log(req.body, 'body');
+//   try {
+//     new Beers.addOneBeer({
+//       brewery:     req.body.brewery,
+//       name:        req.body.name,
+//       description: req.body.description,
+//     })
+//       .save()
+//       .then((beer) => {
+//         res.status(201).json({
+//           message: 'Beer successfully created',
+//           data:    {
+//             beer,
+//           },
+//         });
+//       })
+//       .catch(next);
+//   } catch (err) {
+//     return next(err);
+//   }
+// };
 
 // edit one beer
 beersController.update = (req, res, next) => {
   Beers.findOneBeer(req.params.id)
     .then(beer => beer.editOneBeer({
-      id:          req.body.id,
-      name:        req.body.id,
-      description: req.body.id,
+      brewery:     req.body.brewery,
+      name:        req.body.name,
+      description: req.body.description,
     }))
     .then((beer) => {
       res.status(202).json({
