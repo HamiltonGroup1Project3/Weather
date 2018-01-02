@@ -15,7 +15,6 @@ CREATE TABLE beer (
   id SERIAL PRIMARY KEY,
   name VARCHAR(255) NOT NULL,
   brewery VARCHAR(255) NOT NULL,
-  type_id SERIAL NOT NULL REFERENCES type,
   description TEXT
 );
 

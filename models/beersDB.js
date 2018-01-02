@@ -54,15 +54,8 @@ module.exports = {
             VALUES ($/name/, $/brewery/, $description/)
             RETURNING id
           `, beer),
-
-        /* insert a new entry into the type table, grab the type id */
-        t.one(`
-            INSERT INTO type (name)
-            VALUES ($1)
-            RETURNING id
-          `, beer_type)
         ])
-      })
+
           /*then insert those two id values into the xref table*/
         .then(([beerID, typeID]) => {
           return db.one(`
@@ -74,7 +67,7 @@ module.exports = {
           /*then insert those two id values into their respective tables (beer) and (type) */
         .then(joinBeer => {
           return db.one(`
-            SELECT beer.name, beer.brewery, beer.description, type.name
+            SELECT beer.name, beer.brewery, beer.description,
             FROM x_ref_table
             INNER JOIN beers ON beers.id=x_ref_table.beer_id
             INNER JOIN type ON type.id=x_ref_table.style_type_id
