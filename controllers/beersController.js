@@ -33,6 +33,7 @@ beersController.show = (req, res, next) => {
 };
 
 
+// // add one beer
 beersController.create = (req, res, next) => {
     console.log(req.body, 'body');
     Beers.addOneBeer(req.body)
@@ -43,7 +44,7 @@ beersController.create = (req, res, next) => {
       .catch(err => next(err));
   },
 
-// // add one beer
+
 // beersController.create = (req, res, next) => {
 //   console.log(req.body, 'body');
 //   try {

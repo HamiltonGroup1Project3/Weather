@@ -18,7 +18,7 @@ CREATE TABLE beer (
   description TEXT
 );
 
-CREATE INDEX ON beer (type_id);
+
 
 --create xref table --
 CREATE TABLE x_ref_table (
