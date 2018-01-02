@@ -26,10 +26,12 @@ class App extends Component {
       },
       typesData:     null,
       typesLoaded:   false,
+      singleBeer: null,
+      singleBeerLoaded: false,
     };
     this.getAllBeers = this.getAllBeers.bind(this);
     this.getAllTypes = this.getAllTypes.bind(this);
-    // this.getSingleBeer = this.getSingleBeer.bind(this);
+    this.getSingleBeer = this.getSingleBeer.bind(this);
     // this.beerSubmit = this.beerSubmit.bind(this);
     // this.deleteBeer = this.deleteBeer.bind(this);
   }
@@ -72,32 +74,24 @@ class App extends Component {
       .catch(err => console.log(err));
   }
 
-  // below aren't working yet
-  // // method for using cleint side  selection
-  // getSingleBeer(id) {
-  //   console.log(`single beer id is ${this.state.singleBeer}`);
-  //   if (this.state.singleBeer === id) {
-  //     this.setState({ singleBeer: null });
-  //   } else { this.setState({ singleBeer: id });
-  //   }console.log({ 'state after': this.state });
-  // }
+
 
   // method of using another api call to get single beer
-  //  getSingleBeer(id) {
-  //   console.log('get one beer');
-  //   console.log({ 'state before': this.state });
-  //   fetch(`/api/beers/${id}`)
-  //     .then(res => res.json())
-  //     .then((res) => {
-  //       this.setState({
-  //         singleBeer: res.data.beer,
-  //         singleBeerLoaded: true,
-  //       })
-  //       console.log({ 'Single ApiResult': res });
-  //       console.log({ 'state after': this.state });
-  //     })
-  //     .catch(err => console.log(err));
-  // }
+  getSingleBeer(id) {
+    console.log('get one beer');
+    console.log({ 'state before': this.state });
+    fetch(`/api/beers/${id}`)
+      .then(res => res.json())
+      .then((res) => {
+        this.setState({
+          singleBeer: res.data.beer,
+          singleBeerLoaded: true,
+        })
+        console.log({ 'Single ApiResult': res });
+        console.log({ 'state after': this.state });
+      })
+      .catch(err => console.log(err));
+  }
 
 
   // getSingleBeer(method, event, data, id) {
