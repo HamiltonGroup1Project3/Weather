@@ -16,7 +16,8 @@ const SingleNav = (props) => {
       </div>
 
       <div className="container">
-        <NavLink to="/BeersList/BeerEdit" className="singleNav">
+        <NavLink to="/BeersList/BeerEdit" className="singleNav" isadd={false}>
+
           <p>Edit</p>
         </NavLink>
       </div>

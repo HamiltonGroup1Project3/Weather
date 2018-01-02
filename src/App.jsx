@@ -32,7 +32,7 @@ class App extends Component {
     this.getAllBeers = this.getAllBeers.bind(this);
     this.getAllTypes = this.getAllTypes.bind(this);
     this.getSingleBeer = this.getSingleBeer.bind(this);
-    // this.beerSubmit = this.beerSubmit.bind(this);
+    this.beerSubmit = this.beerSubmit.bind(this);
     // this.deleteBeer = this.deleteBeer.bind(this);
   }
 
@@ -94,21 +94,21 @@ class App extends Component {
   }
 
 
-  // getSingleBeer(method, event, data, id) {
-  //   console.log({"getSingleBeer": { method, event, data, id }});
-  //   event.prevent.DEfault();
-  //   fetch(`/api/beers/:${id} || '' `, {
-  //     method: method,
-  //     headers: {
-  //       'Content-Type': 'application/json',
-  //     },
-  //     body: JSON.stringify(data),
-  //   })
-  //     .then(res => res.json())
-  //     .then((res) => {
-  //         this.getAllBeers();
-  //       });
-  //     }
+  beerSubmit(method, event, data, id) {
+    console.log({"beersubmit": { method, event, data, id }});
+    event.preventDefault();
+    fetch(`/api/beers/:${11} || '' `, {
+      method: method,
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(data),
+    })
+      .then(res => res.json())
+      .then((res) => {
+          this.getAllBeers();
+        });
+      }
 
 
 // for deleting a beer based by id
@@ -126,8 +126,11 @@ class App extends Component {
   AddBeer() {
     this.setState({
       addingBeer: true,
+
     });
   }
+
+
 
   editForm(id) {
     this.setState({
@@ -184,6 +187,8 @@ class App extends Component {
             render={props => (<BeerForm
               {...props}
               beer={this.state.beersData}
+              beerSubmit={this.beerSubmit}
+
             />
             )}
           />
