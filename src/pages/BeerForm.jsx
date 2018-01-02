@@ -11,6 +11,8 @@ class BeerForm extends Component {
       name:        props.beer ? props.beer.name : '',
       brewery:     props.beer ? props.beer.brewery : '',
       description: props.beer ? props.beer.description : '',
+      typeID: props.beer ? props.beer.typeID : '',
+
 
     };
     this.handleChange = this.handleChange.bind(this);
@@ -44,23 +46,24 @@ class BeerForm extends Component {
               name="name"
               placeholder="Name"
               value={this.state.name}
-              onChange={this.handleChange}
+
             />
-            {/*
+
             <input
               type="text"
-              name="type"
+              name="typeID"
               placeholder="Type"
               value={this.state.type}
-              onChange={this.handleChange}
+
             />
-            */}
+
+
             <input
               type="text"
               name="brewery"
               placeholder="Brewery"
               value={this.state.brewery}
-              onChange={this.handleChange}
+
             />
 
             <input
@@ -68,11 +71,11 @@ class BeerForm extends Component {
               name="description"
               placeholder="Description"
               value={this.state.description}
-              onChange={this.handleChange}
+
             />
 
 
-            <input type="submit" value={this.props.addBeer ? 'AddBeer' : 'Submit'} />
+            <input type="submit" value={this.props.addBeer ? 'AddBeer' : 'Submit'}      onChange={this.handleChange} />
           </div>
         </form>
 

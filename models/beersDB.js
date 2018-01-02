@@ -34,49 +34,33 @@ module.exports = {
       `, beer);
   },
 
-  // function 'addOneBeer' to add a beer
-  // addOneBeer(beer) {
-  //   return db.one(`
-  //     INSERT INTO beer (name, brewery, description)
-  //     VALUES ($/name/, $/brewery/, $/description/)
-  //     RETURNING id
-  //     `, beer);
-  // },
+
+
+
+
 
   // function to add a beer to the collection.
   addOneBeer(beer) {
-    return db.tx(t => {
-      return t.batch([
+    return db.tx('beerInsertion', async (t) => {
+      /* insert a new entry into beers, grab the beer id */
+      const { id } = await t.one(`
+        INSERT INTO beer (name, brewery, description)
+        VALUES ($/name/, $/brewery/, $/description/)
+        RETURNING id
+      `, beer);
 
-        /* insert a new entry into beers, grab the beer id */
-        t.one(`
-            INSERT INTO beer (name, brewery, description)
-            VALUES ($/name/, $/brewery/, $/description/)
-            RETURNING id
-          `, beer),
-        ])
+      await t.one(`
+        INSERT INTO x_ref_table (beer_id, style_type_id)
+        VALUES ($1, $2)
+        RETURNING beer_id
+        `, [id, +beer.typeID]);
 
-          /*then insert those two id values into the xref table*/
-        .then(([beerID, typeID]) => {
-          return db.one(`
-            INSERT INTO x_ref_table (beer_id, type_id)
-            VALUES ($1, $2)
-            RETURNING beer_id
-            ` [beerID.id, typeID.style_type_id])
-        })
-          /*then insert those two id values into their respective tables (beer) and (type) */
-        .then(joinBeer => {
-          return db.one(`
-            SELECT beer.name, beer.brewery, beer.description,
-            FROM x_ref_table
-            INNER JOIN beers ON beers.id=x_ref_table.beer_id
-            INNER JOIN type ON type.id=x_ref_table.style_type_id
-            WHERE beers.id=$1
-          `, joinBeer.beer_id)
-      })
+      return id;
+    })
+
   },
-)
-},
+
+
 
   /* function 'deleteOneBeer' to remove a beer (from both the xref table and the beer table) */
 
