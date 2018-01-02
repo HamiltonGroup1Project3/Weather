@@ -106,7 +106,7 @@ class App extends Component {
     })
       .then(res => res.json())
       .then((res) => {
-        this.getAllBeers();
+        return this.getAllBeers();
       });
   }
 
