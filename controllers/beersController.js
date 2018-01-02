@@ -76,7 +76,7 @@ beersController.update = (req, res, next) => {
 
 // delete one beer
 beersController.delete = (req, res, next) => {
-  Beers.destroy(req.params.id)
+  Beers.deleteOneBeer(req.params.id)
     .then(() => {
       res.status(202).json({
         message: 'Beer deleted',
