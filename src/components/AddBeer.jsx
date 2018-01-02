@@ -7,7 +7,7 @@ import './../css/reset.css';
 const AddBeer = (props) => {
   console.log('AddBeer component loaded');
   return (
-    <NavLink to="/BeersList/Beerform/" >
+    <NavLink to="/BeersList/BeerEdit/" >
       <div className="addBeer">
         <h1>  + </h1>
         <p> add Beer </p>
@@ -18,4 +18,3 @@ const AddBeer = (props) => {
 };
 
 export default AddBeer;
-

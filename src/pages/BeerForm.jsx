@@ -69,14 +69,14 @@ class BeerForm extends Component {
           </div>
         </form>
 
-
-        <div className="container">
-          <SingleNav name="prev" />
-          <SingleNav name="edit" />
-          <SingleNav name="delete" />
-          <SingleNav name="next" />
-        </div>
-
+        {/*}
+        // <div className="container">
+        //   <SingleNav name="prev" />
+        //   <SingleNav name="edit" />
+        //   <SingleNav name="delete" />
+        //   <SingleNav name="next" />
+        // </div>
+        */}
       </div>
 
 
