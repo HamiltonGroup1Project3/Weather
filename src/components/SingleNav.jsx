@@ -23,7 +23,7 @@ const SingleNav = (props) => {
       </div>
 
       <div className="container">
-        <NavLink to="/BeersList/BeerEdit" className="singleNav">
+        <NavLink to="/BeersList/BeerEdit" className="singleNav" type={props.type}>
           <p>Delete</p>
         </NavLink>
       </div>

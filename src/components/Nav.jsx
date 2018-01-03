@@ -15,7 +15,7 @@ const Nav = () => {
       List
       </NavLink>
       <NavLink to="/BeersList/BeerDetails" className="nav" activeClassName="active">
-      Details/Form
+      Details
       </NavLink>
 
     </div>

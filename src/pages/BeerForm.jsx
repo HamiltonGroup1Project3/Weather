@@ -1,6 +1,7 @@
 import 'font-awesome/css/font-awesome.min.css';
 import React, { Component } from 'react';
 import SingleNav from './../components/SingleNav';
+import Filter from './../components/Filter';
 import './../css/App.css';
 import './../css/reset.css';
 
@@ -25,7 +26,10 @@ class BeerForm extends Component {
       [name]: value,
     });
   }
+
+
   render() {
+      console.log(this.props.type);
     console.log({'BeerForm loaded': this.state});
 
     return (
@@ -38,56 +42,74 @@ class BeerForm extends Component {
         onSubmit={this.props.isadd
           ? change => this.props.beerSubmit('Put', change, this.state )
           : change => this.props.beerSubmit('Post' , change,
-            this.state, this.props.beer.id)}>
+            this.state, this.props.beer.id) }>
 
-          <div className="form-typeFinder">
+          <div className="formEntry">
             <input
               type="text"
+              className="formInput"
               name="name"
               placeholder="Name"
               value={this.state.name}
               onChange={this.handleChange}
             />
 
-            <input
-              type="text"
-              name="typeID"
-              placeholder="Type"
-              value={this.state.type}
-              onChange={this.handleChange}
-            />
-
 
             <input
               type="text"
+              className="formInput"
               name="brewery"
               placeholder="Brewery"
               value={this.state.brewery}
               onChange={this.handleChange}
             />
 
+
             <input
               type="text"
+              className="formInput"
               name="description"
               placeholder="Description"
               value={this.state.description}
               onChange={this.handleChange}
-
             />
 
 
-            <input type="submit" value={this.props.addBeer ? 'AddBeer' : 'Submit'}       />
+            <select
+              name="typeID"
+              value={this.state.value}
+              onChange={this.handleChange}
+              className="formInput2"
+            >
+              <option value="1">Select Type</option>
+              {this.props.type.map(type => (
+                <option
+                  value={type.id}
+                  key={type.id}
+                > {type.name}
+                </option>
+              ))}
+            </select>
+
+{/*
+            <input
+              type="text"
+              className="formInput"
+              name="typeID"
+              placeholder="Type"
+              value={this.state.type}
+              onChange={this.handleChange}
+            />
+*/}
+
+            <input
+              type="submit"
+              className="nav"
+              value={this.props.addBeer ? 'AddBeer' : 'Submit'}
+            />
+
           </div>
         </form>
-
-        {/*}
-        // <div className="container">
-        //   <SingleNav name="prev" />
-        //   <SingleNav name="edit" />
-        //   <SingleNav name="delete" />
-        //   <SingleNav name="next" />
-        // </div>
-        */}
       </div>
 
 
