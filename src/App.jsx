@@ -8,8 +8,8 @@ import BeersList from './pages/BeersList';
 import BeerForm from './pages/BeerForm';
 import BeerDetails from './pages/BeerDetails';
 import NotFound from './pages/NotFound';
-import './css/App.css';
 import './css/reset.css';
+import './css/App.css';
 
 // state of main application
 class App extends Component {

@@ -59,8 +59,10 @@ font-style: italic;
 /*################*/
 
 .beerForm {
+    font-size: 1.1em;
+  line-height: 150%;
   color: white;
-  min-height: 300px;
+  min-height: 70vh;
   max-width: 700px;
   margin: 10px auto;
   padding: 5px;
@@ -72,8 +74,8 @@ font-style: italic;
 
 .beersList {
   color: white;
-  min-height: 300px;
-  margin: 20px;
+  min-height: 70vh;
+  margin: 10px;
   background-color: rgba(98, 98, 80, 0.52);
   border: 0px solid rgba(100,00,00,.3) ;
   border-radius: 10px;
@@ -81,15 +83,16 @@ font-style: italic;
 }
 
 .home {
-  min-height: 500px;
+  min-height: 70vh;
   min-width: 200px;
   max-width: 800px;
-  margin: 0 auto;
+  margin: 10px auto;
   text-shadow: 0px 0px 3px grey, 0 0 10px black, 0 0 20px white;
   background-color: rgba(98, 98, 80, .8);
   border: 0px solid rgba(000,100,100,.3);
   border-radius: 10px;
-
+  font-size: 1.3em;
+  line-height: 150%;
   color: white;
 
 }
@@ -282,9 +285,11 @@ select option {
   width: 150px;
   height: 20px;
   display: block;
+  font-size: .8em;
   border-radius: 5px;
   color: rgba(52,27,12, 1);
   background-color: rgba(229,197,153, .7);
+  font-size: .8em;
 }
 
 input::-webkit-input-placeholder {
@@ -296,6 +301,7 @@ font-style: oblique;
   margin: 10px auto;
   width: 153px;
   height: 23px;
+  font-size: .8em;
   display: block;
   border-radius: 5px;
   color: rgba(52,27,12, 1);

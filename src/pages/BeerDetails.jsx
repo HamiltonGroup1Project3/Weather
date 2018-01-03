@@ -1,8 +1,8 @@
 import 'font-awesome/css/font-awesome.min.css';
 import React from 'react';
 import SingleNav from './../components/SingleNav';
-import './../css/App.css';
 import './../css/reset.css';
+import './../css/App.css';
 
 import App from './../App';
 
