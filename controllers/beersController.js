@@ -8,12 +8,8 @@ const beersController = {};
 beersController.index = (req, res, next) => {
   Beers.findAllBeers()
     .then((beers) => {
-      res.status(200).json({
-        message: 'ok',
-        data:    {
-          beers,
-        },
-      });
+      res.locals.data = beers;
+      next();
     })
     .catch(next);
 };
@@ -22,12 +18,8 @@ beersController.index = (req, res, next) => {
 beersController.show = (req, res, next) => {
   Beers.findOneBeer(req.params.id)
     .then((beer) => {
-      res.status(200).json({
-        message: 'ok',
-        data:    {
-          beer,
-        },
-      });
+      res.locals.beer = beer;
+      next();
     })
     .catch(next);
 };
@@ -41,7 +33,7 @@ beersController.create = (req, res, next) => {
       res.locals.beerID = beerID;
       next();
     })
-    .catch(err => next(err));
+    .catch(next);
 };
 
 
@@ -77,12 +69,8 @@ beersController.update = (req, res, next) => {
       description: req.body.description,
     }))
     .then((beer) => {
-      res.status(202).json({
-        message: 'Beer successfully updated',
-        data:    {
-          beer,
-        },
-      });
+      res.locals.beer = beer;
+      next();
     })
     .catch(next);
 };
@@ -90,11 +78,7 @@ beersController.update = (req, res, next) => {
 // delete one beer
 beersController.delete = (req, res, next) => {
   Beers.deleteOneBeer(req.params.id)
-    .then(() => {
-      res.status(202).json({
-        message: 'Beer deleted',
-      });
-    })
+    .then(() => next())
     .catch(next);
 };
 
