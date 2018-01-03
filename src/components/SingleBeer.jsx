@@ -16,9 +16,10 @@ const SingleBeer = (props) => {
     >
 
       <div className="singleBeer">
-        {props.id}
+        {/*props.id*/}
         {/* <<  to hide later, using for reference  */ }
         <p>  {props.name} </p>
+        <br />
         <p> {props.brewery} </p>
 
 
