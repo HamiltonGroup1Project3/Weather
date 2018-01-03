@@ -27,7 +27,7 @@ console.log({ 'id': id})
       <p>some text  </p><br />
 
 
-      <SingleNav />
+      <SingleNav type={props.type}/>
     </div>
 
   );

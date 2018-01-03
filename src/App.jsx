@@ -50,7 +50,6 @@ class App extends Component {
     fetch('/api/beers/')
       .then(res => res.json())
       .then((res) => {
-        debugger;
         this.setState({
           beersData:   res.data,
           beersLoaded: true,
@@ -157,7 +156,7 @@ class App extends Component {
 
 
           {/* If api Beers data has returned beerlist component is rendered */}
-          {(this.state.beersLoaded)
+          {(this.state.typesLoaded) && (this.state.beersLoaded)
           ? <Route
             path="/BeersList"
             render={props => (<BeersList
@@ -172,27 +171,33 @@ class App extends Component {
 
 
         {/* route for individual beer details */}
-          <Route
+          {(this.state.typesLoaded) && (this.state.beersLoaded)
+          ? <Route
             path="/BeersList/BeerDetails"
             render={props => (<BeerDetails
               {...props}
               beer={this.state.beersData}
+              type={this.state.typesData}
             />
             )}
           />
+          : <p> Loading... </p> }
 
 
           {/* route to edit form */}
-          <Route
+          {(this.state.typesLoaded) && (this.state.beersLoaded)
+          ? <Route
             path="/BeersList/BeerEdit"
             render={props => (<BeerForm
               {...props}
               beer={this.state.beersData}
               beerSubmit={this.beerSubmit}
+              type={this.state.typesData}
 
             />
             )}
           />
+          : <p> Loading... </p> }
 
 
           {/* catch all for bad routes */}
