@@ -24,7 +24,7 @@ console.log({ 'index': index})
       <p>Brewery: {props.beer[`${index}`].brewery} </p><br />
       <p>Type: {props.beer[`${index}`].type.join(',')}  </p><br />
       <p>Description: {props.beer[`${index}`].description} </p><br />
-      <p>some text  </p><br />
+
 
 
       <SingleNav deleteBeer={props.deleteBeer} type={props.type} beer={props.beer} id={props.beer[`${index}`].id} />
