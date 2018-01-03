@@ -48,17 +48,13 @@ Phase4
 3. UserStory: As a user I would like to edit my user information.
 
 
-## References and Acknowledgements 
-- a
-- b
-
-## Resources
-- [Heroku](https://devcenter.heroku.com/articles/heroku-postgresql)
-- [React](https://reactjs.org/docs/react-component.html#setstate)
-- [React-Router](https://reacttraining.com/react-router/)
-- [High order functions](https://code.tutsplus.com/tutorials/how-to-use-map-filter-reduce-in-javascript--cms-26209)
-- [Summary Table- PostGres](https://lorenstewart.me/2017/12/03/postgresqls-array_agg-function/)
-- [Alias - Postgres](https://www.tutorialspoint.com/postgresql/postgresql_alias_syntax.htm)
+## References and Resources
+- [Heroku docs](https://devcenter.heroku.com/articles/heroku-postgresql)
+- [React docs](https://reactjs.org/docs/react-component.html#setstate)
+- [React-Router docs](https://reacttraining.com/react-router/)
+- [High order functions tutorials- How to use map, filter, reduce](https://code.tutsplus.com/tutorials/how-to-use-map-filter-reduce-in-javascript--cms-26209)
+- [Summary Table, Array.agg - PostGres](https://lorenstewart.me/2017/12/03/postgresqls-array_agg-function/)
+- [Alias syntax - Postgres](https://www.tutorialspoint.com/postgresql/postgresql_alias_syntax.htm)
 
 ## Technologies
 
