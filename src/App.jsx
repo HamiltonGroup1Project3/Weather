@@ -50,11 +50,12 @@ class App extends Component {
     fetch('/api/beers/')
       .then(res => res.json())
       .then((res) => {
+        debugger;
         this.setState({
-          beersData:   res.data.beers,
+          beersData:   res.data,
           beersLoaded: true,
         });
-        console.log({ 'Beers Api': res.data.beers });
+        console.log({ 'Beers Api': res.data});
       })
       .catch(err => console.log(err));
   }

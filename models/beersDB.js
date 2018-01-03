@@ -37,7 +37,6 @@ module.exports = {
 
   // function to add a beer to the collection.
   addOneBeer(beer) {
-    debugger;
     return db.tx('beerInsertion', async (t) => {
       /* insert a new entry into beers, grab the beer id */
       const { id: beerID } = await t.one(`
@@ -67,7 +66,7 @@ module.exports = {
       DELETE
       FROM beer
       WHERE id = $1
-      `, id);
+      `, +id);
   }
 }
 
