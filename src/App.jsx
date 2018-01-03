@@ -33,7 +33,7 @@ class App extends Component {
     this.getAllTypes = this.getAllTypes.bind(this);
     this.getSingleBeer = this.getSingleBeer.bind(this);
     this.beerSubmit = this.beerSubmit.bind(this);
-    // this.deleteBeer = this.deleteBeer.bind(this);
+    this.deleteBeer = this.deleteBeer.bind(this);
   }
 
   // items to load when the main page mounts
@@ -104,21 +104,20 @@ class App extends Component {
       },
       body: JSON.stringify(data),
     })
-      .then(res => res.json())
-      .then((res) => {
-        return this.getAllBeers();
-      });
+      .then((res) => { console.log(res)
+        this.getAllBeers();}
+      );
   }
 
 
   // for deleting a beer based by id
   deleteBeer(id) {
+    console.log({"beerDelete": id })
     fetch(`/api/beers/${id}`, {
-      method: 'Delete',
-    }).then(res => res.json())
-      .then((res) => {
-        this.getAllBeers();
-      });
+      method: 'delete',
+    })
+      .then(() => this.getAllBeers()
+      );
   }
 
 
@@ -178,6 +177,7 @@ class App extends Component {
               {...props}
               beer={this.state.beersData}
               type={this.state.typesData}
+              deleteBeer={this.deleteBeer}
             />
             )}
           />

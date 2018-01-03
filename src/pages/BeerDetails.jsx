@@ -11,23 +11,23 @@ const BeerDetails = (props) => {
 
   // pulls the index of the beer from the hash and stores it as index, if none then set it to 1st index
   // **Should pass up to class
-  let id = null;
-  if (props.location.hash == false) (id = 0); else (id = props.location.hash.substr(1)-1);
+  let index = null;
+  if (props.location.hash == false) (index = 0); else (index = props.location.hash.substr(1)-1);
 
-console.log({ 'id': id})
+console.log({ 'index': index})
 
   // return the information of the individual beer
   return (
     <div className="beerForm">
       <br />
-      <p>Name: {props.beer[`${id}`].name}  </p><br />
-      <p>Brewery: {props.beer[`${id}`].brewery} </p><br />
-      <p>Type: {props.beer[`${id}`].type.join(',')}  </p><br />
-      <p>Description: {props.beer[`${id}`].description} </p><br />
+      <p>Name: {props.beer[`${index}`].name}  </p><br />
+      <p>Brewery: {props.beer[`${index}`].brewery} </p><br />
+      <p>Type: {props.beer[`${index}`].type.join(',')}  </p><br />
+      <p>Description: {props.beer[`${index}`].description} </p><br />
       <p>some text  </p><br />
 
 
-      <SingleNav type={props.type}/>
+      <SingleNav deleteBeer={props.deleteBeer} type={props.type} beer={props.beer} id={props.beer[`${index}`].id} />
     </div>
 
   );

@@ -59,16 +59,17 @@ module.exports = {
   /* function 'deleteOneBeer' to remove a beer (from both the xref table and the beer table) */
 
   deleteOneBeer(id) {
-    return db.none('beerDeletion', async (t) => {
-      const { id: beerID } = await t.one(`
+    console.log(id);
+    return db.tx('beerDeletion', async (t) => {
+       t.none(`
         DELETE FROM x_ref_table
-        WHERE beer_id = $1;
-        `, beer);
+        WHERE beer_id = $1
+        `, id);
 
-      await t.one(`
+      await t.none(`
         DELETE FROM beer
         WHERE id = $1
-        `, +id);
+        `, id);
       });
     }
   }

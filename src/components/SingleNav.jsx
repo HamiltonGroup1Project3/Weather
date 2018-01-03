@@ -7,6 +7,8 @@ import './../css/reset.css';
 const SingleNav = (props) => {
   console.log({ 'SingleNav component loaded': props });
   // need to have currentBeer and place it after hash
+
+
   return (
     <div className="container">
       <div className="container">
@@ -16,14 +18,14 @@ const SingleNav = (props) => {
       </div>
 
       <div className="container">
-        <NavLink to="/BeersList/BeerEdit" className="singleNav" isadd={false}>
+        <NavLink to="/BeersList/BeerEdit" className="singleNav" isadd={"false"}>
 
           <p>Edit</p>
         </NavLink>
       </div>
 
       <div className="container">
-        <NavLink to="/BeersList/BeerEdit" className="singleNav" type={props.type}>
+        <NavLink to="/BeersList/" className="singleNav" type={props.type} onClick={()=> props.deleteBeer(props.id)} >
           <p>Delete</p>
         </NavLink>
       </div>
