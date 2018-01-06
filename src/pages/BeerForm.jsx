@@ -1,5 +1,6 @@
 import 'font-awesome/css/font-awesome.min.css';
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import SingleNav from './../components/SingleNav';
 import Filter from './../components/Filter';
 import './../css/App.css';
@@ -19,9 +20,10 @@ class BeerForm extends Component {
     this.handleChange = this.handleChange.bind(this);
   }
 
-  handleChange(change) {
-    const name = change.target.name;
-    const value = change.target.value;
+
+  handleChange(event) {
+    const name = event.target.name;
+    const value = event.target.value;
     this.setState({
       [name]: value,
     });
@@ -39,12 +41,15 @@ class BeerForm extends Component {
 
       {/* It's its an edit for then update for that id, if its add then just post new state. */}
         <form className={this.props.isadd ? 'addForm' : 'editForm'}
-        onSubmit={this.props.isadd
-          ? change => this.props.beerSubmit('Put', change, this.state )
-          : change => this.props.beerSubmit('Post' , change,
+          onSubmit={this.props.isadd
+          ? event => this.props.beerSubmit('PUT', event, this.state )
+          : event => this.props.beerSubmit('POST', event,
             this.state, this.props.beer.id) }>
 
+
           <div className="formEntry">
+
+            {/* Input for Beer table name */}
             <input
               type="text"
               className="formInput"
@@ -55,6 +60,7 @@ class BeerForm extends Component {
             />
 
 
+            {/* Input for Beer table Brewery*/}
             <input
               type="text"
               className="formInput"
@@ -65,6 +71,7 @@ class BeerForm extends Component {
             />
 
 
+            {/* Input for Beer table Brewery*/}
             <input
               type="text"
               className="formInput"
@@ -75,13 +82,18 @@ class BeerForm extends Component {
             />
 
 
+            {/* Input for Type table Name using drop down */}
             <select
               name="typeID"
               value={this.state.value}
               onChange={this.handleChange}
               className="formInput2"
             >
+
+              {/* default to 1 for select  */}
               <option value="1">Select Type</option>
+
+            {/* map over types and add to drop down */}
               {this.props.type.map(type => (
                 <option
                   value={type.id}
@@ -91,22 +103,15 @@ class BeerForm extends Component {
               ))}
             </select>
 
-{/*
-            <input
-              type="text"
-              className="formInput"
-              name="typeID"
-              placeholder="Type"
-              value={this.state.type}
-              onChange={this.handleChange}
-            />
-*/}
 
+<Link to="/BeersList">
             <input
               type="submit"
               className="nav"
               value={this.props.addBeer ? 'AddBeer' : 'Submit'}
             />
+
+</Link>
 
           </div>
         </form>

@@ -11,3 +11,7 @@ INSERT INTO location (zip, type_id) VALUES
 (90210, 1),
 (12345, 2),
 (76054, 3);
+<<<<<<< HEAD
+=======
+
+>>>>>>> 9784c6a139ba5a32c9cef47507e5fe8592a0bff4
