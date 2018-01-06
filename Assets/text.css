@@ -1,0 +1,133 @@
+.text-style-3 {
+	font-family: ProximaNova;
+	font-size: 56px;
+	font-weight: 300;
+	text-align: center;
+	color: rgb(255, 255, 255);
+	color: var(--white);
+}
+
+.text-style {
+	font-family: SFUIDisplay;
+	font-size: 24px;
+	font-weight: 500;
+	text-align: center;
+	color: rgb(255, 255, 255);
+	color: var(--white);
+}
+
+.text-style-6 {
+	font-family: SFUIDisplay;
+	font-size: 24px;
+	font-weight: 500;
+	line-height: 1.67;
+	text-align: center;
+	color: rgb(125, 203, 196);
+	color: var(--pale-teal);
+}
+
+.text-style-8 {
+	font-family: ProximaNova;
+	font-size: 20px;
+	font-weight: bold;
+	text-align: center;
+	color: rgb(255, 255, 255);
+	color: var(--white);
+}
+
+.text-style-5 {
+	font-family: Gotham;
+	font-size: 20px;
+	line-height: 1.3;
+	text-align: left;
+	color: rgb(255, 255, 255);
+	color: var(--white);
+}
+
+.text-style-4 {
+	font-family: ProximaNova;
+	font-size: 20px;
+	text-align: left;
+	color: rgb(83, 110, 123);
+	color: var(--slate);
+}
+
+.text-style-14 {
+	font-family: ProximaNova;
+	font-size: 20px;
+	letter-spacing: 2px;
+	text-align: center;
+	color: rgb(95, 125, 140);
+	color: var(--blue-grey);
+}
+
+.text-style-7 {
+	font-family: ProximaNova;
+	font-size: 18px;
+	text-align: center;
+	color: rgb(255, 255, 255);
+	color: var(--white);
+}
+
+.text-style-13 {
+	font-family: ProximaNova;
+	font-size: 16px;
+	font-weight: bold;
+	letter-spacing: 1.6px;
+	text-align: center;
+	color: rgb(255, 255, 255);
+	color: var(--white);
+}
+
+.text-style-2 {
+	font-family: SFUIDisplay;
+	font-size: 16px;
+	font-weight: 500;
+	letter-spacing: 1.6px;
+	text-align: center;
+	color: rgb(255, 255, 255);
+	color: var(--white);
+}
+
+.text-style-9 {
+	font-family: SFUIDisplay;
+	font-size: 16px;
+	font-weight: 500;
+	text-align: center;
+	color: rgb(255, 255, 255);
+	color: var(--white);
+}
+
+.text-style-10 {
+	font-family: SFUIDisplay;
+	font-size: 16px;
+	font-weight: 500;
+	text-align: left;
+	color: rgb(255, 255, 255);
+	color: var(--white);
+}
+
+.text-style-12 {
+	font-family: SFUIDisplay;
+	font-size: 16px;
+	font-weight: 500;
+	text-align: right;
+	color: rgb(255, 255, 255);
+	color: var(--white);
+}
+
+.text-style-11 {
+	font-family: ProximaNova;
+	font-size: 16px;
+	text-align: left;
+	color: rgb(255, 255, 255);
+	color: var(--white);
+}
+
+.text-style-15 {
+	font-family: ProximaNova;
+	font-size: 16px;
+	text-align: center;
+	color: rgb(255, 255, 255);
+	color: var(--white);
+}

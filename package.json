@@ -25,7 +25,11 @@
     "babel-regenerator-runtime": "^6.5.0",
     "bulma": "^0.6.1",
     "clean-webpack-plugin": "^0.1.16",
+<<<<<<< HEAD
     "css-loader": "^0.28.7",
+=======
+    "css-loader": "^0.28.8",
+>>>>>>> 9784c6a139ba5a32c9cef47507e5fe8592a0bff4
     "dotenv": "^4.0.0",
     "eslint": "^4.14.0",
     "eslint-config-airbnb": "^16.1.0",
@@ -39,7 +43,11 @@
     "html-webpack-template": "^6.1.0",
     "jwt-decode": "^2.2.0",
     "node-sass": "^4.5.3",
+<<<<<<< HEAD
     "nodemon": "^1.14.3",
+=======
+    "nodemon": "^1.14.8",
+>>>>>>> 9784c6a139ba5a32c9cef47507e5fe8592a0bff4
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "react-router-dom": "^4.2.2",

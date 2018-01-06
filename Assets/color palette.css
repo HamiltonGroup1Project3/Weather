@@ -1,0 +1,25 @@
+:root {
+	--pumpkin-orange-40: rgba(247, 127, 0, 0.4);
+	--pumpkin-orange: rgb(247, 127, 0);
+	--blue-green: rgb(25, 166, 154);
+	--blue-grey: rgb(95, 125, 140);
+	--piss-yellow: rgb(236, 212, 40);
+	--pale-teal: rgb(125, 203, 196);
+	--light-teal: rgb(132, 219, 185);
+	--bluey-grey: rgb(143, 164, 175);
+	--cornflower-blue: rgb(83, 124, 215);
+	--dodger-blue: rgb(51, 184, 248);
+	--silver: rgb(207, 216, 220);
+	--charcoal-grey: rgb(54, 71, 79);
+	--dark: rgb(22, 31, 36);
+	--dark-two: rgb(38, 50, 56);
+	--white-20: rgba(255, 255, 255, 0.2);
+	--greyish-brown-20: rgba(61, 61, 61, 0.2);
+	--greyish-brown-10: rgba(61, 61, 61, 0.1);
+	--greyish-brown-50: rgba(61, 61, 61, 0.5);
+	--greyish-brown-80: rgba(61, 61, 61, 0.8);
+	--white: rgb(255, 255, 255);
+	--dark-10: rgba(22, 31, 36, 0.1);
+	--slate: rgb(83, 110, 123);
+	--bluish-grey: rgb(119, 144, 157);
+}

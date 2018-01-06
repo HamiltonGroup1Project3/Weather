@@ -1,5 +1,9 @@
 # Jackhammerz Weather App
+<<<<<<< HEAD
 Did this update? 
+=======
+ 
+>>>>>>> 9784c6a139ba5a32c9cef47507e5fe8592a0bff4
 
 ## Team 
 Dev Team
@@ -107,3 +111,7 @@ Using array_agg(type.name) AS type  merges the duplicate entries and turns them 
 5. Setup - In a second terminal window
     - CD into project3
     - npm run watch
+<<<<<<< HEAD
+=======
+
+>>>>>>> 9784c6a139ba5a32c9cef47507e5fe8592a0bff4

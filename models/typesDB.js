@@ -12,4 +12,9 @@ module.exports = {
       `);
   },
 
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> 9784c6a139ba5a32c9cef47507e5fe8592a0bff4
 };

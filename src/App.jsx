@@ -24,10 +24,13 @@ class App extends Component {
         description: null,
         type:        null,
       },
-      typesData:     null,
-      typesLoaded:   false,
-      singleBeer: null,
+      typesData:        null,
+      typesLoaded:      false,
+      singleBeer:       null,
       singleBeerLoaded: false,
+      breweryData:      null,
+      breweryLoaded:    false,
+
     };
     this.getAllBeers = this.getAllBeers.bind(this);
     this.getAllTypes = this.getAllTypes.bind(this);
@@ -73,7 +76,6 @@ class App extends Component {
       })
       .catch(err => console.log(err));
   }
-
 
 
   // method of using another api call to get single beer
