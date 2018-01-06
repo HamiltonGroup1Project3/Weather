@@ -18,7 +18,4 @@ CREATE TABLE location (
   type_id serial REFERENCES type.type_id,
   name VARCHAR(255)
 );
-<<<<<<< HEAD
-=======
 
->>>>>>> 9784c6a139ba5a32c9cef47507e5fe8592a0bff4

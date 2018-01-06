@@ -6,17 +6,10 @@ const path            = require('path');
 const bodyParser      = require('body-parser');
 
 // //import controller
-<<<<<<< HEAD
-// const beersController = require('./controllers/beersController');
-
-// routes
-const beerRoutes = require('./routes/beerRoutes');
-=======
 // const locationsController = require('./controllers/locationsController');
 
 // routes
 const locationRoutes = require('./routes/locationRoutes');
->>>>>>> 9784c6a139ba5a32c9cef47507e5fe8592a0bff4
 const typeRoutes = require('./routes/typeRoutes');
 
 
@@ -36,11 +29,8 @@ app.use(bodyParser.urlencoded({
 }));
 app.use(bodyParser.json());
 
-<<<<<<< HEAD
-app.use('/api/beers', beerRoutes);
-=======
+
 app.use('/api/locations', locationRoutes);
->>>>>>> 9784c6a139ba5a32c9cef47507e5fe8592a0bff4
 app.use('/api/types', typeRoutes);
 
 // app.get('/test', controller.index, (req, res, next) => {
