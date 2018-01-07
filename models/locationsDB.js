@@ -16,7 +16,7 @@ module.exports = {
   // function 'findOneLocation' to find one location
   findOneLocation(locationID) {
     return db.one(`
-        SELECT DISTINCT location.name, location.zip, location.id, type.id FROM location INNER JOIN type ON type.id = location.type_id where location_id = $1ORDER BY location.zip;
+        SELECT DISTINCT location.name, location.zip, location.id, type.id FROM location INNER JOIN type ON type.id = location.type_id where location_id = $1 ORDER BY location.zip;
       `, locationID);
   },
 

@@ -16,7 +16,7 @@ locationsController.index = (req, res, next) => {
 
 // find one location
 locationsController.show = (req, res, next) => {
-  Locations.findOneBeer(req.params.id)
+  Locations.findOneLocation(req.params.id)
     .then((location) => {
       res.locals.location = location;
       next();
@@ -28,7 +28,7 @@ locationsController.show = (req, res, next) => {
 // // add one location
 locationsController.create = (req, res, next) => {
   console.log(req.body, 'body');
-  Locations.addOneBeer(req.body)
+  Locations.addOneLocation(req.body)
     .then((locationID) => {
       res.locals.locationID = locationID;
       next();
@@ -40,7 +40,7 @@ locationsController.create = (req, res, next) => {
 // locationsController.create = (req, res, next) => {
 //   console.log(req.body, 'body');
 //   try {
-//     new Locations.addOneBeer({
+//     new Locations.addOneLocation({
 //       brewery:     req.body.brewery,
 //       name:        req.body.name,
 //       description: req.body.description,
@@ -48,7 +48,7 @@ locationsController.create = (req, res, next) => {
 //       .save()
 //       .then((location) => {
 //         res.status(201).json({
-//           message: 'Beer successfully created',
+//           message: 'Location successfully created',
 //           data:    {
 //             location,
 //           },
@@ -62,8 +62,8 @@ locationsController.create = (req, res, next) => {
 
 // edit one location
 locationsController.update = (req, res, next) => {
-  Locations.findOneBeer(req.params.id)
-    .then(location => location.editOneBeer({
+  Locations.findOneLocation(req.params.id)
+    .then(location => location.editOneLocation({
       brewery:     req.body.brewery,
       name:        req.body.name,
       description: req.body.description,
@@ -77,7 +77,7 @@ locationsController.update = (req, res, next) => {
 
 // delete one location
 locationsController.delete = (req, res, next) => {
-  Locations.deleteOneBeer(req.params.id)
+  Locations.deleteOneLocation(req.params.id)
     .then(() => next())
     .catch(next);
 };

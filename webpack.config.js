@@ -51,7 +51,7 @@ const config = {
       },
     }),
     new HtmlWebpackPlugin({
-      title:      'Top Shelf',
+      title:      'Weather',
       xhtml:      true,
       inject:     false,
       template:   htmlTemplate,

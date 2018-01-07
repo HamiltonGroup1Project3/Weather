@@ -6,14 +6,14 @@ import Filter from './../components/Filter';
 import './../css/App.css';
 import './../css/reset.css';
 
-class BeerForm extends Component {
+class LocationForm extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      name:        props.beer ? props.beer.name : '',
-      brewery:     props.beer ? props.beer.brewery : '',
-      description: props.beer ? props.beer.description : '',
-      typeID: props.beer ? props.beer.typeID : '',
+      name:        props.location ? props.location.name : '',
+      brewery:     props.location ? props.location.brewery : '',
+      description: props.location ? props.location.description : '',
+      typeID: props.location ? props.location.typeID : '',
 
 
     };
@@ -32,24 +32,24 @@ class BeerForm extends Component {
 
   render() {
       console.log(this.props.type);
-    console.log({'BeerForm loaded': this.state});
+    console.log({'LocationForm loaded': this.state});
 
     return (
 
-      <div className="beerForm">
-        <p>This is the Beerform. It will display the detail information for each beer and allow for add & edit. </p>
+      <div className="locationForm">
+        <p>This is the Locationform. It will display the detail information for each location and allow for add & edit. </p>
 
       {/* It's its an edit for then update for that id, if its add then just post new state. */}
         <form className={this.props.isadd ? 'addForm' : 'editForm'}
           onSubmit={this.props.isadd
-          ? event => this.props.beerSubmit('PUT', event, this.state )
-          : event => this.props.beerSubmit('POST', event,
-            this.state, this.props.beer.id) }>
+          ? event => this.props.locationSubmit('PUT', event, this.state )
+          : event => this.props.locationSubmit('POST', event,
+            this.state, this.props.location.id) }>
 
 
           <div className="formEntry">
 
-            {/* Input for Beer table name */}
+            {/* Input for Location table name */}
             <input
               type="text"
               className="formInput"
@@ -60,7 +60,7 @@ class BeerForm extends Component {
             />
 
 
-            {/* Input for Beer table Brewery*/}
+            {/* Input for Location table Brewery*/}
             <input
               type="text"
               className="formInput"
@@ -71,7 +71,7 @@ class BeerForm extends Component {
             />
 
 
-            {/* Input for Beer table Brewery*/}
+            {/* Input for Location table Brewery*/}
             <input
               type="text"
               className="formInput"
@@ -104,11 +104,11 @@ class BeerForm extends Component {
             </select>
 
 
-<Link to="/BeersList">
+<Link to="/LocationsList">
             <input
               type="submit"
               className="nav"
-              value={this.props.addBeer ? 'AddBeer' : 'Submit'}
+              value={this.props.addLocation ? 'AddLocation' : 'Submit'}
             />
 
 </Link>
@@ -122,4 +122,4 @@ class BeerForm extends Component {
   }
 }
 
-export default BeerForm;
+export default LocationForm;
