@@ -4,18 +4,18 @@ import './../css/App.css';
 import './../css/reset.css';
 
 
-const SingleBeer = (props) => {
-  console.log({ 'SingleBeer component loaded': props });
+const SingleLocation = (props) => {
+  console.log({ 'SingleLocation component loaded': props });
   return (
 
     // passed the id to hash... need to make it index
     <NavLink
-      to={`/BeersList/BeerDetails#${props.id}`}
+      to={`/LocationsList/LocationDetails#${props.id}`}
       activeClassName="active"
       key={props.id}
     >
 
-      <div className="singleBeer">
+      <div className="singleLocation">
         {/*props.id*/}
         {/* <<  to hide later, using for reference  */ }
         <p>  {props.name} </p>
@@ -28,5 +28,5 @@ const SingleBeer = (props) => {
   );
 };
 
-export default SingleBeer;
+export default SingleLocation;
 

@@ -58,7 +58,7 @@ font-style: italic;
 /*#              #*/
 /*################*/
 
-.beerForm {
+.locationForm {
     font-size: 1.1em;
   line-height: 150%;
   color: white;
@@ -72,7 +72,7 @@ font-style: italic;
   text-shadow: 0px 0px 3px grey, 0 0 10px black, 0 0 20px white;
 }
 
-.beersList {
+.locationsList {
   color: white;
   min-height: 70vh;
   margin: 10px;
@@ -234,7 +234,7 @@ select option {
 }
 
 
-.singleBeer {
+.singleLocation {
   color: white;
   font-size: 20px;
   text-shadow: 1px 1px 3px black, 0 0 6px black, 0 0 5px darkgrey;
@@ -253,12 +253,12 @@ select option {
   z-index: 4;
 }
 
-.singleBeer:hover {
+.singleLocation:hover {
   background-color: darkgrey;
 
 }
 
-.addBeer {
+.addLocation {
   color: white;
   font-size: 20px;
   text-shadow: 1px 1px 3px black, 0 0 6px black, 0 0 5px darkgrey;
@@ -276,7 +276,7 @@ select option {
   z-index: 4;
 }
 
-.addBeer:hover {
+.addLocation:hover {
   background-color: grey;
 }
 
