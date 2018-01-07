@@ -23,8 +23,6 @@ class App extends Component {
       zip: 11374,
       units: "imperial",
       unitsSymbol: '\xB0F',
-      // units: 'imperial',
-      // unitsSymbol: this.getUnitsSymbol(this.units),
       calltype: 'weather',
       locationsLoaded: false,
       locationsData:   {
@@ -44,13 +42,13 @@ class App extends Component {
     this.getUnitsSymbol     = this.getUnitsSymbol.bind(this);
     this.getWeather         = this.getWeather.bind(this);
 
-    this.setCurrentLocation = this.setCurrentLocation.bind(this);
     this.getAllLocations    = this.getAllLocations.bind(this);
     this.getAllTypes        = this.getAllTypes.bind(this);
     this.getSingleLocation  = this.getSingleLocation.bind(this);
     this.locationSubmit     = this.locationSubmit.bind(this);
     this.deleteLocation     = this.deleteLocation.bind(this);
-    this.findZip = this.findZip.bind(this);
+    // this.setCurrentLocation = this.setCurrentLocation.bind(this);
+    // this.findZip = this.findZip.bind(this);
   }
 
 
@@ -93,32 +91,33 @@ class App extends Component {
 
 
   getWeather(units, zip) {
-    getCurrentWeather(units, zip);
-    getForecastWeather(units, zip);
+    console.log({'get Weather': {units, zip}});
+    this.getCurrentWeather(units, zip);
+    this.getForecastWeather(units, zip);
   }
 
 
+// // get the id from details page and update weather
+//   setCurrentLocation(findMe) {
+//     let id = findMe;
+//     console.log({id});
+//     let findId = null;
+//     let temp1 = this.state.locationsData;
+//     console.log({ 'temp1': temp1 });
 
-  setCurrentLocation(findMe) {
-    let id = findMe;
-    console.log({id});
-    let findId = null;
-    let temp1 = this.state.locationsData;
-    console.log({ 'temp1': temp1 });
+//     function locate(location) {
+//       console.log(location);
+//       return location.id == findId;
+//     }
 
-    function locate(location) {
-      console.log(location);
-      return location.id == findId;
-    }
-
-    function findZip(id) {
-      findId = id;
-      let temp = temp1.find(locate );
-      console.log(temp.type, temp.zip);
-      return this.getWeather(temp.type , temp.zip);
-    }
-    findZip(id);
-  }
+//     function findZip(id) {
+//       findId = id;
+//       let temp = temp1.find(locate );
+//       console.log(temp.type, temp.zip);
+//       return this.getWeather(temp.type , temp.zip);
+//     }
+//     findZip(id);
+//   }
 
 
 
@@ -142,6 +141,7 @@ class App extends Component {
           apiCurrentLoaded: true,
         })
         console.log({'getCurrentWeather': this.state.apiCurrentWeather});
+        console.log({ 'state after': this.state });
       })
       .catch(err => console.log(err))
   }
@@ -254,10 +254,10 @@ class App extends Component {
 
   editForm(id) {
     this.setState({
-      editName:    name,
-      editZip: zip,
-      editType:    type,
-      editDesc:    description,
+      editName:   name,
+      editZip:    zip,
+      editType:   type,
+      editDesc:   description,
     });
   }
 
@@ -277,13 +277,15 @@ class App extends Component {
 
 
           {/* Location List-  If api Locations data has returned locationlist component is rendered */}
-          {(this.state.typesLoaded) && (this.state.locationsLoaded)
+          {(this.state.typesLoaded) && (this.state.locationsLoaded) && (this.state.apiCurrentLoaded) && (this.state.apiForecastWeather)
           ? <Route
             path="/LocationsList"
             render={props => (<LocationsList
               {...props}
               locationsList={this.state.locationsData}
               getWeather={this.getWeather}
+              CurrentWeather={this.apiCurrentWeather}
+              ForecastWeather={this.apiForecastWeather}
             />
             )}
             exact
@@ -292,7 +294,7 @@ class App extends Component {
 
 
         {/* Details - route for individual location details */}
-          {(this.state.typesLoaded) && (this.state.locationsLoaded)
+          {(this.state.typesLoaded) && (this.state.locationsLoaded) && (this.state.apiCurrentLoaded) && (this.state.apiForecastWeather)
           ? <Route
             path="/LocationsList/LocationDetails"
             render={props => (<LocationDetails
@@ -302,6 +304,8 @@ class App extends Component {
               deleteLocation={this.deleteLocation}
               getWeather={this.getWeather}
               setCurrentLocation={this.setCurrentLocation}
+              CurrentWeather={this.apiCurrentWeather}
+              ForecastWeather={this.apiForecastWeather}
             />
             )}
           />
@@ -309,7 +313,7 @@ class App extends Component {
 
 
           {/* Form - route to edit form */}
-          {(this.state.typesLoaded) && (this.state.locationsLoaded)
+          {(this.state.typesLoaded) && (this.state.locationsLoaded) && (this.state.apiCurrentLoaded) && (this.state.apiForecastWeather)
           ? <Route
             path="/LocationsList/LocationEdit"
             render={props => (<LocationForm

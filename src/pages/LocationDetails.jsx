@@ -13,7 +13,11 @@ const LocationDetails = (props) => {
   // **Should pass up to class
   let index = null;
   if (props.history.location.hash == false) (index = 11374); else (index = props.history.location.hash.substr(1) );
-  props.setCurrentLocation(index);
+
+//props.getWeather('imperial', index);
+
+
+  // setCurrentLocation(index)
 
 console.log({ 'index': index})
 
