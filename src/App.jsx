@@ -30,31 +30,34 @@ class App extends Component {
       locationsData:   {
         id:          null,
         name:        null,
-        brewery:     null,
+        zip:     null,
         description: null,
-        type:        null,
+        type_id:        null,
       },
       typesData:        null,
       typesLoaded:      false,
       singleLocation:       null,
       singleLocationLoaded: false,
     };
-    this.getCurrentWeather=this.getCurrentWeather.bind(this);
-    this.getForecastWeather=this.getForecastWeather.bind(this);
-    this.getUnitsSymbol=this.getUnitsSymbol.bind(this);
+    this.getCurrentWeather  = this.getCurrentWeather.bind(this);
+    this.getForecastWeather = this.getForecastWeather.bind(this);
+    this.getUnitsSymbol     = this.getUnitsSymbol.bind(this);
+    this.getWeather         = this.getWeather.bind(this);
 
-
-    this.getAllLocations = this.getAllLocations.bind(this);
-    this.getAllTypes = this.getAllTypes.bind(this);
-    this.getSingleLocation = this.getSingleLocation.bind(this);
-    this.locationSubmit = this.locationSubmit.bind(this);
-    this.deleteLocation = this.deleteLocation.bind(this);
+    this.setCurrentLocation = this.setCurrentLocation.bind(this);
+    this.getAllLocations    = this.getAllLocations.bind(this);
+    this.getAllTypes        = this.getAllTypes.bind(this);
+    this.getSingleLocation  = this.getSingleLocation.bind(this);
+    this.locationSubmit     = this.locationSubmit.bind(this);
+    this.deleteLocation     = this.deleteLocation.bind(this);
+    this.findZip = this.findZip.bind(this);
   }
 
 
   // items to load when the main page mounts
   componentDidMount() {
     console.log('component did mount');
+    console.log({ 'state': this.state });
     this.getForecastWeather(this.state.units, this.state.zip);
     this.getCurrentWeather(this.state.units, this.state.zip);
     this.getAllLocations();
@@ -89,51 +92,78 @@ class App extends Component {
   }
 
 
+  getWeather(units, zip) {
+    getCurrentWeather(units, zip);
+    getForecastWeather(units, zip);
+  }
+
+
+
+  setCurrentLocation(findMe) {
+    let id = findMe;
+    console.log({id});
+    let findId = null;
+    let temp1 = this.state.locationsData;
+    console.log({ 'temp1': temp1 });
+
+    function locate(location) {
+      console.log(location);
+      return location.id == findId;
+    }
+
+    function findZip(id) {
+      findId = id;
+      let temp = temp1.find(locate );
+      console.log(temp.type, temp.zip);
+      return this.getWeather(temp.type , temp.zip);
+    }
+    findZip(id);
+  }
+
+
+
+
   getCurrentWeather(units, zip) {
-  let key='e3cd724c0500567870e3c02db59c2d1c';
-  // let key=process.env.REACT_APP_SECRET;
+    let key='e3cd724c0500567870e3c02db59c2d1c';
+    // let key=process.env.REACT_APP_SECRET;
     console.log(`zip is ${zip}`)
     console.log(`symbol is ${this.state.unitsSymbol}`)
     console.log('run getCurrentWeather')
     fetch(`http://api.openweathermap.org/data/2.5/${this.state.calltype}?zip=${zip}&appid=${key}&units=${units}`)
 
-  .then((res) => {
-     { /*debugger; */}
-    return res.json() })
-    // .then(res => res.json())
-    .then(res => {
-      // console.log(res);
-      this.setState({
-        apiCurrentWeather: res,
-        apiCurrentLoaded: true,
+      .then((res) => {
+        { /*debugger; */}
+        return res.json() })
+      // .then(res => res.json())
+      .then(res => {
+        // console.log(res);
+        this.setState({
+          apiCurrentWeather: res,
+          apiCurrentLoaded: true,
+        })
+        console.log({'getCurrentWeather': this.state.apiCurrentWeather});
       })
-      console.log({'getCurrentWeather': this.state.apiCurrentWeather});
-    })
-    .catch(err => console.log(err))
+      .catch(err => console.log(err))
   }
 
   // http://api.openweathermap.org/data/2.5/weather?zip=11374&appid=${WEATHER_API_KEY}&units=imperial
 
   getForecastWeather(units, zip) {
-  let key='e3cd724c0500567870e3c02db59c2d1c';
+    let key='e3cd724c0500567870e3c02db59c2d1c';
 
     console.log('run getForecastResults')
     fetch(`http://api.openweathermap.org/data/2.5/forecast?zip=${zip}&appid=${key}&units=${units}`)
-    .then(res => res.json())
-    .then(res => {
-      // console.log(res);
-      this.setState({
-        apiForecastWeather: res,
-        apiForecastLoaded: true,
+      .then(res => res.json())
+      .then(res => {
+        // console.log(res);
+        this.setState({
+          apiForecastWeather: res,
+          apiForecastLoaded: true,
+        })
+        console.log({ 'getForecastWeather': this.state.apiForecastWeather });
       })
-      console.log({'getForecastWeather': this.state.apiForecastWeather});
-    })
       .catch(err => console.log(err))
   }
-
-
-
-
 
 
   // api call to our local api to return locationsData
@@ -146,12 +176,13 @@ class App extends Component {
           locationsData:   res.data,
           locationsLoaded: true,
         });
-        console.log({ 'Locations Api': res.data});
+        console.log({ 'Locations Api': res.data });
+        console.log({ 'state': this.state });
       })
       .catch(err => console.log(err));
   }
 
-// api call to our local api to return types of locations list
+  // api call to our local api to return types of locations list
   getAllTypes() {
     console.log('get types');
     fetch('/api/types/')
@@ -221,11 +252,10 @@ class App extends Component {
   }
 
 
-
   editForm(id) {
     this.setState({
       editName:    name,
-      editBrewery: brewery,
+      editZip: zip,
       editType:    type,
       editDesc:    description,
     });
@@ -236,9 +266,9 @@ class App extends Component {
     return (
       <div className="App">
 
-        {/* pass in types for filtering on if loaded*/}
+        {/*Header - pass in types for filtering on if loaded*/}
         {(this.state.typesLoaded) && (this.state.locationsLoaded)
-        ? <Header type={this.state.typesData} brewery={this.state.typesData} />
+        ? <Header type={this.state.typesData} zip={this.state.typesData} />
         : <p> Loading... </p> }
 
 
@@ -246,22 +276,22 @@ class App extends Component {
           <Route path="/" exact component={Home} />
 
 
-          {/* If api Locations data has returned locationlist component is rendered */}
+          {/* Location List-  If api Locations data has returned locationlist component is rendered */}
           {(this.state.typesLoaded) && (this.state.locationsLoaded)
           ? <Route
             path="/LocationsList"
             render={props => (<LocationsList
               {...props}
               locationsList={this.state.locationsData}
+              getWeather={this.getWeather}
             />
             )}
             exact
-            locationsList={this.state.locationList}
           />
           : <p> Loading... </p> }
 
 
-        {/* route for individual location details */}
+        {/* Details - route for individual location details */}
           {(this.state.typesLoaded) && (this.state.locationsLoaded)
           ? <Route
             path="/LocationsList/LocationDetails"
@@ -270,13 +300,15 @@ class App extends Component {
               location={this.state.locationsData}
               type={this.state.typesData}
               deleteLocation={this.deleteLocation}
+              getWeather={this.getWeather}
+              setCurrentLocation={this.setCurrentLocation}
             />
             )}
           />
           : <p> Loading... </p> }
 
 
-          {/* route to edit form */}
+          {/* Form - route to edit form */}
           {(this.state.typesLoaded) && (this.state.locationsLoaded)
           ? <Route
             path="/LocationsList/LocationEdit"

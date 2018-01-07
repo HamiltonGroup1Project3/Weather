@@ -11,7 +11,7 @@ class LocationForm extends Component {
     super(props);
     this.state = {
       name:        props.location ? props.location.name : '',
-      brewery:     props.location ? props.location.brewery : '',
+      zip:     props.location ? props.location.zip : '',
       description: props.location ? props.location.description : '',
       typeID: props.location ? props.location.typeID : '',
 
@@ -60,18 +60,18 @@ class LocationForm extends Component {
             />
 
 
-            {/* Input for Location table Brewery*/}
+            {/* Input for Location table Zip Code*/}
             <input
               type="text"
               className="formInput"
-              name="brewery"
-              placeholder="Brewery"
-              value={this.state.brewery}
+              name="zip"
+              placeholder="Zip Code"
+              value={this.state.zip}
               onChange={this.handleChange}
             />
 
 
-            {/* Input for Location table Brewery*/}
+            {/* Input for Location table Zip Code
             <input
               type="text"
               className="formInput"
@@ -80,7 +80,7 @@ class LocationForm extends Component {
               value={this.state.description}
               onChange={this.handleChange}
             />
-
+*/}
 
             {/* Input for Type table Name using drop down */}
             <select
@@ -91,7 +91,7 @@ class LocationForm extends Component {
             >
 
               {/* default to 1 for select  */}
-              <option value="1">Select Type</option>
+              <option value="1">Select Units</option>
 
             {/* map over types and add to drop down */}
               {this.props.type.map(type => (

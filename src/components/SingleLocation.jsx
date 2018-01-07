@@ -13,14 +13,15 @@ const SingleLocation = (props) => {
       to={`/LocationsList/LocationDetails#${props.id}`}
       activeClassName="active"
       key={props.id}
+
     >
 
       <div className="singleLocation">
-        {/*props.id*/}
+        {props.id}
         {/* <<  to hide later, using for reference  */ }
         <p>  {props.name} </p>
         <br />
-        <p> {props.brewery} </p>
+        <p> {props.zip} </p>
 
 
       </div>
