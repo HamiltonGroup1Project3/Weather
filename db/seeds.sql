@@ -1,4 +1,4 @@
-\c jackhammerz
+\c groupweather
 
 INSERT INTO type (name) VALUES
 ('Imperial'),

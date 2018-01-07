@@ -4,20 +4,30 @@ import { Route, Switch, Link } from 'react-router-dom';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import Home from './pages/Home';
-import BeersList from './pages/BeersList';
-import BeerForm from './pages/BeerForm';
-import BeerDetails from './pages/BeerDetails';
+import LocationsList from './pages/LocationsList';
+import LocationForm from './pages/LocationForm';
+import LocationDetails from './pages/LocationDetails';
 import NotFound from './pages/NotFound';
 import './css/reset.css';
 import './css/App.css';
 
-// state of main application
+
 class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      beersLoaded: false,
-      beersData:   {
+      apiCurrentWeather: null,
+      apiCurrentLoaded: false,
+      apiForecastWeather: null,
+      apiForecastLoaded: false,
+      zip: 11374,
+      units: "imperial",
+      unitsSymbol: '\xB0F',
+      // units: 'imperial',
+      // unitsSymbol: this.getUnitsSymbol(this.units),
+      calltype: 'weather',
+      locationsLoaded: false,
+      locationsData:   {
         id:          null,
         name:        null,
         brewery:     null,
@@ -26,43 +36,126 @@ class App extends Component {
       },
       typesData:        null,
       typesLoaded:      false,
-      singleBeer:       null,
-      singleBeerLoaded: false,
-      breweryData:      null,
-      breweryLoaded:    false,
-
+      singleLocation:       null,
+      singleLocationLoaded: false,
     };
-    this.getAllBeers = this.getAllBeers.bind(this);
+    this.getCurrentWeather=this.getCurrentWeather.bind(this);
+    this.getForecastWeather=this.getForecastWeather.bind(this);
+    this.getUnitsSymbol=this.getUnitsSymbol.bind(this);
+
+
+    this.getAllLocations = this.getAllLocations.bind(this);
     this.getAllTypes = this.getAllTypes.bind(this);
-    this.getSingleBeer = this.getSingleBeer.bind(this);
-    this.beerSubmit = this.beerSubmit.bind(this);
-    this.deleteBeer = this.deleteBeer.bind(this);
+    this.getSingleLocation = this.getSingleLocation.bind(this);
+    this.locationSubmit = this.locationSubmit.bind(this);
+    this.deleteLocation = this.deleteLocation.bind(this);
   }
+
+
+  getUnitsSymbol(units) {
+    console.log({'getUnitsSymbol': units});
+    switch(units) {
+
+      case "imperial":
+        return this.setState({
+          untis: "imperial",
+          unitsSymbol: "\xB0F" });
+        break;
+
+      case "metric":
+        return this.setState({
+          untis: "metric",
+          unitsSymbol: "\xB0C" });
+        break;
+
+      default:
+        return this.setState({
+          untis: null,
+          unitsSymbol: "\xB0K" });
+    }
+  }
+
+
+  componentDidMount() {
+    console.log('componentDidMount');
+    this.getForecastWeather(this.state.units, this.state.zip);
+    this.getCurrentWeather(this.state.units, this.state.zip);
+    //<WeatherApiCall />
+
+  }
+
+
+  getCurrentWeather(units, zip) {
+  let key='e3cd724c0500567870e3c02db59c2d1c';
+  // let key=process.env.REACT_APP_SECRET;
+    console.log(`zip is ${zip}`)
+    console.log(`symbol is ${this.state.unitsSymbol}`)
+    console.log('run getCurrentWeather')
+    fetch(`http://api.openweathermap.org/data/2.5/${this.state.calltype}?zip=${zip}&appid=${key}&units=${units}`)
+
+  .then((res) => {
+     { /*debugger; */}
+    return res.json() })
+    // .then(res => res.json())
+    .then(res => {
+      // console.log(res);
+      this.setState({
+        apiCurrentWeather: res,
+        apiCurrentLoaded: true,
+      })
+      console.log({'getCurrentWeather': this.state.apiCurrentWeather});
+    })
+    .catch(err => console.log(err))
+  }
+
+  // http://api.openweathermap.org/data/2.5/weather?zip=11374&appid=${WEATHER_API_KEY}&units=imperial
+
+  getForecastWeather(units, zip) {
+  let key='e3cd724c0500567870e3c02db59c2d1c';
+
+    console.log('run getForecastResults')
+    fetch(`http://api.openweathermap.org/data/2.5/forecast?zip=${zip}&appid=${key}&units=${units}`)
+    .then(res => res.json())
+    .then(res => {
+      // console.log(res);
+      this.setState({
+        apiForecastWeather: res,
+        apiForecastLoaded: true,
+      })
+      console.log({'getForecastWeather': this.state.apiForecastWeather});
+    })
+      .catch(err => console.log(err))
+  }
+
+
+
+
+
 
   // items to load when the main page mounts
   componentDidMount() {
     console.log('component did mount');
-    this.getAllBeers();
+    this.getAllLocations();
     this.getAllTypes();
-    // this.getSingleBeer(6);
+    // this.getSingleLocation(6);
   }
 
-  // api call to our local api to return beersData
-  getAllBeers() {
-    console.log('get beers');
-    fetch('/api/beers/')
+  // api call to our local api to return locationsData
+  getAllLocations() {
+    console.log('get locations');
+    fetch('/api/locations/')
       .then(res => res.json())
       .then((res) => {
         this.setState({
-          beersData:   res.data,
-          beersLoaded: true,
+          locationsData:   res.data,
+          locationsLoaded: true,
         });
-        console.log({ 'Beers Api': res.data});
+        console.log({ 'Locations Api': res.data});
       })
       .catch(err => console.log(err));
   }
 
-// api call to our local api to return types of beers list
+// api call to our local api to return types of locations list
   getAllTypes() {
     console.log('get types');
     fetch('/api/types/')
@@ -78,16 +171,16 @@ class App extends Component {
   }
 
 
-  // method of using another api call to get single beer
-  getSingleBeer(id) {
-    console.log('get one beer');
+  // method of using another api call to get single location
+  getSingleLocation(id) {
+    console.log('get one location');
     console.log({ 'state before': this.state });
-    fetch(`/api/beers/${id}`)
+    fetch(`/api/locations/${id}`)
       .then(res => res.json())
       .then((res) => {
         this.setState({
-          singleBeer: res.data.beer,
-          singleBeerLoaded: true,
+          singleLocation: res.data.location,
+          singleLocationLoaded: true,
         })
         console.log({ 'Single ApiResult': res });
         console.log({ 'state after': this.state });
@@ -96,10 +189,10 @@ class App extends Component {
   }
 
 
-  beerSubmit(method, event, data, id) {
-    console.log({"beersubmit": { method, event, data, id }});
+  locationSubmit(method, event, data, id) {
+    console.log({"locationsubmit": { method, event, data, id }});
     event.preventDefault();
-    fetch(`/api/beers/`, {
+    fetch(`/api/locations/`, {
       method: method,
       headers: {
         'Content-Type': 'application/json',
@@ -107,26 +200,26 @@ class App extends Component {
       body: JSON.stringify(data),
     })
       .then((res) => { console.log(res)
-        this.getAllBeers();}
+        this.getAllLocations();}
       );
   }
 
 
-  // for deleting a beer based by id
-  deleteBeer(id) {
-    console.log({"beerDelete": id })
-    fetch(`/api/beers/${id}`, {
+  // for deleting a location based by id
+  deleteLocation(id) {
+    console.log({"locationDelete": id })
+    fetch(`/api/locations/${id}`, {
       method: 'delete',
     })
-      .then(() => this.getAllBeers()
+      .then(() => this.getAllLocations()
       );
   }
 
 
-  // setting State to when we add A beer
-  AddBeer() {
+  // setting State to when we add A location
+  AddLocation() {
     this.setState({
-      addingBeer: true,
+      addingLocation: true,
 
     });
   }
@@ -147,7 +240,7 @@ class App extends Component {
     return (
       <div className="App">
         {/* pass in types for filtering on if loaded*/}
-        {(this.state.typesLoaded) && (this.state.beersLoaded)
+        {(this.state.typesLoaded) && (this.state.locationsLoaded)
         ? <Header type={this.state.typesData} brewery={this.state.typesData} />
         : <p> Loading... </p> }
 
@@ -156,30 +249,30 @@ class App extends Component {
           <Route path="/" exact component={Home} />
 
 
-          {/* If api Beers data has returned beerlist component is rendered */}
-          {(this.state.typesLoaded) && (this.state.beersLoaded)
+          {/* If api Locations data has returned locationlist component is rendered */}
+          {(this.state.typesLoaded) && (this.state.locationsLoaded)
           ? <Route
-            path="/BeersList"
-            render={props => (<BeersList
+            path="/LocationsList"
+            render={props => (<LocationsList
               {...props}
-              beersList={this.state.beersData}
+              locationsList={this.state.locationsData}
             />
             )}
             exact
-            beersList={this.state.beerList}
+            locationsList={this.state.locationList}
           />
           : <p> Loading... </p> }
 
 
-        {/* route for individual beer details */}
-          {(this.state.typesLoaded) && (this.state.beersLoaded)
+        {/* route for individual location details */}
+          {(this.state.typesLoaded) && (this.state.locationsLoaded)
           ? <Route
-            path="/BeersList/BeerDetails"
-            render={props => (<BeerDetails
+            path="/LocationsList/LocationDetails"
+            render={props => (<LocationDetails
               {...props}
-              beer={this.state.beersData}
+              location={this.state.locationsData}
               type={this.state.typesData}
-              deleteBeer={this.deleteBeer}
+              deleteLocation={this.deleteLocation}
             />
             )}
           />
@@ -187,13 +280,13 @@ class App extends Component {
 
 
           {/* route to edit form */}
-          {(this.state.typesLoaded) && (this.state.beersLoaded)
+          {(this.state.typesLoaded) && (this.state.locationsLoaded)
           ? <Route
-            path="/BeersList/BeerEdit"
-            render={props => (<BeerForm
+            path="/LocationsList/LocationEdit"
+            render={props => (<LocationForm
               {...props}
-              beer={this.state.beersData}
-              beerSubmit={this.beerSubmit}
+              location={this.state.locationsData}
+              locationSubmit={this.locationSubmit}
               type={this.state.typesData}
 
             />
