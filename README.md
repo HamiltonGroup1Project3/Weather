@@ -87,7 +87,7 @@ Using array_agg(type.name) AS type  merges the duplicate entries and turns them 
 - NPM install
 
 2. Create local database
-    - create database called 'jackhammerz'
+    - create database called 'groupweather'
     - run migration file from /Weather/db/migration.sql
     - run seed from file /Weather/db/seed.sql
 
@@ -95,7 +95,7 @@ Using array_agg(type.name) AS type  merges the duplicate entries and turns them 
 ```
   DB_HOST=localhost
   DB_PORT=5432
-  DB_NAME=jackhammerz
+  DB_NAME=groupweather
 
 ```
 

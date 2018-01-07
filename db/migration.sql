@@ -1,4 +1,4 @@
-\c jackhammerz;
+\c groupweather;
 
 --drop tables if it already exists--
 DROP TABLE if EXISTS type;
@@ -11,11 +11,11 @@ CREATE TABLE type (
   name VARCHAR(255)
 );
 
--- create brewery table many to 1 --
+-- create location table many to 1 --
 CREATE TABLE location (
   id SERIAL PRIMARY KEY,
   zip INTEGER NOT NULL,
-  type_id serial REFERENCES type.type_id,
+  type_id SERIAL REFERENCES type(id),
   name VARCHAR(255)
 );
 
