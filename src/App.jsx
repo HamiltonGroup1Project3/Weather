@@ -52,6 +52,19 @@ class App extends Component {
   }
 
 
+  // items to load when the main page mounts
+  componentDidMount() {
+    console.log('component did mount');
+    this.getForecastWeather(this.state.units, this.state.zip);
+    this.getCurrentWeather(this.state.units, this.state.zip);
+    this.getAllLocations();
+    this.getAllTypes();
+    // this.getSingleLocation(6);
+  }
+
+
+
+
   getUnitsSymbol(units) {
     console.log({'getUnitsSymbol': units});
     switch(units) {
@@ -73,15 +86,6 @@ class App extends Component {
           untis: null,
           unitsSymbol: "\xB0K" });
     }
-  }
-
-
-  componentDidMount() {
-    console.log('componentDidMount');
-    this.getForecastWeather(this.state.units, this.state.zip);
-    this.getCurrentWeather(this.state.units, this.state.zip);
-    //<WeatherApiCall />
-
   }
 
 
@@ -131,14 +135,6 @@ class App extends Component {
 
 
 
-
-  // items to load when the main page mounts
-  componentDidMount() {
-    console.log('component did mount');
-    this.getAllLocations();
-    this.getAllTypes();
-    // this.getSingleLocation(6);
-  }
 
   // api call to our local api to return locationsData
   getAllLocations() {
@@ -239,6 +235,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+
         {/* pass in types for filtering on if loaded*/}
         {(this.state.typesLoaded) && (this.state.locationsLoaded)
         ? <Header type={this.state.typesData} brewery={this.state.typesData} />
