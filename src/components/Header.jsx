@@ -13,22 +13,27 @@ const Header = (props) => {
       <div className="header">
 
         <div className="left container">
-
-          {/* passes in types for filtering */}
+{/*
+          passes in types for filtering
           <Filter name="Type" typeData={props.type} />
 
-        {/*should pass in brewery's currently passing types*/}
-          <Filter name="Brewery" typeData={props.type}/>
+        should pass in brewery's currently passing types
+          <Filter name="Zip" typeData={props.type}/>
+*/}
         </div>
+
+
         <div className="center">
           <div>
-            <h1 className="App-title"> Top Shelf</h1>
+            <h1 className="App-title"> Weather App</h1>
           </div>
           <div className="container">
             <Nav />
           </div>
         </div>
+
         <div className="right container">
+{/*
           <div className="login" >
             <button>
               <i className="fa fa-sign-in" aria-hidden="true" /> Login
@@ -39,7 +44,9 @@ const Header = (props) => {
                User1
             </button>
           </div>
+*/}
         </div>
+
 
       </div>
 

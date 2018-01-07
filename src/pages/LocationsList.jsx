@@ -19,12 +19,13 @@ const LocationsList = (props) => {
         <AddLocation />
 
         { /* itterates over locations list to display full list of locations */}
-        { props.locationsList.map(location => (
+        { props.locationsList.map( location => (
           <SingleLocation
             key={location.id}
             name={location.name}
-            brewery={location.brewery}
+            zip={location.zip}
             id={location.id}
+
           />
           ))}
 

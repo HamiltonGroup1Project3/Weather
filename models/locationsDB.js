@@ -7,7 +7,7 @@ module.exports = {
 // function 'findAllLocations' to find all the locations
   findAllLocations() {
     return db.many(`
- SELECT DISTINCT location.name, location.zip, location.id, type.id FROM location INNER JOIN type ON type.id = location.type_id  ORDER BY location.zip;
+ SELECT DISTINCT location.id, location.name, location.zip, type.name AS type FROM location INNER JOIN type ON type.id = location.type_id  ORDER BY location.id;
       `);
   },
 
@@ -16,7 +16,7 @@ module.exports = {
   // function 'findOneLocation' to find one location
   findOneLocation(locationID) {
     return db.one(`
-        SELECT DISTINCT location.name, location.zip, location.id, type.id FROM location INNER JOIN type ON type.id = location.type_id where location_id = $1 ORDER BY location.zip;
+        SELECT DISTINCT location.name, location.zip, location.id, type.name AS type FROM location INNER JOIN type ON type.id = location.type_id where location_id = $1 ORDER BY location.zip;
       `, locationID);
   },
 
