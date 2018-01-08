@@ -1,0 +1,122 @@
+.App {
+
+  font-family: "Courier", Courier, serif;
+}
+
+p ,h2, h3 {
+  margin: 5px;
+}
+
+
+.fill-1-copy-30 {
+  width: 160px;
+  height: 160px;
+  background-color: rgb(255, 255, 255);
+  background-color: var(--white);
+}
+
+.rectangle-copy-29 {
+  width: 620px;
+  height: 160px;
+  border-radius: 4px;
+  background-color: rgb(247, 127, 0);
+  background-color: var(--pumpkin-orange);
+}
+.forecastByDay {
+  width: 186px;
+  height: 180px;
+  border-radius: 4px;
+  background-color: rgb(247, 127, 0);
+  background-color: var(--pumpkin-orange);
+}
+
+.forecastByHour {
+  width: 1300px;
+  height: 284px;
+  background-image: linear-gradient(rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2));
+  background-image: linear-gradient(var(--white-20), var(--white-20));
+  background-blend-mode: lighten;
+}
+
+
+
+
+
+
+
+
+.App-title {
+  font-size: 1.5em;
+}
+
+.App-intro {
+  font-size: large;
+}
+
+@keyframes App-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+
+
+.forecastResults {
+  margin: 5px;
+  border: 3px solid black;
+
+}
+
+.forecast3H {
+  margin: 2px;
+  border: 2px transparent green;
+  padding: 0px 5px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.searchForm {
+  margin: 10px;
+  border: 3px transparent red;
+}
+
+.searchEditor {
+  margin: 0px;
+  border: 0px transparent rgba(150, 250, 150, .5);
+}
+
+.searchField {
+  margin: 0 10px;
+}
+
+.button {
+   border-top: 1px solid #96d1f8;
+   background: #65a9d7;
+   background: -webkit-gradient(linear, left top, left bottom, from(#3e779d), to(#65a9d7));
+   background: -webkit-linear-gradient(top, #3e779d, #65a9d7);
+   background: -moz-linear-gradient(top, #3e779d, #65a9d7);
+   background: -ms-linear-gradient(top, #3e779d, #65a9d7);
+   background: -o-linear-gradient(top, #3e779d, #65a9d7);
+   padding: 5px 10px;
+   -webkit-border-radius: 8px;
+   -moz-border-radius: 8px;
+   border-radius: 8px;
+   -webkit-box-shadow: rgba(0,0,0,1) 0 1px 0;
+   -moz-box-shadow: rgba(0,0,0,1) 0 1px 0;
+   box-shadow: rgba(0,0,0,1) 0 1px 0;
+   text-shadow: rgba(0,0,0,.4) 0 1px 0;
+   color: white;
+   font-size: 14px;
+   font-family: Georgia, serif;
+   text-decoration: none;
+   vertical-align: middle;
+   }
+.button:hover {
+   border-top-color: #28597a;
+   background: #28597a;
+   color: #ccc;
+   }
+.button:active {
+   border-top-color: #1b435e;
+   background: #1b435e;
+   }

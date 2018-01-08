@@ -24,9 +24,13 @@ const Header = (props) => {
 
 
         <div className="center">
+
+{/*
           <div>
             <h1 className="App-title"> Weather App</h1>
           </div>
+*/}
+
           <div className="container">
             <Nav />
           </div>

@@ -1,0 +1,97 @@
+
+.currentResults {
+  width: 620px;
+  height: 380px;
+  margin: 15px;
+  border: 3px transparent blue;
+  background-color: rgb(247, 127, 0);
+  color: white;
+  display: flex;
+}
+
+.today {
+  width: 61px;
+  height: 19px;
+ font-family: 'Inconsolata', monospace;
+  font-size: 16px;
+  font-weight: bold;
+  letter-spacing: 1.6px;
+  text-align: left;
+  color: rgb(255, 255, 255);
+  color: var(--white);
+  display:block;
+  border: 3px transparent blue;
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+.OO {
+  width: 250px;
+  height: 77px;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 64px;
+  font-weight: 300;
+  text-align: left;
+  color: rgb(255, 255, 255);
+  color: var(--white);
+  border: 3px transparent blue;
+  padding-bottom: 40px;
+  display: block;
+
+}
+
+.l-OO {
+  width: 62px;
+  height: 33px;
+  font-family: 'Inconsolata', monospace;
+  font-size: 26px;
+  font-weight: bold;
+  text-align: right;
+  color: rgb(255, 255, 255);
+  color: var(--white);
+  border: 3px transparent blue;
+  display: flex;
+
+}
+
+.text-style-1 {
+  font-size: 16px;
+  border: 3px transparent red;
+  vertical-align: text-bottom;
+  padding-right: 5px;
+}
+
+ .text-style-2 {
+ font-family: 'Open Sans', sans-serif;
+ border: 3px transparent green;
+ vertical-align: text-bottom;
+ padding-right: 10px;
+}
+
+.rectangle-copy-31 {
+  width: 295px;
+  height: 380px;
+  border-radius: 4px;
+  background-color: rgba(0, 0, 0, 0.0);
+  border: 1px transparent red;
+}
+.rectangle-copy-30 {
+  width: 295px;
+  height: 380px;
+  border-radius: 4px;
+  background-color: rgba(0, 0, 0, 0.0);
+  background-image: ()
+  border: 1px transparent red;
+}
+
+.next-hour-clear-for {
+  width: 186px;
+  height: 82px;
+  font-family: 'Inconsolata', monospace;
+  font-size: 18px;
+  font-weight: 500;
+  text-align: left;
+  color: rgb(255, 255, 255);
+  color: var(--white);
+  padding-top: 30px;
+}
