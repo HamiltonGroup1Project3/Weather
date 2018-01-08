@@ -52,33 +52,14 @@ Trello](https://trello.com/b/cWocpnJz/weather-app)
 ## Featured Code 
 - React Router code 
 ```
-<Switch>
-  <Route path="/" exact component={Home} />
-  {(this.state.beersLoaded) 
-    ? <Route path="/BeersList" render={props => 
-      (<BeersList {...props} beersList={this.state.beersData} />)} 
-      exact beersList={this.state.beerList} />
-    : <p> Loading... </p> }
 
-  <Route path="/BeersList/BeerDetails" render={props => (<BeerDetails {...props}
-      beer={this.state.beersData} /> )} />
-
-  <Route path="/BeersList/BeerEdit" render={props => (<BeerForm {...props} beer={this.state.beersData} /> )} />
-
-  <Route path="/" component={NotFound} />
-</Switch>
 ```
 
 - Code for making our Summary Table 
 ```
-  findAllBeers() {
-    return db.many(`
- SELECT DISTINCT x_ref_table.beer_id AS id, beer.name, beer.brewery, array_agg(type.name) AS type, beer.description FROM x_ref_table INNER JOIN type ON type.id = x_ref_table.style_type_id INNER JOIN beer on beer.id = x_ref_table.beer_id GROUP BY x_ref_table.beer_id, beer.name, beer.brewery, beer.description ORDER BY x_ref_table.beer_id;
-      `);
-  },
+ 
 ```
-
-Using array_agg(type.name) AS type  merges the duplicate entries and turns them into an array. 
+ 
 
 ## How to install and get it running on a local host
 1. Install files
