@@ -1,4 +1,6 @@
-import React from 'react'
+import React from 'react';
+import SingleNav from './../components/SingleNav';
+import WeatherImage from './../components/WeatherImage';
 import './../css/currentResults.css';
 <style>
 @import url('https://fonts.googleapis.com/css?family=Inconsolata|Open+Sans');
@@ -11,7 +13,7 @@ const CurrentResults = props => {
   return (
     <div className="currentResults">
       <div className="rectangle-copy-30">
-        <p> image</p>
+        <WeatherImage />
       </div>
       <div className="rectangle-copy-31">
         <span className="today"> Today </span>

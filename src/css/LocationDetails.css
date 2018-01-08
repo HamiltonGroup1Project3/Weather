@@ -1,6 +1,7 @@
-.App {
-
+.LocationDetails {
   font-family: "Courier", Courier, serif;
+  background-color: rgb(247, 127, 0);
+  min-height: 95vh;
 }
 
 p ,h2, h3 {
@@ -51,6 +52,8 @@ p ,h2, h3 {
 
 .App-intro {
   font-size: large;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 @keyframes App-logo-spin {
@@ -58,22 +61,6 @@ p ,h2, h3 {
   to { transform: rotate(360deg); }
 }
 
-
-
-.forecastResults {
-  margin: 5px;
-  border: 3px solid black;
-
-}
-
-.forecast3H {
-  margin: 2px;
-  border: 2px transparent green;
-  padding: 0px 5px;
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-}
 
 .searchForm {
   margin: 10px;
