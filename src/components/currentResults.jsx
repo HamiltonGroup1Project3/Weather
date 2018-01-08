@@ -19,7 +19,7 @@ const CurrentResults = props => {
         <span className="today"> Today </span>
 
         <span className="OO"> {(Math.round(props.weather.main.temp*10)/10)}{props.unitsSymbol} </span>
-        <div className="">
+        <div className="box">
           <span className="text-style-1"> L: </span>
           <span className="text-style-2"> {(Math.round(props.weather.main.temp_min*10)/10)}{props.unitsSymbol} </span>
 
