@@ -40,9 +40,8 @@ font-style: italic;
 .App {
   text-align: center;
   margin: 0px;
-  background-color: rgba( 0,0,250, .3);
+  background-color: rgb(247, 127, 0);
   border: 0px solid rgba(0,0,250, .0) ;
-  background-image: url("https://i.imgur.com/PnBgPGa.jpg");
   background-repeat: no-repeat;
   background-size: cover;
 
@@ -235,21 +234,20 @@ select option {
 
 
 .singleLocation {
-  color: white;
+   color: white;
   font-size: 20px;
   text-shadow: 1px 1px 3px black, 0 0 6px black, 0 0 5px darkgrey;
   text-decoration: none;
-  background-image: url("https://i.imgur.com/JTSxG6Y.png?3");
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
   width: 121px;
-  height: 130px;
+  height: 120px;
   margin: auto;
   /*background-color: rgba(000,200,200,.3);*/
-  border: 0px solid rgba(000,200,200,.3);
+  border: 3px solid rgba(182, 130, 32, 1);
   border-radius: 10px;
-  padding-top: 30px;
+  padding-top: 40px;
   z-index: 4;
 }
 
@@ -270,7 +268,7 @@ select option {
   height: 120px;
   margin: auto;
   /*background-color: rgba(000,200,200,.3);*/
-  border: 3px solid rgba(182, 130, 32, .5);
+  border: 3px solid rgba(182, 130, 32, 1);
   border-radius: 10px;
   padding-top: 40px;
   z-index: 4;

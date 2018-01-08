@@ -1,5 +1,5 @@
 import 'font-awesome/css/font-awesome.min.css';
-import React from 'react';
+import React, { Component } from 'react';
 import SingleNav from './../components/SingleNav';
 import './../css/reset.css';
 import App from './../App';
@@ -8,7 +8,7 @@ import './../css/LocationDetails.css';
 import CurrentResults from './../components/currentResults';
 // import SearchForm from './searchForm';
 import ForecastResults from './../components/forecastResults';
-import Header from './../components/Header';
+import Header2 from './../components/Header2';
 
 // const LocationDetails = (props) => {
   // console.log({ 'Location details component loaded': { props } });
@@ -124,7 +124,7 @@ let key='8a6b692ba4ab3f5c8ade46440d2e0a4f';
     return (
       <div className="App">
       {this.state.apiCurrentWeather ?
-        <Header weather={this.state.apiCurrentWeather}
+        <Header2 weather={this.state.apiCurrentWeather}
         forecast={this.state.apiForecastWeather}  />
         : <p> Loading...</p> }
 

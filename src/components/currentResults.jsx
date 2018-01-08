@@ -1,5 +1,5 @@
 import React from 'react'
-import './currentResults.css';
+import './../css/currentResults.css';
 <style>
 @import url('https://fonts.googleapis.com/css?family=Inconsolata|Open+Sans');
 </style>

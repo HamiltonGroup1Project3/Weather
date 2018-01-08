@@ -332,7 +332,7 @@ class App extends Component {
           <Route path="/" component={NotFound} />
 
         </Switch>
-        <Footer />
+       {/* <Footer />  */}
       </div>
     );
   }

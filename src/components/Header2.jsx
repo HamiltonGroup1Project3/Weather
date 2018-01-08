@@ -1,8 +1,8 @@
 import React from 'react'
-import './Header.css';
+import './../css/Header2.css';
 
 
-const Header = props => {
+const Header2 = props => {
       console.log({'Header': props.weather})
       console.log(props)
   return (
@@ -14,4 +14,4 @@ const Header = props => {
 }
 
 
-export default Header;
+export default Header2;
