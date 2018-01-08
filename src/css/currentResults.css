@@ -12,7 +12,7 @@
 .today {
   width: 61px;
   height: 19px;
- font-family: 'Inconsolata', monospace;
+  font-family: 'Inconsolata', monospace;
   font-size: 16px;
   font-weight: bold;
   letter-spacing: 1.6px;
@@ -58,14 +58,14 @@
   font-size: 16px;
   border: 3px transparent red;
   vertical-align: text-bottom;
-  padding-right: 5px;
+  padding-right: 0px;
 }
 
  .text-style-2 {
  font-family: 'Open Sans', sans-serif;
  border: 3px transparent green;
  vertical-align: text-bottom;
- padding-right: 10px;
+ padding-right: 0px;
 }
 
 .rectangle-copy-31 {
@@ -82,6 +82,7 @@
   background-color: rgba(0, 0, 0, 0.0);
   /*background-image: ()*/
   border: 1px transparent red;
+  padding-top: 50px;
 }
 
 .next-hour-clear-for {
@@ -94,4 +95,7 @@
   color: rgb(255, 255, 255);
   color: var(--white);
   padding-top: 30px;
+}
+.box {
+text-align: left;
 }

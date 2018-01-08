@@ -68,7 +68,7 @@ switch(units) {
 
 
 componentDidMount() {
-  console.log('componentDidMount');
+  console.log({'componentDidMount': this.props});
   this.getForecastWeather(this.state.units, this.state.zip);
   this.getCurrentWeather(this.state.units, this.state.zip);
   //<WeatherApiCall />
@@ -134,7 +134,7 @@ let key='8a6b692ba4ab3f5c8ade46440d2e0a4f';
 
           {/*Search Form
           <SearchForm getCurrentWeather={this.getCurrentWeather} getForecastWeather={this.getForecastWeather} getUnitsSymbol={this.getUnitsSymbol} />
-          */}
+
 
           {/* displays current weather once it's loaded  */}
           {this.state.apiCurrentWeather ? <CurrentResults weather={this.state.apiCurrentWeather} unitsSymbol={this.state.unitsSymbol} /> : <p> Loading...</p> }
