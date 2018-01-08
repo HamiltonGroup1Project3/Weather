@@ -1,0 +1,41 @@
+
+.main {
+  color:white;
+  background-color: rgba(255,255,255,.2);
+  padding-top: 15px;
+
+}
+
+.forecastResults {
+  margin: 10px 20px;
+  border: 0px solid black;
+  display: flex;
+
+}
+
+.forecast3H {
+  margin: 0px;
+  border: 0px solid green;
+  padding: 0px 0px;
+  display: block;
+  justify-content: center;
+  flex-wrap: wrap;
+  flex-grow: 1;
+    padding-bottom: 25px;
+}
+
+.hourBox {
+  min-width: 1px;
+  background-color: rgba(0,0,0, 0.2 );
+  color: transparent;
+  margin-top: 20px;
+  vertical-align: center;
+}
+
+.hourBox-cloud {
+  min-width: 1px;
+  background-color: rgba(0,0,0, 0.6 );
+  color: transparent;
+  margin-top: 20px;
+  vertical-align: center;
+}

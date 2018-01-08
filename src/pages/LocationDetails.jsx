@@ -6,6 +6,7 @@ import App from './../App';
 
 import './../css/LocationDetails.css';
 import CurrentResults from './../components/currentResults';
+import DayResults from './../components/DayResults';
 // import SearchForm from './searchForm';
 import ForecastResults from './../components/forecastResults';
 import Header2 from './../components/Header2';
@@ -122,7 +123,7 @@ let key='8a6b692ba4ab3f5c8ade46440d2e0a4f';
 
   render() {
     return (
-      <div className="App">
+      <div className="LocationDetails">
       {this.state.apiCurrentWeather ?
         <Header2 weather={this.state.apiCurrentWeather}
         forecast={this.state.apiForecastWeather}  />
@@ -138,10 +139,12 @@ let key='8a6b692ba4ab3f5c8ade46440d2e0a4f';
           {/* displays current weather once it's loaded  */}
           {this.state.apiCurrentWeather ? <CurrentResults weather={this.state.apiCurrentWeather} unitsSymbol={this.state.unitsSymbol} /> : <p> Loading...</p> }
 
+          {/* displays weather forecast once it's loaded  */}
+          {this.state.apiForecastWeather ? <DayResults forecast={this.state.apiForecastWeather} unitsSymbol={this.state.unitsSymbol} /> : <p> Loading... </p> }
 
+        </div>
           {/* displays weather forecast once it's loaded  */}
           {this.state.apiForecastWeather ? <ForecastResults forecast={this.state.apiForecastWeather} unitsSymbol={this.state.unitsSymbol} /> : <p> Loading... </p> }
-        </div>
       </div>
     );
   }
