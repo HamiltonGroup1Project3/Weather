@@ -104,14 +104,14 @@ class LocationForm extends Component {
             </select>
 
 
-<Link to="/LocationsList">
+
             <input
               type="submit"
               className="nav"
               value={this.props.addLocation ? 'AddLocation' : 'Submit'}
             />
 
-</Link>
+
 
           </div>
         </form>
