@@ -130,9 +130,9 @@ class App extends Component {
     console.log('run getCurrentWeather')
     fetch(`http://api.openweathermap.org/data/2.5/${this.state.calltype}?zip=${zip}&appid=${key}&units=${units}`)
 
-      .then((res) => {
-        { /*debugger; */}
-        return res.json() })
+      // .then((res) => {
+      //   { debugger; }
+      //   return res.json() })
       // .then(res => res.json())
       .then(res => {
         // console.log(res);
