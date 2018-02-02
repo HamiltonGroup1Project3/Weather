@@ -121,12 +121,12 @@ class App extends Component {
 
 
   getCurrentWeather(units, zip) {
-    let key='e3cd724c0500567870e3c02db59c2d1c';
-    // let key=process.env.REACT_APP_SECRET;
+    // let key='e3cd724c0500567870e3c02db59c2d1c';
+    let key=process.env.REACT_APP_SECRET;
     console.log(`zip is ${zip}`)
     console.log(`symbol is ${this.state.unitsSymbol}`)
     console.log('run getCurrentWeather')
-    fetch(`http://api.openweathermap.org/data/2.5/${this.state.calltype}?zip=${zip}&appid=${key}&units=${units}`)
+    fetch(`https://api.openweathermap.org/data/2.5/${this.state.calltype}?zip=${zip}&appid=${key}&units=${units}`)
 
       // .then((res) => {
       //   { debugger; }
@@ -147,10 +147,10 @@ class App extends Component {
   // http://api.openweathermap.org/data/2.5/weather?zip=11374&appid=${WEATHER_API_KEY}&units=imperial
 
   getForecastWeather(units, zip) {
-    let key='e3cd724c0500567870e3c02db59c2d1c';
-
+    // let key='e3cd724c0500567870e3c02db59c2d1c';
+let key=process.env.REACT_APP_SECRET;
     console.log('run getForecastResults')
-    fetch(`http://api.openweathermap.org/data/2.5/forecast?zip=${zip}&appid=${key}&units=${units}`)
+    fetch(`https://api.openweathermap.org/data/2.5/forecast?zip=${zip}&appid=${key}&units=${units}`)
       .then(res => res.json())
       .then(res => {
         // console.log(res);
