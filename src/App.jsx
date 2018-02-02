@@ -125,7 +125,7 @@ class App extends Component {
     console.log(`zip is ${zip}`)
     console.log(`symbol is ${this.state.unitsSymbol}`)
     console.log('run getCurrentWeather')
-    fetch(`https://api.openweathermap.org/data/2.5/${this.state.calltype}?zip=${zip}&appid=${key}&units=${units}`)
+    fetch(`https://crossorigin.me/http://api.openweathermap.org/data/2.5/${this.state.calltype}?zip=${zip}&appid=${key}&units=${units}`)
 
       // .then((res) => {
       //   { debugger; }
@@ -148,7 +148,7 @@ class App extends Component {
   getForecastWeather(units, zip) {
     let key=process.env.WEATHER_API_KEY;
     console.log('run getForecastResults')
-    fetch(`https://api.openweathermap.org/data/2.5/forecast?zip=${zip}&appid=${key}&units=${units}`)
+    fetch(`https://crossorigin.me/http://api.openweathermap.org/data/2.5/forecast?zip=${zip}&appid=${key}&units=${units}`)
       .then(res => res.json())
       .then(res => {
         // console.log(res);
