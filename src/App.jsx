@@ -64,8 +64,6 @@ class App extends Component {
   }
 
 
-
-
   getUnitsSymbol(units) {
     console.log({'getUnitsSymbol': units});
     switch(units) {
