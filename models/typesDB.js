@@ -3,7 +3,7 @@ const db = require('./connection');
 // export the collection of functions
 module.exports = {
 
-// function finds all types of beers from Type table
+// function finds all types from Type table
   findAllTypes() {
     return db.many(`
       SELECT *

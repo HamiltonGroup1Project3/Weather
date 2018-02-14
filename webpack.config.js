@@ -15,6 +15,7 @@ const fontLoaderConfig = {
   limit: 100,
 };
 
+
 // let's bring in local environmental variables
 if (!('NODE_ENV' in process.env)) require('dotenv').config();
 

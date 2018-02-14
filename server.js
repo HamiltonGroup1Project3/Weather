@@ -37,6 +37,7 @@ app.use('/api/types', typeRoutes);
 //   res.send('it worked');
 // });
 
+// covers routes that aren't found
 app.get('*', (req, res) =>{
   res.status(400).json({
     message: 'not found',

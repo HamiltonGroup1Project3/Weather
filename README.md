@@ -3,8 +3,7 @@
 ## Team 
 Dev Team
 - Luke McDonald
-- Mark Albom
-- Mohammad Badruzzaman
+
 
 UX Team 
 - McKellen Rattray

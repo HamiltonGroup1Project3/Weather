@@ -5,5 +5,5 @@
             <stop offset="100%"/>
         </linearGradient>
     </defs>
-    <path fill="url(#a)" fill-opacity=".3" fill-rule="evenodd" d="M798 1401h441.191v232H798z" style="mix-blend-mode:multiply" transform="rotate(-180 619.596 816.5)"/>
+    <path fill="url(#a)" fill-opacity=".3" fillRule="evenodd" d="M798 1401h441.191v232H798z" style="mix-blend-mode:multiply" transform="rotate(-180 619.596 816.5)"/>
 </svg>
